@@ -1,0 +1,49 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE } from "../config";
+
+const desc =
+  "《小狐狸區塊鏈》是誰？從 YouTube 頻道出發的幣圈知識品牌：用白話文講加密貨幣，所有平台與 U 卡都自己實測過才寫。";
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  description: desc,
+  sameAs: [SITE.youtube],
+};
+---
+
+<Base title="關於我們" description={desc} path="/about/">
+  <article class="article">
+    <div class="read">
+      <span class="art-cat">關於我們</span>
+      <h1 class="art-title">用白話文，把加密貨幣講得簡單</h1>
+
+      <div class="body" style="margin-top:30px">
+        <p>嗨，這裡是《小狐狸區塊鏈》。我們從 <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube 頻道</a>出發——四十多部影片，做的一直是同一件事：把複雜的加密貨幣新聞和工具，講成一般人聽得懂的白話文。這個網站是頻道的延伸：影片負責講新聞、開箱與實測，網站負責把教學、優惠和活動整理成隨時查得到的攻略。</p>
+
+        <h2>我們做過什麼</h2>
+        <p>頻道的核心是「實測開箱」系列：台灣交易所一間一間實際開戶評測（MAX、BitoPro、XREX），U 卡（加密貨幣簽帳卡）不只開箱——我們直接在日本福岡的整趟旅行全程用 U 卡付款，從機票、住宿到 Uber，實際刷過一輪再告訴你哪裡好用、哪裡卡關、要不要報稅。此外也持續追蹤台灣加密貨幣報稅規則、預測市場 Polymarket、GameFi 與 AI 圈的最新動態。</p>
+
+        <h2>我們的三個原則</h2>
+        <p><strong>一、實測過才寫。</strong>推薦的平台我們自己有帳號、自己走過開戶到出金的完整流程。沒用過的東西，我們會明說。</p>
+        <p><strong>二、把行銷數字拆穿。</strong>「最高 10,000 USDT」這種宣傳上限，我們會告訴你實際拿到的通常是什麼、條件是什麼、哪些根本拿不到。讀者的信任比一次點擊值錢。</p>
+        <p><strong>三、風險講在前面。</strong>加密貨幣是高風險資產，每篇文章都附風險聲明。任何要你「先繳稅才能出金」的，都是詐騙——這句話我們會一直重複。</p>
+
+        <h2>利益揭露</h2>
+        <p>本站文章與活動看板含推薦連結。你透過連結註冊，我們可能獲得交易所返佣——這不會增加你的成本，也不影響你拿到的優惠（多數情況你反而拿到更多折扣），這是頻道與網站持續營運的主要收入來源。即便如此，平台的缺點與風險我們照寫，上面 Crypto.com 鎖倉規則那篇就是例子。</p>
+
+        <h2>聯絡我們</h2>
+        <p>合作邀約或內容指正，歡迎到 <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube 頻道</a>留言或私訊。發現文章內容過期（活動換檔很快），也請告訴我們，我們會儘快更新。</p>
+      </div>
+
+      <p class="disclaimer">
+        本站所有內容均為資訊整理與個人經驗分享，不構成投資建議。加密貨幣價格波動劇烈，屬高風險標的，投資前請自行評估並承擔風險。
+      </p>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+</Base>

@@ -1,0 +1,98 @@
+---
+import { PLATFORMS } from "../config";
+const data = JSON.stringify(
+  Object.fromEntries(PLATFORMS.map((p) => [p.id, { name: p.name, url: p.url, code: p.code, post: p.post, benefit: p.benefit }]))
+);
+---
+
+<section class="quiz" id="quiz">
+  <div class="wrap quiz-in">
+    <div class="quiz-copy">
+      <span class="eyebrow">30 秒測驗</span>
+      <h3>不知道從哪間開始？</h3>
+      <p>回答三個問題，找出最適合你的起點。</p>
+    </div>
+    <div class="quiz-box" data-platforms={data}>
+      <div class="q-step" data-step="0">
+        <p class="q-q">1 / 3 — 你目前的狀態是？</p>
+        <button class="q-opt" data-v="newbie">完全新手，第一次接觸</button>
+        <button class="q-opt" data-v="some">買過幣，想找更省的平台</button>
+        <button class="q-opt" data-v="defi">想玩鏈上 / DeFi</button>
+      </div>
+      <div class="q-step" data-step="1" hidden>
+        <p class="q-q">2 / 3 — 你最在意什麼？</p>
+        <button class="q-opt" data-v="fee">手續費越低越好</button>
+        <button class="q-opt" data-v="gift">開戶獎勵 / 盲盒</button>
+        <button class="q-opt" data-v="card">日常消費能刷卡</button>
+      </div>
+      <div class="q-step" data-step="2" hidden>
+        <p class="q-q">3 / 3 — 你打算投入多少？</p>
+        <button class="q-opt" data-v="small">先小額試水溫（幾千台幣）</button>
+        <button class="q-opt" data-v="mid">有計畫地定期投入</button>
+        <button class="q-opt" data-v="big">資金較大，重視深度與安全</button>
+      </div>
+      <div class="q-result" hidden>
+        <span class="q-badge">你的起點</span>
+        <h4 class="q-name"></h4>
+        <p class="q-why"></p>
+        <div class="q-actions">
+          <a class="q-read" href="#">看完整介紹</a>
+          <a class="q-go" href="#" data-track="quiz_result" target="_blank" rel="noopener noreferrer">用優惠碼註冊 ↗</a>
+        </div>
+        <button class="q-again" type="button">再測一次</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const box = document.querySelector<HTMLElement>(".quiz-box");
+  if (box) {
+    const platforms = JSON.parse(box.dataset.platforms || "{}");
+    const answers: string[] = [];
+    const steps = box.querySelectorAll<HTMLElement>(".q-step");
+    const result = box.querySelector<HTMLElement>(".q-result")!;
+
+    function pick(): { id: string; why: string } {
+      const [who, want] = answers;
+      if (want === "card") {
+        return { id: "crypto-com", why: "你重視日常刷卡消費，Crypto.com 的 App 與卡片生態最完整。想走鏈上路線也可以搭配 EtherFi 的加密信用卡。" };
+      }
+      if (who === "defi") {
+        return { id: "metamask", why: "想玩鏈上，第一步是裝好 MetaMask 錢包並加入 Rewards 累點；之後質押 ETH 可再看 EtherFi。" };
+      }
+      if (want === "gift") {
+        return { id: "gate", why: "Gate 目前的拆盲盒活動最高可抽 100 USDT 等值代幣，開戶獎勵的趣味性最高；OKX 的新戶盲盒也值得一起領。" };
+      }
+      if (answers[2] === "big") {
+        return { id: "binance", why: "資金較大時，市場深度與流動性最重要，幣安是全球交易量最大的交易所，搭配推薦碼長期手續費也省。" };
+      }
+      return { id: "binance", why: "新手從幣安開始最穩：中文介面成熟、教學資源最多，綁定推薦碼享手續費返佣，之後再到任務中心領新手獎勵。" };
+    }
+
+    box.addEventListener("click", (e) => {
+      const t = e.target as HTMLElement;
+      if (t.classList.contains("q-opt")) {
+        answers.push(t.dataset.v || "");
+        const i = answers.length;
+        steps.forEach((s) => (s.hidden = true));
+        if (i < 3) {
+          steps[i].hidden = false;
+        } else {
+          const { id, why } = pick();
+          const p = platforms[id];
+          result.querySelector(".q-name")!.textContent = p.name;
+          result.querySelector(".q-why")!.textContent = why;
+          (result.querySelector(".q-read") as HTMLAnchorElement).href = `/posts/${p.post}/`;
+          (result.querySelector(".q-go") as HTMLAnchorElement).href = p.url;
+          result.hidden = false;
+        }
+      }
+      if (t.classList.contains("q-again")) {
+        answers.length = 0;
+        result.hidden = true;
+        steps.forEach((s, i) => (s.hidden = i !== 0));
+      }
+    });
+  }
+</script>

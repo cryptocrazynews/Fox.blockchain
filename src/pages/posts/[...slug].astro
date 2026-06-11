@@ -1,0 +1,114 @@
+---
+import Base from "../../layouts/Base.astro";
+import PromoCTA from "../../components/PromoCTA.astro";
+import { SITE } from "../../config";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+const iso = (d: Date) => d.toISOString();
+const author = data.author ?? SITE.author;
+const updated = data.updatedDate ?? data.pubDate;
+const canonical = new URL(`/posts/${entry.id}/`, SITE.url).href;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  description: data.answer ?? data.excerpt,
+  datePublished: iso(data.pubDate),
+  dateModified: iso(updated),
+  inLanguage: SITE.locale,
+  author: { "@type": "Organization", name: author },
+  publisher: { "@type": "Organization", name: SITE.name },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+};
+
+const faqSchema =
+  data.faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: data.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
+// 其他文章（繼續閱讀）
+const others = (await getCollection("posts", ({ data: d }) => !d.draft))
+  .filter((p) => p.id !== entry.id)
+  .slice(0, 2);
+---
+
+<Base title={data.title} description={data.excerpt} ogType="article" path={`/posts/${entry.id}/`}>
+  <article class="article">
+    <div class="read">
+      <a class="back" href="/">← 回到首頁</a>
+      <span class="art-cat">{data.category}</span>
+      <h1 class="art-title">{data.title}</h1>
+      <div class="art-meta">
+        <span>{author}</span>
+        <span>更新於 {fmt(updated)}</span>
+      </div>
+
+      {data.answer && (
+        <div class="answer">
+          <span class="lab"><span class="d"></span> 一句話回答 · 可被 AI 引用</span>
+          <p>{data.answer}</p>
+        </div>
+      )}
+
+      <div class="body">
+        <Content />
+      </div>
+
+      <PromoCTA platformId={data.platform} />
+
+      {data.faqs.length > 0 && (
+        <div class="faq">
+          <span class="lab">常見問題</span>
+          <div style="margin-top:14px">
+            {data.faqs.map((f) => (
+              <details class="faq-item">
+                <summary>{f.q}<span class="pm">+</span></summary>
+                <p class="faq-a">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <p class="disclaimer">
+        風險聲明：本文僅為資訊整理與個人經驗分享，不構成投資建議。加密貨幣價格波動劇烈，屬高風險標的，投資前請自行評估並承擔風險。任何要求「先繳稅、先付保證金才能出金」的訊息幾乎都是詐騙。
+      </p>
+
+      {others.length > 0 && (
+        <>
+          <div class="section-h" style="margin-top:56px"><h3>繼續閱讀</h3></div>
+          <div class="grid" style="grid-template-columns:1fr;padding-bottom:0">
+            {others.map((p) => (
+              <a class="card" href={`/posts/${p.id}/`} style="min-height:0">
+                <span class="cat">{p.data.category}</span>
+                <h4>{p.data.title}</h4>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</Base>

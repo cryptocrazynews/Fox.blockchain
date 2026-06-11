@@ -1,0 +1,134 @@
+---
+import { SITE } from "../config";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+  path?: string;
+}
+const {
+  title,
+  description = SITE.description,
+  ogType = "website",
+  path = Astro.url.pathname,
+} = Astro.props;
+
+const fullTitle = title ? `${title}｜${SITE.name}` : `${SITE.name}｜${SITE.tagline}`;
+const canonical = new URL(path, SITE.url).href;
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: SITE.locale,
+  publisher: {
+    "@type": "Organization",
+    name: SITE.name,
+    sameAs: [SITE.youtube],
+  },
+};
+---
+
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    {/* ── 分析工具（在 config.ts 填入即生效）── */}
+    {SITE.plausibleDomain && (
+      <script defer data-domain={SITE.plausibleDomain} src="https://plausible.io/js/script.outbound-links.js"></script>
+    )}
+    {SITE.gaId && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}`}></script>
+        <script is:inline define:vars={{ gaId: SITE.gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="wrap bar-in">
+        <a class="brand" href="/" aria-label={SITE.name}>
+          <span class="brand-mark">{SITE.name}</span>
+          <span class="brand-dot"></span>
+          <span class="brand-tag">{SITE.tagline}</span>
+        </a>
+        <nav style="display:flex;gap:14px;align-items:center">
+          <a href="/start/" style="font-size:13.5px;font-weight:600;color:var(--slate)">新手入門</a>
+          <a href={SITE.youtube} target="_blank" rel="noopener noreferrer" style="font-size:13.5px;font-weight:600;color:var(--slate)">YouTube ↗</a>
+          <a class="promo-pill" href="/#deals">🎁 活動看板</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <span class="name">{SITE.name}</span>
+        <div class="links">
+          <a href="/">首頁</a>
+          <a href="/start/">新手入門</a>
+          <a href="/about/">關於我們</a>
+          <a href="/disclaimer/">免責聲明</a>
+          <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="/rss.xml">RSS</a>
+          <a href="/admin/">後台</a>
+        </div>
+      </div>
+      <div class="wrap" style="padding-bottom:22px">
+        <p style="font-size:12px;color:#909aa8;line-height:1.7;margin:0">
+          利益揭露：本站文章含推薦連結，透過連結註冊本站可能獲得返佣，這不會增加你的成本，且不影響你獲得的優惠。加密貨幣為高風險資產，本站內容均非投資建議。
+        </p>
+      </div>
+    </footer>
+
+    {/* ── 出站點擊事件追蹤：記錄每次推薦連結點擊來自哪個版位 ── */}
+    <script>
+      document.addEventListener("click", (e) => {
+        const a = (e.target as HTMLElement).closest("a[data-track]") as HTMLAnchorElement | null;
+        if (!a) return;
+        const pos = a.dataset.track || "unknown";
+        const dest = a.hostname;
+        // Plausible
+        // @ts-ignore
+        if (window.plausible) window.plausible("Referral Click", { props: { position: pos, dest } });
+        // GA4
+        // @ts-ignore
+        if (window.gtag) window.gtag("event", "referral_click", { position: pos, destination: dest });
+      });
+    </script>
+  </body>
+</html>

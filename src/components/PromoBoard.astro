@@ -1,0 +1,34 @@
+---
+import { PLATFORMS } from "../config";
+const today = new Date().toISOString().slice(0, 10);
+---
+
+<section class="board" id="deals">
+  <div class="wrap">
+    <div class="board-head">
+      <div>
+        <span class="eyebrow">活動看板</span>
+        <h3>目前各平台主推活動</h3>
+      </div>
+      <span class="board-date">更新於 {today} · 活動可能隨時變動，以官方為準</span>
+    </div>
+    <div class="board-track" role="list">
+      {PLATFORMS.map((p) => (
+        <div class="deal" role="listitem">
+          {p.hot && <span class="deal-hot">主打</span>}
+          <span class="deal-type">{p.type}</span>
+          <h4>{p.name}</h4>
+          <p class="deal-act">{p.activity}</p>
+          {p.deadline && <p class="deal-deadline">⏳ 截止：{p.deadline}</p>}
+          <div class="deal-foot">
+            <code>{p.code}</code>
+            <div class="deal-links">
+              <a class="deal-read" href={`/posts/${p.post}/`}>介紹文</a>
+              <a class="deal-go" href={p.url} data-track={`board:${p.id}`} target="_blank" rel="noopener noreferrer">領取 ↗</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

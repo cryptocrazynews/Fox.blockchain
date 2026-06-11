@@ -1,0 +1,75 @@
+# ⚠️ 部署前必改：把 repo 換成你的 GitHub「帳號/儲存庫名稱」
+backend:
+  name: github
+  repo: your-github-username/crypto-blog
+  branch: main
+
+# 媒體（圖片）上傳位置
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: "zh_Hant"
+
+collections:
+  - name: "posts"
+    label: "文章"
+    label_singular: "文章"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{fields.slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "標題", widget: "string" }
+      - {
+          name: "slug",
+          label: "網址代稱（英文，會變成 /posts/xxx）",
+          widget: "string",
+          hint: "例：bian-an-shou-xu-fei",
+        }
+      - {
+          name: "category",
+          label: "分類",
+          widget: "select",
+          options: ["新手教學", "交易所評測", "手續費比較", "出入金", "錢包與 DeFi", "安全防詐", "活動優惠"],
+        }
+      - { name: "excerpt", label: "摘要（卡片上顯示，1～2 句）", widget: "text" }
+      - {
+          name: "answer",
+          label: "一句話回答（40～60 字，AI 會抽這段）",
+          widget: "text",
+          required: false,
+        }
+      - { name: "author", label: "作者署名", widget: "string", required: false, default: "編輯部" }
+      - { name: "pubDate", label: "發佈日期", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - {
+          name: "updatedDate",
+          label: "更新日期",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          picker_utc: true,
+          required: false,
+        }
+      - {
+          name: "platform",
+          label: "綁定平台（顯示該平台優惠卡片）",
+          widget: "select",
+          required: false,
+          options: ["binance", "gate", "okx", "crypto-com", "metamask", "etherfi"],
+        }
+      - { name: "glyph", label: "封面符號（例 ₿ ₮ Ξ）", widget: "string", required: false, default: "₿" }
+      - { name: "draft", label: "存為草稿（不公開）", widget: "boolean", default: false }
+      - {
+          name: "faqs",
+          label: "常見問題 FAQ",
+          widget: "list",
+          required: false,
+          summary: "{{fields.q}}",
+          fields:
+            [
+              { name: "q", label: "問題", widget: "string" },
+              { name: "a", label: "回答", widget: "text" },
+            ],
+        }
+      - { name: "body", label: "內文", widget: "markdown" }

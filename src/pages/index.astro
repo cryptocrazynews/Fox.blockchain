@@ -1,0 +1,74 @@
+---
+import Base from "../layouts/Base.astro";
+import PromoBoard from "../components/PromoBoard.astro";
+import Quiz from "../components/Quiz.astro";
+import FeeCalc from "../components/FeeCalc.astro";
+import Newsletter from "../components/Newsletter.astro";
+import { SITE } from "../config";
+import { getCollection } from "astro:content";
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
+  (a, b) =>
+    (b.data.updatedDate ?? b.data.pubDate).valueOf() -
+    (a.data.updatedDate ?? a.data.pubDate).valueOf()
+);
+const [lead, ...rest] = posts;
+---
+
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">幣圈活動 × 優惠統整入口</span>
+      <h1>看得懂的<br />加密貨幣知識</h1>
+      <p>{SITE.tagline} 交易所優惠、入金教學、錢包與信用卡指南，新手需要的都在這。</p>
+      <div class="hub-cta-row" style="margin-top:24px">
+        <a class="hub-chip" href="/start/">🧭 新手完整路線圖</a>
+        <a class="hub-chip" href="#deals">🎁 看目前活動</a>
+        <a class="hub-chip" href="#quiz">⚡ 30 秒找到適合你的平台</a>
+      </div>
+    </div>
+  </section>
+
+  <PromoBoard />
+  <Quiz />
+
+  <div class="wrap">
+    {lead && (
+      <a class="lead" href={`/posts/${lead.id}/`}>
+        <div class="lead-cover">
+          <span class="glyph">{lead.data.glyph ?? "₿"}</span>
+          <span class="cat">{lead.data.category}</span>
+        </div>
+        <div class="lead-body">
+          <h2>{lead.data.title}</h2>
+          <p class="ex">{lead.data.excerpt}</p>
+          <p class="meta">更新於 {fmt(lead.data.updatedDate ?? lead.data.pubDate)} · {lead.data.author ?? SITE.author}</p>
+        </div>
+      </a>
+    )}
+
+    {rest.length > 0 && (
+      <>
+        <div class="section-h">
+          <h3>最新文章</h3>
+          <span>{posts.length} 篇</span>
+        </div>
+        <div class="grid" style="padding-bottom:24px">
+          {rest.map((p) => (
+            <a class="card" href={`/posts/${p.id}/`}>
+              <span class="cat">{p.data.category}</span>
+              <h4>{p.data.title}</h4>
+              <p class="ex">{p.data.excerpt}</p>
+              <span class="meta">更新於 {fmt(p.data.updatedDate ?? p.data.pubDate)}</span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+
+  <FeeCalc />
+  <Newsletter />
+</Base>

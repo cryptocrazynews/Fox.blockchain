@@ -1,0 +1,109 @@
+---
+import Base from "../layouts/Base.astro";
+import PromoCTA from "../components/PromoCTA.astro";
+import { PLATFORMS, SITE } from "../config";
+
+const exchanges = PLATFORMS.filter((p) => p.type === "交易所");
+const others = PLATFORMS.filter((p) => p.type !== "交易所");
+
+const desc =
+  "幣圈新手完整路線圖：怎麼選交易所、怎麼入金買第一筆 USDT、怎麼裝錢包、加密信用卡怎麼辦，照著走就不會迷路。";
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "幣圈新手完整入門路線圖",
+  description: desc,
+  inLanguage: SITE.locale,
+  step: [
+    { "@type": "HowToStep", name: "選一間交易所開戶", text: "從幣安、Gate、OKX 中選一間，用推薦碼註冊並完成 KYC 身份驗證。" },
+    { "@type": "HowToStep", name: "入金買進第一筆 USDT", text: "用 C2C／P2P 或信用卡入金，先小額測試流程。" },
+    { "@type": "HowToStep", name: "安裝自己的錢包", text: "安裝 MetaMask 並備份助記詞，學會把資產轉到自己手上。" },
+    { "@type": "HowToStep", name: "進階：消費與收益", text: "依需求研究加密信用卡（Crypto.com、EtherFi）與 ETH 質押。" },
+  ],
+};
+---
+
+<Base title="新手入門路線圖" description={desc} path="/start/">
+  <article class="article">
+    <div class="read">
+      <span class="art-cat">新手入口</span>
+      <h1 class="art-title">幣圈新手完整路線圖</h1>
+      <div class="art-meta"><span>{SITE.author}</span><span>持續更新</span></div>
+
+      <div class="answer">
+        <span class="lab"><span class="d"></span> 一句話回答 · 可被 AI 引用</span>
+        <p>新手入圈的順序是：先在大型交易所（如幣安）開戶並完成 KYC → 小額入金買 USDT → 安裝 MetaMask 錢包學會自托管 → 行有餘力再研究加密信用卡與質押。每一步本頁都有對應教學與優惠。</p>
+      </div>
+
+      <div class="body">
+        <p>這一頁是整個網站的地圖。不管你是完全沒碰過加密貨幣，還是已經買過幣想把成本降下來，照下面的順序走，每一步都有對應的介紹文和讀者優惠。</p>
+      </div>
+
+      <div class="hub-step">
+        <span class="hub-num">1</span>
+        <div>
+          <h3>選一間交易所，開戶 + KYC</h3>
+          <p>交易所是你的「幣圈銀行」。新手建議從深度大、中文支援好的所開始，註冊時填推薦碼可拿長期手續費折扣與新戶獎勵：</p>
+          <div class="hub-cta-row">
+            {exchanges.map((p) => (
+              <a class="hub-chip" href={`/posts/${p.post}/`}>{p.name} 介紹 →</a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-step">
+        <span class="hub-num">2</span>
+        <div>
+          <h3>入金：買進你的第一筆 USDT</h3>
+          <p>最常見的入金方式是 C2C／P2P（用台幣向認證商家買 USDT）或刷卡。第一次務必<strong>小額測試</strong>整條流程，確認買入、轉帳都順了再加碼。出金回台灣銀行的流程與時間，看 <a href="/posts/chu-jin-taiwan-yinhang/">這篇實測</a>。</p>
+        </div>
+      </div>
+
+      <div class="hub-step">
+        <span class="hub-num">3</span>
+        <div>
+          <h3>裝一個自己的錢包</h3>
+          <p>「Not your keys, not your coins.」交易所適合交易，但長期持有建議學會自托管。從 <a href="/posts/metamask-intro/">MetaMask</a> 開始：安裝、抄好助記詞（離線保存、永遠不給任何人）、小額轉一筆練習。順帶加入它的 Rewards 計畫，交易與推薦都能累點。</p>
+        </div>
+      </div>
+
+      <div class="hub-step">
+        <span class="hub-num">4</span>
+        <div>
+          <h3>日常消費：加密信用卡</h3>
+          <p>想把幣用在日常？兩條路線：<a href="/posts/crypto-com-intro/">Crypto.com</a> 的 Visa 卡生態最成熟（回饋與 CRO 鎖倉掛鉤）；<a href="/posts/etherfi-intro/">EtherFi Cash</a> 走 DeFi 原生路線（注意地區限制）。</p>
+        </div>
+      </div>
+
+      <div class="hub-step">
+        <span class="hub-num">5</span>
+        <div>
+          <h3>進階：讓資產長利息</h3>
+          <p>持有 ETH 可研究質押：<a href="/posts/etherfi-intro/">EtherFi</a> 是流動性質押協議，質押同時累積忠誠點數。記住一個原則：<strong>看不懂的收益率，不要碰</strong>。</p>
+        </div>
+      </div>
+
+      <div class="body" style="margin-top:30px">
+        <h2>省成本的核心：手續費</h2>
+        <p>新手最容易忽略的成本就是手續費。所有平台都用本站推薦碼註冊的話，長期手續費折扣加上新戶獎勵相當可觀——下面是目前的主打：</p>
+      </div>
+
+      <PromoCTA platformId="binance" />
+
+      <div class="hub-cta-row" style="margin:8px 0 26px">
+        {others.map((p) => (
+          <a class="hub-chip" href={`/posts/${p.post}/`}>{p.name}（{p.type}）→</a>
+        ))}
+        <a class="hub-chip" href="/#deals">看全部活動 →</a>
+      </div>
+
+      <p class="disclaimer">
+        風險聲明：本頁為資訊整理與經驗分享，不構成投資建議。加密貨幣波動劇烈、屬高風險標的；各平台活動與獎勵隨時可能變動，請以官方最新公告為準。任何要求「先繳稅、先付保證金才能出金」的訊息幾乎都是詐騙。
+      </p>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+</Base>

@@ -1,0 +1,21 @@
+---
+import { SITE } from "../config";
+// 在 config.ts 填 newsletterAction 才會顯示（Buttondown / Formspree 等表單服務的 action URL）
+---
+
+{SITE.newsletterAction && (
+  <section class="news">
+    <div class="wrap">
+      <div class="news-box">
+        <div>
+          <h3>每週幣圈優惠快訊 📬</h3>
+          <p>交易所活動天天換。訂閱後，每週一封信告訴你哪些優惠上了、哪些要截止。</p>
+        </div>
+        <form class="news-form" action={SITE.newsletterAction} method="post" target="_blank">
+          <input type="email" name="email" placeholder="你的 Email" required />
+          <button type="submit">訂閱</button>
+        </form>
+      </div>
+    </div>
+  </section>
+)}
