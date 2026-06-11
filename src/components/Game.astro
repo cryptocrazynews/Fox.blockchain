@@ -12,7 +12,7 @@ const shellStyle = variant === "hero"
 <div id="game-shell" style={shellStyle}>
   <canvas id="game"></canvas>
 
-  <div id="start-screen" >
+  <div id="start-screen" class="overlay">
     <div class="ov-card">
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
@@ -21,7 +21,7 @@ const shellStyle = variant === "hero"
     </div>
   </div>
 
-  <div id="dead-screen"  hidden>
+  <div id="dead-screen" class="overlay" hidden>
     <div class="ov-card">
       <div class="ov-glyph dead">💀</div>
       <h2>你的 ₿ 被吃掉了</h2>
@@ -43,6 +43,8 @@ const shellStyle = variant === "hero"
   #game-shell{position:relative;width:100%;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0E1320;box-shadow:var(--shadow);touch-action:none}
   #game{display:block;width:100%;height:100%}
   .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(14,19,32,.82);backdrop-filter:blur(4px);padding:20px;text-align:center}
+  .overlay[hidden]{display:none!important}
+  #pilot-tip[hidden],#hud[hidden]{display:none!important}
   .ov-card{max-width:340px}
   .ov-glyph{font-family:var(--serif);font-size:56px;color:var(--amber);line-height:1;margin-bottom:6px}
   .ov-glyph.dead{font-size:50px}
