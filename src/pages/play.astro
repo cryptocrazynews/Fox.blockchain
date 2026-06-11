@@ -82,9 +82,10 @@ const desc = "幣圈版 agar.io！你是一顆小比特幣，吃碎幣長大、�
   @media(prefers-reduced-motion:reduce){.ov-btn:hover{transform:none}}
 </style>
 
-<script is:inline define:vars={{ ctaData }}>
+<script type="application/json" id="cta-data" set:html={ctaData}></script>
+<script is:inline>
 (function(){
-  const HOT = JSON.parse(ctaData);
+  const HOT = (()=>{ try{ return JSON.parse(document.getElementById("cta-data").textContent||"[]"); }catch(e){ return []; } })();
   const JOKES = [
     "一個不小心，畢生積蓄變成別人的午餐。",
     "貪心想變大，結果連本金都沒了。很真實。",
@@ -127,12 +128,15 @@ const desc = "幣圈版 agar.io！你是一顆小比特幣，吃碎幣長大、�
   }
   function spawnBot(mass){
     const i = (Math.random()*BOT_GLYPHS.length)|0;
-    return { x:rand(0,WORLD), y:rand(0,WORLD), mass:mass||rand(8,160),
+    let x,y,tries=0;
+    do { x=rand(0,WORLD); y=rand(0,WORLD); tries++; }
+    while(player && dist2(x,y,player.x,player.y) < 660*660 && tries<40);
+    return { x, y, mass:mass||rand(8,140),
              tx:rand(0,WORLD), ty:rand(0,WORLD), glyph:BOT_GLYPHS[i], color:BOT_COLORS[i], retarget:0 };
   }
 
   function init(){
-    player = { x:WORLD/2, y:WORLD/2, mass:22 };
+    player = { x:WORLD/2, y:WORLD/2, mass:22, born:performance.now() };
     target = { x:player.x, y:player.y };
     foods = []; for(let i=0;i<260;i++) foods.push(spawnFood());
     bots = []; for(let i=0;i<16;i++) bots.push(spawnBot());
@@ -193,7 +197,7 @@ const desc = "幣圈版 agar.io！你是一顆小比特幣，吃碎幣長大、�
       if(player.mass > b.mass*1.15 && collide < (pr-br*0.4)*(pr-br*0.4)){
         player.mass += b.mass*0.85; bots[i]=spawnBot(rand(8,40));
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
-        return die();
+        if(performance.now() - player.born > 1800) return die();
       }
     }
 
@@ -229,7 +233,13 @@ const desc = "幣圈版 agar.io！你是一顆小比特幣，吃碎幣長大、�
     for(let i=0;i<bots.length;i++){ const b=bots[i]; drawBlob(b.x,b.y,m2r(b.mass),b.color,b.glyph); }
 
     // player (bitcoin)
-    drawBlob(player.x,player.y,m2r(player.mass),"#F5A524","₿",true);
+    const pr0 = m2r(player.mass);
+    if(running && performance.now() - player.born < 1800){
+      const pulse = 1 + Math.sin(performance.now()/120)*0.12;
+      ctx.beginPath(); ctx.strokeStyle="rgba(245,165,36,.55)"; ctx.lineWidth=4;
+      ctx.arc(player.x,player.y,pr0*1.5*pulse,0,6.283); ctx.stroke();
+    }
+    drawBlob(player.x,player.y,pr0,"#F5A524","₿",true);
 
     ctx.restore();
   }
