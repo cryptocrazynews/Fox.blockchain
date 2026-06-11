@@ -12,7 +12,7 @@ const shellStyle = variant === "hero"
 <div id="game-shell" style={shellStyle}>
   <canvas id="game"></canvas>
 
-  <div id="start-screen" class="overlay">
+  <div id="start-screen" >
     <div class="ov-card">
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
@@ -21,7 +21,7 @@ const shellStyle = variant === "hero"
     </div>
   </div>
 
-  <div id="dead-screen" class="overlay" hidden>
+  <div id="dead-screen"  hidden>
     <div class="ov-card">
       <div class="ov-glyph dead">💀</div>
       <h2>你的 ₿ 被吃掉了</h2>
