@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import PromoBoard from "../components/PromoBoard.astro";
 import Quiz from "../components/Quiz.astro";
 import FeeCalc from "../components/FeeCalc.astro";
+import Game from "../components/Game.astro";
 import Newsletter from "../components/Newsletter.astro";
 import { SITE } from "../config";
 import { getCollection } from "astro:content";
@@ -19,16 +20,20 @@ const [lead, ...rest] = posts;
 
 <Base>
   <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow">幣圈活動 × 優惠統整入口</span>
-      <h1>看得懂的<br />加密貨幣知識</h1>
-      <p>{SITE.tagline} 交易所優惠、入金教學、錢包與信用卡指南，新手需要的都在這。</p>
-      <div class="hub-cta-row" style="margin-top:24px">
-        <a class="hub-chip" href="/start/">🧭 新手完整路線圖</a>
-        <a class="hub-chip" href="#deals">🎁 看目前活動</a>
-        <a class="hub-chip" href="#quiz">⚡ 30 秒找到適合你的平台</a>
-        <a class="hub-chip" href="/play/">🎮 玩：比特幣大作戰</a>
-
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">幣圈活動 × 優惠統整入口</span>
+        <h1>看得懂的<br />加密貨幣知識</h1>
+        <p>{SITE.tagline} 交易所優惠、入金教學、錢包與信用卡指南，新手需要的都在這。</p>
+        <div class="hub-cta-row" style="margin-top:24px">
+          <a class="hub-chip" href="/start/">🧭 新手完整路線圖</a>
+          <a class="hub-chip" href="#deals">🎁 看目前活動</a>
+          <a class="hub-chip" href="#quiz">⚡ 30 秒找到適合你的平台</a>
+        </div>
+      </div>
+      <div class="hero-game">
+        <Game variant="hero" />
+        <p class="hero-game-cap">🎮 比特幣大作戰 — 吃小的、躲大的，看你能養多大一顆 ₿</p>
       </div>
     </div>
   </section>
@@ -73,4 +78,10 @@ const [lead, ...rest] = posts;
 
   <FeeCalc />
   <Newsletter />
+
+<style>
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:44px}}
+  .hero-game-cap{font-family:var(--mono);font-size:12px;color:#909aa8;text-align:center;margin:12px 0 0;line-height:1.6}
+</style>
 </Base>
