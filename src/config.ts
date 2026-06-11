@@ -16,7 +16,7 @@ export const SITE = {
   // Plausible：填你的網域，例 "fox-blockchain.com"
   plausibleDomain: "",
   // GA4：填你的評估 ID，例 "G-XXXXXXXXXX"
-  gaId: "",
+  gaId: "G-QM9443W2L9",
 
   // ── 電子報（留空 = 首頁不顯示訂閱框）──
   // 填表單服務的 action URL（如 Buttondown / Formspree），見 README
