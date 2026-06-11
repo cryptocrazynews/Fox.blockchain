@@ -36,12 +36,19 @@ const websiteSchema = {
 <!doctype html>
 <html lang={SITE.locale}>
   <head>
+    <style>
+      .brand{align-items:center}
+      .brand-fox{width:38px;height:38px;display:block;flex:none}
+      .brand-tag{margin-left:2px}
+      @media(max-width:460px){.brand-fox{width:32px;height:32px}}
+    </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
 
     <meta property="og:type" content={ogType} />
@@ -50,9 +57,11 @@ const websiteSchema = {
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:locale" content="zh_TW" />
+    <meta property="og:image" content={new URL("/og-image.png", SITE.url).href} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL("/og-image.png", SITE.url).href} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,8 +88,8 @@ const websiteSchema = {
     <header class="bar">
       <div class="wrap bar-in">
         <a class="brand" href="/" aria-label={SITE.name}>
+          <img src="/fox-head.png" alt="" class="brand-fox" width="38" height="38" />
           <span class="brand-mark">{SITE.name}</span>
-          <span class="brand-dot"></span>
           <span class="brand-tag">{SITE.tagline}</span>
         </a>
         <nav style="display:flex;gap:14px;align-items:center">
