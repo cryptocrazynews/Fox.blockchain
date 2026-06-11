@@ -16,9 +16,9 @@ const shellStyle = variant === "hero"
     <div class="ov-card">
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
-      <p class="ov-sub">吃小的、躲大的，越長越大。<br>滑鼠移動／手指拖曳控制方向。</p>
+      <p class="ov-sub">移動<b>滑鼠</b>或按<b>方向鍵 / WASD</b>，<br>帶比特幣去吃碎幣、長大、躲開大幣。</p>
       <button class="ov-btn primary" id="btn-start">開始遊戲</button>
-      <p class="ov-hint">⌨️ 滑鼠 ／ 📱 觸控</p>
+      <p class="ov-hint">開局 3 秒無敵，放心熟悉操作</p>
     </div>
   </div>
 
@@ -116,10 +116,22 @@ const shellStyle = variant === "hero"
   function init(){
     player = { x:WORLD/2, y:WORLD/2, mass:22, born:performance.now() };
     target = { x:player.x, y:player.y };
-    foods = []; for(let i=0;i<260;i++) foods.push(spawnFood());
-    bots = []; for(let i=0;i<16;i++) bots.push(spawnBot());
+    foods = []; for(let i=0;i<300;i++) foods.push(spawnFood());
+    // 出生點周圍鋪一圈碎幣，一移動馬上就能長大
+    for(let i=0;i<46;i++) foods.push({ x:WORLD/2+rand(-300,300), y:WORLD/2+rand(-300,300), hue:rand(38,50) });
+    bots = []; for(let i=0;i<15;i++) bots.push(spawnBot());
     cam = { x:player.x, y:player.y, s:1 };
   }
+
+  // 鍵盤控制（方向鍵 / WASD）
+  const keys = {};
+  window.addEventListener("keydown",(e)=>{
+    const k=e.key.toLowerCase();
+    if(["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)){
+      keys[k]=true; if(k.startsWith("arrow")) e.preventDefault();
+    }
+  });
+  window.addEventListener("keyup",(e)=>{ keys[e.key.toLowerCase()]=false; });
 
   function setTargetFromEvent(clientX, clientY){
     const r = cv.getBoundingClientRect();
@@ -133,6 +145,14 @@ const shellStyle = variant === "hero"
   function speedFor(mass){ return Math.max(1.5, 5.6 - Math.sqrt(mass)*0.17); }
 
   function step(){
+    // 鍵盤方向覆寫目標
+    let kx=0, ky=0;
+    if(keys["arrowleft"]||keys["a"]) kx-=1;
+    if(keys["arrowright"]||keys["d"]) kx+=1;
+    if(keys["arrowup"]||keys["w"]) ky-=1;
+    if(keys["arrowdown"]||keys["s"]) ky+=1;
+    if(kx||ky){ target.x = player.x + kx*240; target.y = player.y + ky*240; }
+
     const pr = m2r(player.mass);
     let dx = target.x-player.x, dy = target.y-player.y;
     const d = Math.hypot(dx,dy) || 1;
@@ -147,9 +167,10 @@ const shellStyle = variant === "hero"
 
     for(let i=0;i<bots.length;i++){
       const b=bots[i]; const br=m2r(b.mass);
+      const grace = performance.now() - player.born < 3000;
       let steerx=0, steery=0;
       const dpx=player.x-b.x, dpy=player.y-b.y, pd=Math.hypot(dpx,dpy)||1;
-      if(pd<320){
+      if(!grace && pd<320){
         if(b.mass > player.mass*1.15){ steerx=dpx/pd; steery=dpy/pd; }
         else if(player.mass > b.mass*1.15){ steerx=-dpx/pd; steery=-dpy/pd; }
       }
@@ -157,7 +178,7 @@ const shellStyle = variant === "hero"
         if(--b.retarget<=0 || dist2(b.x,b.y,b.tx,b.ty)<400){ b.tx=rand(0,WORLD); b.ty=rand(0,WORLD); b.retarget=120; }
         const tdx=b.tx-b.x, tdy=b.ty-b.y, td=Math.hypot(tdx,tdy)||1; steerx=tdx/td; steery=tdy/td;
       }
-      const bsp=speedFor(b.mass)*0.9;
+      const bsp=speedFor(b.mass)*(grace?0.45:0.9);
       b.x=Math.max(0,Math.min(WORLD,b.x+steerx*bsp));
       b.y=Math.max(0,Math.min(WORLD,b.y+steery*bsp));
       if((i&1)===0){ for(let k=0;k<foods.length;k+=3){ const f=foods[k]; if(dist2(b.x,b.y,f.x,f.y)<br*br){ b.mass+=1; foods[k]=spawnFood(); } } }
@@ -166,7 +187,7 @@ const shellStyle = variant === "hero"
       if(player.mass > b.mass*1.15 && collide < (pr-br*0.4)*(pr-br*0.4)){
         player.mass += b.mass*0.85; bots[i]=spawnBot(rand(8,40));
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
-        if(performance.now() - player.born > 1800) return die();
+        if(performance.now() - player.born > 2500) return die();
       }
     }
 
@@ -189,7 +210,7 @@ const shellStyle = variant === "hero"
     for(let i=0;i<foods.length;i++){ const f=foods[i]; ctx.beginPath(); ctx.fillStyle="hsl("+f.hue+",90%,60%)"; ctx.arc(f.x,f.y,3.2,0,6.283); ctx.fill(); }
     for(let i=0;i<bots.length;i++){ const b=bots[i]; drawBlob(b.x,b.y,m2r(b.mass),b.color,b.glyph); }
     const pr0 = m2r(player.mass);
-    if(running && performance.now() - player.born < 1800){
+    if(running && performance.now() - player.born < 2500){
       const pulse = 1 + Math.sin(performance.now()/120)*0.12;
       ctx.beginPath(); ctx.strokeStyle="rgba(245,165,36,.55)"; ctx.lineWidth=4;
       ctx.arc(player.x,player.y,pr0*1.5*pulse,0,6.283); ctx.stroke();
