@@ -16,9 +16,8 @@ const shellStyle = variant === "hero"
     <div class="ov-card">
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
-      <p class="ov-sub">移動<b>滑鼠</b>或按<b>方向鍵 / WASD</b>，<br>帶比特幣去吃碎幣、長大、躲開大幣。</p>
+      <p class="ov-sub">吃碎幣長大、躲開比你大的幣。<br>開局自動駕駛，動一下滑鼠就由你接手。</p>
       <button class="ov-btn primary" id="btn-start">開始遊戲</button>
-      <p class="ov-hint">開局 3 秒無敵，放心熟悉操作</p>
     </div>
   </div>
 
@@ -37,6 +36,7 @@ const shellStyle = variant === "hero"
   </div>
 
   <div id="hud" hidden>市值 <span id="hud-score">0</span></div>
+  <div id="pilot-tip" hidden>🤖 自動駕駛中 — 移動滑鼠／按方向鍵／點一下 接手</div>
 </div>
 
 <style>
@@ -57,17 +57,18 @@ const shellStyle = variant === "hero"
   .ov-btn.cta{background:var(--amber);color:#231600;width:100%;margin-bottom:14px;font-size:15.5px}
   .ov-btn.ghost{background:rgba(255,255,255,.1);color:#fff}
   .ov-actions{display:flex;gap:10px;justify-content:center}
-  .ov-hint{font-family:var(--mono);font-size:12px;color:#6b7280;margin:14px 0 0}
   #hud{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.32);padding:6px 12px;border-radius:9px;pointer-events:none}
   #hud span{color:var(--amber)}
+  #pilot-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#fff;background:rgba(27,77,255,.85);padding:7px 14px;border-radius:99px;pointer-events:none;white-space:nowrap}
   @media(prefers-reduced-motion:reduce){.ov-btn:hover{transform:none}}
 </style>
 
 <script type="application/json" id="cta-data" set:html={ctaData}></script>
 <script is:inline>
 (function(){
-  const HOT = (()=>{ try{ return JSON.parse(document.getElementById("cta-data").textContent||"[]"); }catch(e){ return []; } })();
-  const JOKES = [
+  var HOT = [];
+  try{ HOT = JSON.parse(document.getElementById("cta-data").textContent||"[]"); }catch(e){}
+  var JOKES = [
     "一個不小心，畢生積蓄變成別人的午餐。",
     "貪心想變大，結果連本金都沒了。很真實。",
     "歸零的速度比下跌還快，幣圈日常。",
@@ -75,127 +76,183 @@ const shellStyle = variant === "hero"
     "你被爆倉了……喔不對，是被吃了。"
   ];
 
-  const shell = document.getElementById("game-shell");
-  const cv = document.getElementById("game");
-  const ctx = cv.getContext("2d");
-  const startScreen = document.getElementById("start-screen");
-  const deadScreen = document.getElementById("dead-screen");
-  const hud = document.getElementById("hud");
-  const hudScore = document.getElementById("hud-score");
+  var shell = document.getElementById("game-shell");
+  var cv = document.getElementById("game");
+  var ctx = cv.getContext("2d");
+  var startScreen = document.getElementById("start-screen");
+  var deadScreen = document.getElementById("dead-screen");
+  var hud = document.getElementById("hud");
+  var hudScore = document.getElementById("hud-score");
+  var pilotTip = document.getElementById("pilot-tip");
 
-  let DPR = Math.min(window.devicePixelRatio || 1, 2);
-  let W = 0, H = 0;
-  const WORLD = 3200;
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var WORLD = 3200;
 
   function resize(){
-    const r = shell.getBoundingClientRect();
-    W = r.width; H = r.height;
+    var r = shell.getBoundingClientRect();
+    W = r.width || 800; H = r.height || 460;
     cv.width = W * DPR; cv.height = H * DPR;
     ctx.setTransform(DPR,0,0,DPR,0,0);
   }
   window.addEventListener("resize", resize); resize();
 
-  const rand = (a,b)=>a+Math.random()*(b-a);
-  const m2r = (m)=>4+Math.sqrt(m)*3.2;
-  const dist2 = (ax,ay,bx,by)=>{const dx=ax-bx,dy=ay-by;return dx*dx+dy*dy;};
+  function rand(a,b){ return a+Math.random()*(b-a); }
+  function m2r(m){ return 4+Math.sqrt(m)*3.2; }
+  function dist2(ax,ay,bx,by){ var dx=ax-bx,dy=ay-by; return dx*dx+dy*dy; }
 
-  let player, foods, bots, running=false, target={x:0,y:0}, cam={x:0,y:0,s:1};
+  var player=null, foods=[], bots=[], running=false, userControlled=false;
+  var target={x:0,y:0}, cam={x:0,y:0,s:1};
 
-  const BOT_GLYPHS = ["Ξ","◎","₮","$","◈","¤"];
-  const BOT_COLORS = ["#5B8DEF","#22B8A6","#8B7BEF","#EF6F6F","#3FA9F5","#E0a93f"];
+  var BOT_GLYPHS = ["\u039E","\u25CE","\u20AE","$","\u25C8","\u00A4"];
+  var BOT_COLORS = ["#5B8DEF","#22B8A6","#8B7BEF","#EF6F6F","#3FA9F5","#E0a93f"];
+  var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 380;
 
   function spawnFood(){ return { x:rand(0,WORLD), y:rand(0,WORLD), hue:rand(38,50) }; }
-  function spawnBot(mass){
-    const i = (Math.random()*BOT_GLYPHS.length)|0;
-    let x,y,tries=0;
+  function makeBot(mass, minDist){
+    var i = (Math.random()*BOT_GLYPHS.length)|0;
+    var x,y,tries=0;
     do { x=rand(0,WORLD); y=rand(0,WORLD); tries++; }
-    while(player && dist2(x,y,player.x,player.y) < 660*660 && tries<40);
-    return { x, y, mass:mass||rand(8,140), tx:rand(0,WORLD), ty:rand(0,WORLD), glyph:BOT_GLYPHS[i], color:BOT_COLORS[i], retarget:0 };
+    while(player && dist2(x,y,player.x,player.y) < minDist*minDist && tries<60);
+    return { x:x, y:y, mass:mass, tx:rand(0,WORLD), ty:rand(0,WORLD),
+             glyph:BOT_GLYPHS[i], color:BOT_COLORS[i], retarget:0 };
   }
 
   function init(){
     player = { x:WORLD/2, y:WORLD/2, mass:22, born:performance.now() };
     target = { x:player.x, y:player.y };
-    foods = []; for(let i=0;i<300;i++) foods.push(spawnFood());
-    // 出生點周圍鋪一圈碎幣，一移動馬上就能長大
-    for(let i=0;i<46;i++) foods.push({ x:WORLD/2+rand(-300,300), y:WORLD/2+rand(-300,300), hue:rand(38,50) });
-    bots = []; for(let i=0;i<15;i++) bots.push(spawnBot());
+    userControlled = false;
+    foods = [];
+    for(var i=0;i<300;i++) foods.push(spawnFood());
+    for(var j=0;j<46;j++) foods.push({ x:WORLD/2+rand(-320,320), y:WORLD/2+rand(-320,320), hue:rand(38,50) });
+    bots = [];
+    for(var k=0;k<10;k++) bots.push(makeBot(rand(8,26), 650));      // 小幣（多數可以吃）
+    for(var k2=0;k2<3;k2++) bots.push(makeBot(rand(45,75), 900));   // 中幣
+    for(var k3a=0;k3a<2;k3a++) bots.push(makeBot(rand(100,150), 1400)); // 大幣，遠遠生
     cam = { x:player.x, y:player.y, s:1 };
+    pilotTip.hidden = false;
   }
 
-  // 鍵盤控制（方向鍵 / WASD）
-  const keys = {};
-  window.addEventListener("keydown",(e)=>{
-    const k=e.key.toLowerCase();
-    if(["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)){
-      keys[k]=true; if(k.startsWith("arrow")) e.preventDefault();
-    }
-  });
-  window.addEventListener("keyup",(e)=>{ keys[e.key.toLowerCase()]=false; });
-
+  function takeControl(){
+    if(!userControlled){ userControlled = true; pilotTip.hidden = true; }
+  }
   function setTargetFromEvent(clientX, clientY){
-    const r = cv.getBoundingClientRect();
+    var r = cv.getBoundingClientRect();
     target.x = cam.x + (clientX - r.left - W/2)/cam.s;
     target.y = cam.y + (clientY - r.top - H/2)/cam.s;
   }
-  cv.addEventListener("mousemove",(e)=>setTargetFromEvent(e.clientX,e.clientY));
-  cv.addEventListener("touchmove",(e)=>{e.preventDefault();const t=e.touches[0];setTargetFromEvent(t.clientX,t.clientY);},{passive:false});
-  cv.addEventListener("touchstart",(e)=>{const t=e.touches[0];setTargetFromEvent(t.clientX,t.clientY);},{passive:true});
+  cv.addEventListener("mousemove",function(e){ if(running){ takeControl(); setTargetFromEvent(e.clientX,e.clientY); } });
+  cv.addEventListener("pointerdown",function(e){ if(running){ takeControl(); setTargetFromEvent(e.clientX,e.clientY); } });
+  cv.addEventListener("touchmove",function(e){ if(!running) return; e.preventDefault(); var t=e.touches[0]; takeControl(); setTargetFromEvent(t.clientX,t.clientY); },{passive:false});
+  cv.addEventListener("touchstart",function(e){ if(!running) return; var t=e.touches[0]; takeControl(); setTargetFromEvent(t.clientX,t.clientY); },{passive:true});
+
+  var keys = {};
+  window.addEventListener("keydown",function(e){
+    var k=(e.key||"").toLowerCase();
+    if(["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].indexOf(k)>=0){
+      if(running) takeControl();
+      keys[k]=true; if(k.indexOf("arrow")===0) e.preventDefault();
+    }
+  });
+  window.addEventListener("keyup",function(e){ keys[(e.key||"").toLowerCase()]=false; });
 
   function speedFor(mass){ return Math.max(1.5, 5.6 - Math.sqrt(mass)*0.17); }
 
+  function autopilot(){
+    var pr = m2r(player.mass);
+    // 1) 附近有比我大的幣 → 反方向逃
+    var threat=null, td=1e18;
+    for(var i=0;i<bots.length;i++){
+      var b=bots[i];
+      if(b.mass > player.mass*1.1){
+        var d2=dist2(player.x,player.y,b.x,b.y);
+        if(d2<td){ td=d2; threat=b; }
+      }
+    }
+    if(threat && td < (300+pr)*(300+pr)){
+      var dx=player.x-threat.x, dy=player.y-threat.y, d=Math.hypot(dx,dy)||1;
+      target.x = player.x + (dx/d)*420;
+      target.y = player.y + (dy/d)*420;
+      return;
+    }
+    // 2) 否則去吃最近的碎幣
+    var best=null, bd=1e18;
+    for(var f=0; f<foods.length; f++){
+      var fd=dist2(player.x,player.y,foods[f].x,foods[f].y);
+      if(fd<bd){ bd=fd; best=foods[f]; }
+    }
+    if(best){ target.x=best.x; target.y=best.y; }
+  }
+
   function step(){
-    // 鍵盤方向覆寫目標
-    let kx=0, ky=0;
+    if(!userControlled) autopilot();
+
+    var kx=0, ky=0;
     if(keys["arrowleft"]||keys["a"]) kx-=1;
     if(keys["arrowright"]||keys["d"]) kx+=1;
     if(keys["arrowup"]||keys["w"]) ky-=1;
     if(keys["arrowdown"]||keys["s"]) ky+=1;
     if(kx||ky){ target.x = player.x + kx*240; target.y = player.y + ky*240; }
 
-    const pr = m2r(player.mass);
-    let dx = target.x-player.x, dy = target.y-player.y;
-    const d = Math.hypot(dx,dy) || 1;
-    const sp = speedFor(player.mass);
+    var pr = m2r(player.mass);
+    var dx = target.x-player.x, dy = target.y-player.y;
+    var d = Math.hypot(dx,dy) || 1;
+    var sp = speedFor(player.mass);
     if(d>2){ player.x += (dx/d)*sp; player.y += (dy/d)*sp; }
     player.x = Math.max(0,Math.min(WORLD,player.x));
     player.y = Math.max(0,Math.min(WORLD,player.y));
 
-    for(let i=0;i<foods.length;i++){ const f=foods[i];
+    for(var i=0;i<foods.length;i++){
+      var f=foods[i];
       if(dist2(player.x,player.y,f.x,f.y) < pr*pr){ player.mass += 1.1; foods[i]=spawnFood(); }
     }
 
-    for(let i=0;i<bots.length;i++){
-      const b=bots[i]; const br=m2r(b.mass);
-      const grace = performance.now() - player.born < 3000;
-      let steerx=0, steery=0;
-      const dpx=player.x-b.x, dpy=player.y-b.y, pd=Math.hypot(dpx,dpy)||1;
-      if(!grace && pd<320){
-        if(b.mass > player.mass*1.15){ steerx=dpx/pd; steery=dpy/pd; }
-        else if(player.mass > b.mass*1.15){ steerx=-dpx/pd; steery=-dpy/pd; }
+    var now = performance.now();
+    var grace = now - player.born < GRACE_MS;
+    var immune = now - player.born < IMMUNE_MS;
+
+    for(var bi=0;bi<bots.length;bi++){
+      var b=bots[bi]; var br=m2r(b.mass);
+      var steerx=0, steery=0;
+      var dpx=player.x-b.x, dpy=player.y-b.y, pd=Math.hypot(dpx,dpy)||1;
+      if(!grace && pd<260 && player.mass > b.mass*1.15){
+        steerx=-dpx/pd; steery=-dpy/pd; // 只會逃，不會追
       }
       if(steerx===0 && steery===0){
         if(--b.retarget<=0 || dist2(b.x,b.y,b.tx,b.ty)<400){ b.tx=rand(0,WORLD); b.ty=rand(0,WORLD); b.retarget=120; }
-        const tdx=b.tx-b.x, tdy=b.ty-b.y, td=Math.hypot(tdx,tdy)||1; steerx=tdx/td; steery=tdy/td;
+        var tdx=b.tx-b.x, tdy=b.ty-b.y, tdd=Math.hypot(tdx,tdy)||1; steerx=tdx/tdd; steery=tdy/tdd;
       }
-      const bsp=speedFor(b.mass)*(grace?0.45:0.9);
+      var bsp=speedFor(b.mass)*(grace?0.4:0.9);
       b.x=Math.max(0,Math.min(WORLD,b.x+steerx*bsp));
       b.y=Math.max(0,Math.min(WORLD,b.y+steery*bsp));
-      if((i&1)===0){ for(let k=0;k<foods.length;k+=3){ const f=foods[k]; if(dist2(b.x,b.y,f.x,f.y)<br*br){ b.mass+=1; foods[k]=spawnFood(); } } }
+      if((bi&1)===0 && b.mass<BOT_MASS_CAP){
+        for(var k3=0;k3<foods.length;k3+=3){ var ff=foods[k3]; if(dist2(b.x,b.y,ff.x,ff.y)<br*br){ b.mass+=1; foods[k3]=spawnFood(); } }
+      }
 
-      const collide = dist2(player.x,player.y,b.x,b.y);
+      var collide = dist2(player.x,player.y,b.x,b.y);
       if(player.mass > b.mass*1.15 && collide < (pr-br*0.4)*(pr-br*0.4)){
-        player.mass += b.mass*0.85; bots[i]=spawnBot(rand(8,40));
+        player.mass += b.mass*0.85; bots[bi]=makeBot(rand(8,34), 700);
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
-        if(performance.now() - player.born > 2500) return die();
+        if(!immune) return die();
       }
     }
 
-    const targetS = Math.max(0.42, Math.min(1.25, 22/Math.sqrt(player.mass)+0.18));
+    var targetS = Math.max(0.42, Math.min(1.25, 22/Math.sqrt(player.mass)+0.18));
     cam.s += (targetS-cam.s)*0.06;
     cam.x += (player.x-cam.x)*0.12;
     cam.y += (player.y-cam.y)*0.12;
     hudScore.textContent = Math.floor(player.mass);
+  }
+
+  function drawBlob(x,y,r,color,glyph,isPlayer){
+    ctx.beginPath(); ctx.fillStyle=color; ctx.arc(x,y,r,0,6.283); ctx.fill();
+    ctx.lineWidth=Math.max(2,r*0.08); ctx.strokeStyle="rgba(255,255,255,"+(isPlayer?0.9:0.55)+")"; ctx.stroke();
+    if(r>11){
+      ctx.fillStyle = isPlayer ? "#231600" : "rgba(255,255,255,.92)";
+      ctx.font="700 "+Math.min(r*1.1,40)+"px monospace";
+      ctx.textAlign="center"; ctx.textBaseline="middle";
+      ctx.fillText(glyph,x,y+1);
+    }
   }
 
   function draw(){
@@ -204,34 +261,29 @@ const shellStyle = variant === "hero"
     ctx.save();
     ctx.translate(W/2,H/2); ctx.scale(cam.s,cam.s); ctx.translate(-cam.x,-cam.y);
     ctx.strokeStyle="rgba(255,255,255,.04)"; ctx.lineWidth=1;
-    for(let gx=0;gx<=WORLD;gx+=160){ ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,WORLD); ctx.stroke(); }
-    for(let gy=0;gy<=WORLD;gy+=160){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(WORLD,gy); ctx.stroke(); }
+    for(var gx=0;gx<=WORLD;gx+=160){ ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,WORLD); ctx.stroke(); }
+    for(var gy=0;gy<=WORLD;gy+=160){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(WORLD,gy); ctx.stroke(); }
     ctx.strokeStyle="rgba(245,165,36,.25)"; ctx.lineWidth=4; ctx.strokeRect(0,0,WORLD,WORLD);
-    for(let i=0;i<foods.length;i++){ const f=foods[i]; ctx.beginPath(); ctx.fillStyle="hsl("+f.hue+",90%,60%)"; ctx.arc(f.x,f.y,3.2,0,6.283); ctx.fill(); }
-    for(let i=0;i<bots.length;i++){ const b=bots[i]; drawBlob(b.x,b.y,m2r(b.mass),b.color,b.glyph); }
-    const pr0 = m2r(player.mass);
-    if(running && performance.now() - player.born < 2500){
-      const pulse = 1 + Math.sin(performance.now()/120)*0.12;
+    for(var i=0;i<foods.length;i++){ var f=foods[i]; ctx.beginPath(); ctx.fillStyle="hsl("+f.hue+",90%,60%)"; ctx.arc(f.x,f.y,3.2,0,6.283); ctx.fill(); }
+    for(var bi=0;bi<bots.length;bi++){ var b=bots[bi]; drawBlob(b.x,b.y,m2r(b.mass),b.color,b.glyph,false); }
+    var pr0 = m2r(player.mass);
+    if(running && performance.now() - player.born < IMMUNE_MS){
+      var pulse = 1 + Math.sin(performance.now()/120)*0.12;
       ctx.beginPath(); ctx.strokeStyle="rgba(245,165,36,.55)"; ctx.lineWidth=4;
       ctx.arc(player.x,player.y,pr0*1.5*pulse,0,6.283); ctx.stroke();
     }
-    drawBlob(player.x,player.y,pr0,"#F5A524","₿",true);
+    drawBlob(player.x,player.y,pr0,"#F5A524","\u20BF",true);
     ctx.restore();
   }
 
-  function drawBlob(x,y,r,color,glyph,isPlayer){
-    ctx.beginPath(); ctx.fillStyle=color; ctx.arc(x,y,r,0,6.283); ctx.fill();
-    ctx.lineWidth=Math.max(2,r*0.08); ctx.strokeStyle="rgba(255,255,255,"+(isPlayer?.9:.55)+")"; ctx.stroke();
-    if(r>11){
-      ctx.fillStyle = isPlayer ? "#231600" : "rgba(255,255,255,.92)";
-      ctx.font="700 "+Math.min(r*1.1,40)+"px var(--mono,monospace)";
-      ctx.textAlign="center"; ctx.textBaseline="middle";
-      ctx.fillText(glyph,x,y+1);
-    }
+  var raf;
+  function loop(){
+    if(!running) return;
+    try { step(); } catch(err){ console.error("game step error:", err); }
+    if(!running) return;
+    try { draw(); } catch(err2){ console.error("game draw error:", err2); }
+    raf=requestAnimationFrame(loop);
   }
-
-  let raf;
-  function loop(){ if(!running) return; step(); draw(); raf=requestAnimationFrame(loop); }
 
   function start(){
     init(); running=true;
@@ -240,18 +292,19 @@ const shellStyle = variant === "hero"
   }
 
   function die(){
-    running=false; cancelAnimationFrame(raf); draw();
-    const score=Math.floor(player.mass);
-    let best=0; try{ best=parseInt(localStorage.getItem("btc_game_best")||"0",10)||0; }catch(e){}
+    running=false; cancelAnimationFrame(raf);
+    try{ draw(); }catch(e){}
+    var score=Math.floor(player.mass);
+    var best=0; try{ best=parseInt(localStorage.getItem("btc_game_best")||"0",10)||0; }catch(e){}
     if(score>best){ best=score; try{ localStorage.setItem("btc_game_best",String(best)); }catch(e){} }
     document.getElementById("final-score").textContent=score;
     document.getElementById("best-score").textContent=best;
     document.getElementById("joke-line").textContent=JOKES[(Math.random()*JOKES.length)|0];
-    const ex=HOT[(Math.random()*HOT.length)|0]||{name:"交易所",url:"/#deals",id:"none"};
-    const cta=document.getElementById("cta-link");
-    cta.textContent="沒了？去 "+ex.name+" 買一顆真的 ₿ ↗";
+    var ex=HOT[(Math.random()*HOT.length)|0]||{name:"\u4ea4\u6613\u6240",url:"/#deals",id:"none"};
+    var cta=document.getElementById("cta-link");
+    cta.textContent="\u6c92\u4e86\uff1f\u53bb "+ex.name+" \u8cb7\u4e00\u9846\u771f\u7684 \u20BF \u2197";
     cta.href=ex.url; cta.setAttribute("data-track","game_death_cta:"+ex.id);
-    hud.hidden=true; deadScreen.hidden=false;
+    hud.hidden=true; pilotTip.hidden=true; deadScreen.hidden=false;
   }
 
   document.getElementById("btn-start").addEventListener("click",start);
