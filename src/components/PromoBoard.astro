@@ -12,7 +12,8 @@ const today = new Date().toISOString().slice(0, 10);
       </div>
       <span class="board-date">更新於 {today} · 活動可能隨時變動，以官方為準</span>
     </div>
-    <div class="board-track" role="list">
+
+    <div class="board-track" role="list" id="board-track">
       {PLATFORMS.map((p) => (
         <div class="deal" role="listitem">
           {p.hot && <span class="deal-hot">主打</span>}
@@ -30,5 +31,87 @@ const today = new Date().toISOString().slice(0, 10);
         </div>
       ))}
     </div>
+
+    <!-- 可拖動滑塊 -->
+    <div class="board-bar" id="board-bar">
+      <div class="board-thumb" id="board-thumb"></div>
+    </div>
+    <p class="board-hint">← 拖動滑塊、或直接拖卡片左右滑 →</p>
   </div>
 </section>
+
+<style>
+  .board-track{scrollbar-width:none;cursor:grab}
+  .board-track::-webkit-scrollbar{display:none}
+  .board-track.dragging{cursor:grabbing;scroll-behavior:auto}
+  .board-bar{position:relative;height:8px;border-radius:99px;background:var(--mist);margin:6px 2px 0;overflow:hidden;cursor:pointer}
+  .board-thumb{position:absolute;top:0;left:0;height:100%;border-radius:99px;background:var(--cobalt);min-width:40px;transition:background .15s ease}
+  .board-thumb:hover{background:var(--cobalt-deep)}
+  .board-hint{font-family:var(--mono);font-size:11.5px;color:#909aa8;text-align:center;margin:8px 0 0}
+  @media(min-width:1100px){.board-hint{opacity:.6}}
+</style>
+
+<script>
+  (function(){
+    const track = document.getElementById("board-track");
+    const bar = document.getElementById("board-bar");
+    const thumb = document.getElementById("board-thumb");
+    if(!track || !bar || !thumb) return;
+
+    function sync(){
+      const ratio = track.clientWidth / track.scrollWidth;
+      if(ratio >= 1){ bar.style.display="none"; return; }
+      bar.style.display="block";
+      const tw = bar.clientWidth;
+      const thumbW = Math.max(40, tw * ratio);
+      thumb.style.width = thumbW + "px";
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const maxThumb = tw - thumbW;
+      thumb.style.transform = "translateX(" + (track.scrollLeft / maxScroll) * maxThumb + "px)";
+    }
+
+    track.addEventListener("scroll", sync, { passive:true });
+    window.addEventListener("resize", sync);
+
+    // 滑鼠滾輪 → 水平捲動
+    track.addEventListener("wheel", (e)=>{
+      if(Math.abs(e.deltaY) > Math.abs(e.deltaX)){ track.scrollLeft += e.deltaY; e.preventDefault(); }
+    }, { passive:false });
+
+    // 拖動卡片區捲動
+    let dragT=false, startX=0, startScroll=0, moved=false;
+    track.addEventListener("pointerdown",(e)=>{
+      if(e.target.closest("a")) return; // 別擋住連結點擊
+      dragT=true; moved=false; startX=e.clientX; startScroll=track.scrollLeft; track.classList.add("dragging");
+    });
+    window.addEventListener("pointermove",(e)=>{
+      if(!dragT) return;
+      const dx=e.clientX-startX; if(Math.abs(dx)>4) moved=true;
+      track.scrollLeft = startScroll - dx;
+    });
+    window.addEventListener("pointerup",()=>{ dragT=false; track.classList.remove("dragging"); });
+    track.addEventListener("click",(e)=>{ if(moved){ e.preventDefault(); } }, true);
+
+    // 拖動滑塊
+    let dragB=false, bStartX=0, bStartScroll=0;
+    function thumbDown(e){ dragB=true; bStartX=e.clientX; bStartScroll=track.scrollLeft; e.preventDefault(); }
+    thumb.addEventListener("pointerdown",thumbDown);
+    window.addEventListener("pointermove",(e)=>{
+      if(!dragB) return;
+      const tw=bar.clientWidth, thumbW=thumb.clientWidth, maxThumb=tw-thumbW;
+      const maxScroll=track.scrollWidth-track.clientWidth;
+      const dx=e.clientX-bStartX;
+      track.scrollLeft = bStartScroll + (dx/maxThumb)*maxScroll;
+    });
+    window.addEventListener("pointerup",()=>{ dragB=false; });
+    // 點軌道跳轉
+    bar.addEventListener("pointerdown",(e)=>{
+      if(e.target===thumb) return;
+      const rect=bar.getBoundingClientRect();
+      const pct=(e.clientX-rect.left)/rect.width;
+      track.scrollLeft = pct*(track.scrollWidth-track.clientWidth);
+    });
+
+    setTimeout(sync, 50); sync();
+  })();
+</script>
