@@ -4,7 +4,7 @@
 
 export const SITE = {
   // 部署後請改成你的正式網址（影響 canonical 與 sitemap）
-  url: "https://your-domain.com",
+  url: "https://fox-blockchain.com",
   name: "小狐狸區塊鏈",
   tagline: "用白話文把加密貨幣講得簡單。",
   description:
