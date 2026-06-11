@@ -1,9 +1,8 @@
 // ───────────────────────────────────────────────────────────
-//  全站設定 — 你主要要改的就是這個檔案
+//  全站設定 
 // ───────────────────────────────────────────────────────────
 
 export const SITE = {
-  // 部署後請改成你的正式網址（影響 canonical 與 sitemap）
   url: "https://fox-blockchain.com",
   name: "小狐狸區塊鏈",
   tagline: "用白話文把加密貨幣講得簡單。",
@@ -107,6 +106,39 @@ export const PLATFORMS: Platform[] = [
     activity: "透過推薦質押 ETH，雙方各得忠誠點數",
     activityNote: "卡片服務有地區限制，活動檔期以官方公告為準",
     post: "etherfi-intro",
+  },
+  {
+    id: "max",
+    name: "MAX 交易所",
+    type: "台灣交易所",
+    code: "35d1aa4c",
+    url: "https://max.maicoin.com/?r=35d1aa4c",
+    benefit: "台幣出入金方便，綁推薦碼享手續費折扣",
+    activity: "透過推薦連結註冊享手續費折扣（實際內容待補）",
+    activityNote: "優惠細節以官方與你的推薦方案為準",
+    post: "max-intro",
+  },
+  {
+    id: "bitopro",
+    name: "BitoPro 幣託",
+    type: "台灣交易所",
+    code: "9066419187",
+    url: "https://www.bitopro.com/users/sign_up?referrer=9066419187",
+    benefit: "台灣老牌交易所，綁推薦碼手續費省下一截",
+    activity: "透過推薦連結註冊，手續費折扣（實際 % 待補）",
+    activityNote: "優惠細節以官方與你的推薦方案為準",
+    post: "bitopro-intro",
+  },
+  {
+    id: "xrex",
+    name: "XREX",
+    type: "台灣交易所",
+    code: "34sMC9SwvyX47kHj",
+    url: "https://link.xrex.io/referral/34sMC9SwvyX47kHj",
+    benefit: "主打資安與跨境支付，台灣少數美元出入金交易所",
+    activity: "推薦碼享永久 10% 手續費折扣",
+    activityNote: "優惠細節以官方與你的推薦方案為準",
+    post: "xrex-intro",
   },
 ];
 
