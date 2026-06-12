@@ -1,8 +1,6 @@
-// ───────────────────────────────────────────────────────────
-//  全站設定 
-// ───────────────────────────────────────────────────────────
 
 export const SITE = {
+
   url: "https://fox-blockchain.com",
   name: "小狐狸區塊鏈",
   tagline: "用白話文把加密貨幣講得簡單。",
@@ -11,16 +9,12 @@ export const SITE = {
   author: "小狐狸",
   locale: "zh-TW",
   youtube: "https://www.youtube.com/@Fox.blockchain",
+ 
+  youtubeChannelId: "Fox.blockchain",
 
-  // ── 分析工具（擇一或都用；留空 = 不載入）──
-  // Plausible：填你的網域，例 "fox-blockchain.com"
-  plausibleDomain: "",
-  // GA4：填你的評估 ID，例 "G-XXXXXXXXXX"
+
   gaId: "G-QM9443W2L9",
 
-  // ── 電子報（留空 = 首頁不顯示訂閱框）──
-  // 填表單服務的 action URL（如 Buttondown / Formspree），見 README
-  newsletterAction: "",
 };
 
 export interface Platform {
@@ -113,9 +107,9 @@ export const PLATFORMS: Platform[] = [
     type: "台灣交易所",
     code: "35d1aa4c",
     url: "https://max.maicoin.com/?r=35d1aa4c",
-    benefit: "台幣出入金方便，綁推薦碼享手續費折扣",
-    activity: "透過推薦連結註冊享手續費折扣（實際內容待補）",
-    activityNote: "優惠細節以官方與你的推薦方案為準",
+    benefit: "台灣最大台幣出入金管道，遠東銀行信託",
+    activity: "推薦碼 8 折 × MAX Token 折抵 7 折，疊加省約 44% 手續費",
+    activityNote: "折扣以官方公告為準，註冊時記得填推薦碼",
     post: "max-intro",
   },
   {
@@ -124,9 +118,9 @@ export const PLATFORMS: Platform[] = [
     type: "台灣交易所",
     code: "9066419187",
     url: "https://www.bitopro.com/users/sign_up?referrer=9066419187",
-    benefit: "台灣老牌交易所，綁推薦碼手續費省下一截",
-    activity: "透過推薦連結註冊，手續費折扣（實際 % 待補）",
-    activityNote: "優惠細節以官方與你的推薦方案為準",
+    benefit: "台灣最老牌交易所，全家點數能換幣",
+    activity: "推薦連結前 180 天 8 折 × BITO 折抵 8 折，疊加省 36%",
+    activityNote: "180 天時效從註冊起算，以官方公告為準",
     post: "bitopro-intro",
   },
   {
