@@ -18,7 +18,7 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
 );
 const [lead, ...rest] = posts;
 ---
-
+ 
 <Base>
   <section class="hero">
     <div class="wrap hero-grid">
