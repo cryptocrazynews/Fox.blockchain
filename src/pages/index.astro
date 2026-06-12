@@ -5,6 +5,7 @@ import Quiz from "../components/Quiz.astro";
 import FeeCalc from "../components/FeeCalc.astro";
 import Game from "../components/Game.astro";
 import Newsletter from "../components/Newsletter.astro";
+import LatestVideo from "../components/LatestVideo.astro";
 import { SITE } from "../config";
 import { getCollection } from "astro:content";
 
@@ -39,6 +40,7 @@ const [lead, ...rest] = posts;
   </section>
 
   <PromoBoard />
+  <LatestVideo />
   <Quiz />
 
   <div class="wrap">
