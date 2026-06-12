@@ -183,7 +183,7 @@ const shellStyle = variant === "hero"
     var roll = Math.random();
     var type = roll<0.34 ? "trump" : (roll<0.67 ? "ftx" : "generic");
     var ev, pct;
-    if(type==="trump"){ ev="川普發了一篇推文"; pct=50; }
+    if(type==="trump"){ ev="川普發動關稅制裁"; pct=50; }
     else if(type==="ftx"){ ev="FTX 又暴雷了"; pct=40; }
     else { ev=GENERIC[(Math.random()*GENERIC.length)|0]; pct=Math.round(rand(0.40,0.60)*100); }
     swanFx = { type:type, t0:performance.now(), dur:2800, applied:false, ev:ev, pct:pct,
