@@ -37,6 +37,7 @@ const shellStyle = variant === "hero"
 
   <div id="hud" hidden>市值 <span id="hud-score">0</span></div>
   <div id="pilot-tip" hidden>🤖 自動駕駛中 — 移動滑鼠／按方向鍵／點一下 接手</div>
+  <div id="swan-banner" hidden></div>
 </div>
 
 <style>
@@ -62,6 +63,9 @@ const shellStyle = variant === "hero"
   #hud{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.32);padding:6px 12px;border-radius:9px;pointer-events:none}
   #hud span{color:var(--amber)}
   #pilot-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#fff;background:rgba(27,77,255,.85);padding:7px 14px;border-radius:99px;pointer-events:none;white-space:nowrap}
+  #swan-banner{position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#B4231D,#E0521B);color:#fff;font-weight:700;font-size:14px;text-align:center;padding:11px 14px;pointer-events:none;z-index:5;box-shadow:0 4px 16px rgba(0,0,0,.3);animation:swanIn .25s ease}
+  @keyframes swanIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
+  #swan-banner[hidden],#pilot-tip[hidden],#hud[hidden]{display:none!important}
   @media(prefers-reduced-motion:reduce){.ov-btn:hover{transform:none}}
 </style>
 
@@ -108,7 +112,11 @@ const shellStyle = variant === "hero"
 
   var BOT_GLYPHS = ["\u039E","\u25CE","\u20AE","$","\u25C8","\u00A4"];
   var BOT_COLORS = ["#5B8DEF","#22B8A6","#8B7BEF","#EF6F6F","#3FA9F5","#E0a93f"];
-  var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 380;
+  var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 240;
+  var nextSwan = 0;
+  var SWANS = [
+    "FTX 又暴雷了","川普發了一篇推文","某交易所無預警跑路","SEC 一紙訴狀","巨鯨倒貨砸盤","穩定幣脫鉤了","交易所被駭客提光","升息超出預期"
+  ];
 
   function spawnFood(){ return { x:rand(0,WORLD), y:rand(0,WORLD), hue:rand(38,50) }; }
   function makeBot(mass, minDist){
@@ -128,25 +136,44 @@ const shellStyle = variant === "hero"
     for(var i=0;i<300;i++) foods.push(spawnFood());
     for(var j=0;j<46;j++) foods.push({ x:WORLD/2+rand(-320,320), y:WORLD/2+rand(-320,320), hue:rand(38,50) });
     bots = [];
-    for(var k=0;k<10;k++) bots.push(makeBot(rand(8,26), 650));      // 小幣（多數可以吃）
-    for(var k2=0;k2<3;k2++) bots.push(makeBot(rand(45,75), 900));   // 中幣
-    for(var k3a=0;k3a<2;k3a++) bots.push(makeBot(rand(100,150), 1400)); // 大幣，遠遠生
+    for(var k=0;k<10;k++) bots.push(makeBot(rand(8,24), 600));      // 小幣（多數可以吃）
+    for(var k2=0;k2<3;k2++) bots.push(makeBot(rand(40,62), 950));   // 中幣
+    bots.push(makeBot(rand(90,120), 1500));                          // 1 顆大幣，遠遠生
     cam = { x:player.x, y:player.y, s:1 };
     pilotTip.hidden = false;
+    nextSwan = performance.now() + rand(12000, 20000);
+  }
+
+  function triggerSwan(){
+    var cut = rand(0.40, 0.60);
+    var pct = Math.round(cut*100);
+    var ev = SWANS[(Math.random()*SWANS.length)|0];
+    player.mass = Math.max(12, player.mass*(1-cut));
+    for(var i=0;i<bots.length;i++){ bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
+    var banner = document.getElementById("swan-banner");
+    if(banner){
+      banner.textContent = "🦢 黑天鵝！" + ev + "，全場暴跌 " + pct + "%";
+      banner.hidden = false;
+      clearTimeout(banner._t);
+      banner._t = setTimeout(function(){ banner.hidden = true; }, 3200);
+    }
+    nextSwan = performance.now() + rand(15000, 26000);
   }
 
   function takeControl(){
     if(!userControlled){ userControlled = true; pilotTip.hidden = true; }
   }
-  function setTargetFromEvent(clientX, clientY){
+  var pointer = { sx:0, sy:0, active:false };
+  function setPointer(clientX, clientY){
     var r = cv.getBoundingClientRect();
-    target.x = cam.x + (clientX - r.left - W/2)/cam.s;
-    target.y = cam.y + (clientY - r.top - H/2)/cam.s;
+    pointer.sx = clientX - r.left - W/2;
+    pointer.sy = clientY - r.top - H/2;
+    pointer.active = true;
   }
-  cv.addEventListener("mousemove",function(e){ if(running){ takeControl(); setTargetFromEvent(e.clientX,e.clientY); } });
-  cv.addEventListener("pointerdown",function(e){ if(running){ takeControl(); setTargetFromEvent(e.clientX,e.clientY); } });
-  cv.addEventListener("touchmove",function(e){ if(!running) return; e.preventDefault(); var t=e.touches[0]; takeControl(); setTargetFromEvent(t.clientX,t.clientY); },{passive:false});
-  cv.addEventListener("touchstart",function(e){ if(!running) return; var t=e.touches[0]; takeControl(); setTargetFromEvent(t.clientX,t.clientY); },{passive:true});
+  cv.addEventListener("mousemove",function(e){ if(running){ takeControl(); setPointer(e.clientX,e.clientY); } });
+  cv.addEventListener("pointerdown",function(e){ if(running){ takeControl(); setPointer(e.clientX,e.clientY); } });
+  cv.addEventListener("touchmove",function(e){ if(!running) return; e.preventDefault(); var t=e.touches[0]; takeControl(); setPointer(t.clientX,t.clientY); },{passive:false});
+  cv.addEventListener("touchstart",function(e){ if(!running) return; var t=e.touches[0]; takeControl(); setPointer(t.clientX,t.clientY); },{passive:true});
 
   var keys = {};
   window.addEventListener("keydown",function(e){
@@ -158,7 +185,7 @@ const shellStyle = variant === "hero"
   });
   window.addEventListener("keyup",function(e){ keys[(e.key||"").toLowerCase()]=false; });
 
-  function speedFor(mass){ return Math.max(1.5, 5.6 - Math.sqrt(mass)*0.17); }
+  function speedFor(mass){ return Math.max(3.0, 9.2 - Math.sqrt(mass)*0.14); }
 
   function autopilot(){
     var pr = m2r(player.mass);
@@ -171,7 +198,7 @@ const shellStyle = variant === "hero"
         if(d2<td){ td=d2; threat=b; }
       }
     }
-    if(threat && td < (300+pr)*(300+pr)){
+    if(threat && td < (420+pr)*(420+pr)){
       var dx=player.x-threat.x, dy=player.y-threat.y, d=Math.hypot(dx,dy)||1;
       target.x = player.x + (dx/d)*420;
       target.y = player.y + (dy/d)*420;
@@ -187,20 +214,27 @@ const shellStyle = variant === "hero"
   }
 
   function step(){
+    var now = performance.now();
     if(!userControlled) autopilot();
 
+    // 滑鼠：持續朝游標方向移動（不會走到一半停）
+    if(userControlled && pointer.active){
+      target.x = cam.x + pointer.sx/cam.s;
+      target.y = cam.y + pointer.sy/cam.s;
+    }
+    // 鍵盤覆寫
     var kx=0, ky=0;
     if(keys["arrowleft"]||keys["a"]) kx-=1;
     if(keys["arrowright"]||keys["d"]) kx+=1;
     if(keys["arrowup"]||keys["w"]) ky-=1;
     if(keys["arrowdown"]||keys["s"]) ky+=1;
-    if(kx||ky){ target.x = player.x + kx*240; target.y = player.y + ky*240; }
+    if(kx||ky){ target.x = player.x + kx*260; target.y = player.y + ky*260; }
 
     var pr = m2r(player.mass);
     var dx = target.x-player.x, dy = target.y-player.y;
     var d = Math.hypot(dx,dy) || 1;
     var sp = speedFor(player.mass);
-    if(d>2){ player.x += (dx/d)*sp; player.y += (dy/d)*sp; }
+    if(d>6){ player.x += (dx/d)*sp; player.y += (dy/d)*sp; }
     player.x = Math.max(0,Math.min(WORLD,player.x));
     player.y = Math.max(0,Math.min(WORLD,player.y));
 
@@ -209,26 +243,39 @@ const shellStyle = variant === "hero"
       if(dist2(player.x,player.y,f.x,f.y) < pr*pr){ player.mass += 1.1; foods[i]=spawnFood(); }
     }
 
-    var now = performance.now();
     var grace = now - player.born < GRACE_MS;
     var immune = now - player.born < IMMUNE_MS;
+
+    // 黑天鵝事件
+    if(running && now > nextSwan && !grace){ triggerSwan(); }
 
     for(var bi=0;bi<bots.length;bi++){
       var b=bots[bi]; var br=m2r(b.mass);
       var steerx=0, steery=0;
+      // 對玩家：大的追、小的逃
       var dpx=player.x-b.x, dpy=player.y-b.y, pd=Math.hypot(dpx,dpy)||1;
-      if(!grace && pd<260 && player.mass > b.mass*1.15){
-        steerx=-dpx/pd; steery=-dpy/pd; // 只會逃，不會追
+      var chasingP=false;
+      if(!grace && pd<300){
+        if(b.mass > player.mass*1.1){ steerx=dpx/pd; steery=dpy/pd; chasingP=true; }
+        else if(player.mass > b.mass*1.1){ steerx=-dpx/pd; steery=-dpy/pd; }
       }
+      // 對其他幣：找最近、比自己小的去追捕
+      if(steerx===0 && steery===0){
+        var prey=null, prd=1e18;
+        for(var pj=0;pj<bots.length;pj++){ if(pj===bi) continue; var ob=bots[pj];
+          if(b.mass > ob.mass*1.25){ var od=dist2(b.x,b.y,ob.x,ob.y); if(od<prd && od<480*480){ prd=od; prey=ob; } } }
+        if(prey){ var qx=prey.x-b.x, qy=prey.y-b.y, qd=Math.hypot(qx,qy)||1; steerx=qx/qd; steery=qy/qd; }
+      }
+      // 否則隨機遊走
       if(steerx===0 && steery===0){
         if(--b.retarget<=0 || dist2(b.x,b.y,b.tx,b.ty)<400){ b.tx=rand(0,WORLD); b.ty=rand(0,WORLD); b.retarget=120; }
         var tdx=b.tx-b.x, tdy=b.ty-b.y, tdd=Math.hypot(tdx,tdy)||1; steerx=tdx/tdd; steery=tdy/tdd;
       }
-      var bsp=speedFor(b.mass)*(grace?0.4:0.9);
+      var bsp=speedFor(b.mass)*(grace?0.4:(chasingP?0.78:0.92));
       b.x=Math.max(0,Math.min(WORLD,b.x+steerx*bsp));
       b.y=Math.max(0,Math.min(WORLD,b.y+steery*bsp));
-      if((bi&1)===0 && b.mass<BOT_MASS_CAP){
-        for(var k3=0;k3<foods.length;k3+=3){ var ff=foods[k3]; if(dist2(b.x,b.y,ff.x,ff.y)<br*br){ b.mass+=1; foods[k3]=spawnFood(); } }
+      if(b.mass<BOT_MASS_CAP){
+        for(var k3=0;k3<foods.length;k3+=2){ var ff=foods[k3]; if(dist2(b.x,b.y,ff.x,ff.y)<br*br){ b.mass+=1; foods[k3]=spawnFood(); } }
       }
 
       var collide = dist2(player.x,player.y,b.x,b.y);
@@ -236,6 +283,20 @@ const shellStyle = variant === "hero"
         player.mass += b.mass*0.85; bots[bi]=makeBot(rand(8,34), 700);
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
         if(!immune) return die();
+      }
+    }
+
+    // 幣吃幣：大的吃掉小的
+    for(var a=0;a<bots.length;a++){
+      for(var c=a+1;c<bots.length;c++){
+        var ba=bots[a], bc=bots[c];
+        var ra=m2r(ba.mass), rc=m2r(bc.mass);
+        var dd=dist2(ba.x,ba.y,bc.x,bc.y);
+        if(ba.mass > bc.mass*1.2 && dd < (ra-rc*0.4)*(ra-rc*0.4)){
+          ba.mass += bc.mass*0.8; bots[c]=makeBot(rand(8,30), 600);
+        } else if(bc.mass > ba.mass*1.2 && dd < (rc-ra*0.4)*(rc-ra*0.4)){
+          bc.mass += ba.mass*0.8; bots[a]=makeBot(rand(8,30), 600);
+        }
       }
     }
 
@@ -290,6 +351,7 @@ const shellStyle = variant === "hero"
   function start(){
     init(); running=true;
     startScreen.hidden=true; deadScreen.hidden=true; hud.hidden=false;
+    var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
     cancelAnimationFrame(raf); loop();
   }
 
@@ -306,7 +368,9 @@ const shellStyle = variant === "hero"
     var cta=document.getElementById("cta-link");
     cta.textContent="\u6c92\u4e86\uff1f\u53bb "+ex.name+" \u8cb7\u4e00\u9846\u771f\u7684 \u20BF \u2197";
     cta.href=ex.url; cta.setAttribute("data-track","game_death_cta:"+ex.id);
-    hud.hidden=true; pilotTip.hidden=true; deadScreen.hidden=false;
+    hud.hidden=true; pilotTip.hidden=true;
+    var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
+    deadScreen.hidden=false;
   }
 
   document.getElementById("btn-start").addEventListener("click",start);
