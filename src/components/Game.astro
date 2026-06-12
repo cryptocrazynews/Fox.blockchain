@@ -238,7 +238,7 @@ const shellStyle = variant === "hero"
   });
   window.addEventListener("keyup",function(e){ keys[(e.key||"").toLowerCase()]=false; });
 
-  function speedFor(mass){ return Math.max(1.8, 0.5 - Math.sqrt(mass)*0.08); }
+  function speedFor(mass){ return Math.max(2.4, 6.5 - Math.sqrt(mass)*0.1); }
 
   function autopilot(){
     var pr = m2r(player.mass);
