@@ -36,6 +36,9 @@ const websiteSchema = {
 <!doctype html>
 <html lang={SITE.locale}>
   <head>
+    <script is:inline>
+      (function(){try{var t=localStorage.getItem("theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+    </script>
     <style>
       .brand{align-items:center}
       .brand-fox{width:38px;height:38px;display:block;flex:none}
@@ -94,8 +97,8 @@ const websiteSchema = {
         </a>
         <nav style="display:flex;gap:14px;align-items:center">
           <a href="/start/" style="font-size:13.5px;font-weight:600;color:var(--slate)">新手入門</a>
-          <a href={SITE.youtube} target="_blank" rel="noopener noreferrer" style="font-size:13.5px;font-weight:600;color:var(--slate)">YouTube ↗</a>
-          <a class="promo-pill" href="/#deals">🎁 活動看板</a>
+          <button class="theme-btn" id="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">🌙</button>
+          <a class="promo-pill" href={SITE.youtube} target="_blank" rel="noopener noreferrer">▶ 看 YouTube 頻道</a>
         </nav>
       </div>
     </header>
@@ -115,7 +118,6 @@ const websiteSchema = {
           <a href="/disclaimer/">免責聲明</a>
           <a href={SITE.youtube} target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="/rss.xml">RSS</a>
-          <a href="/admin/">後台</a>
         </div>
       </div>
       <div class="wrap" style="padding-bottom:22px">
@@ -140,5 +142,18 @@ const websiteSchema = {
         if (window.gtag) window.gtag("event", "referral_click", { position: pos, destination: dest });
       });
     </script>
-  </body>
+    <script is:inline>
+    (function(){
+      var b=document.getElementById("theme-toggle"); if(!b) return;
+      function icon(){ b.textContent = document.documentElement.getAttribute("data-theme")==="dark" ? "☀️" : "🌙"; }
+      icon();
+      b.addEventListener("click",function(){
+        var cur=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
+        document.documentElement.setAttribute("data-theme",cur);
+        try{localStorage.setItem("theme",cur);}catch(e){}
+        icon();
+      });
+    })();
+  </script>
+</body>
 </html>
