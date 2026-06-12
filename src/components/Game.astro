@@ -16,8 +16,22 @@ const shellStyle = variant === "hero"
     <div class="ov-card">
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
-      <p class="ov-sub">吃碎幣長大、躲開比你大的幣。<br>開局自動駕駛，動一下滑鼠就由你接手。</p>
+      <p class="ov-sub">吃幣長大、躲開大幣。終極目標：吃掉<b>以太幣大魔王 ETH</b>，登頂市值之王！<br>小心隨機降臨的黑天鵝事件。</p>
       <button class="ov-btn primary" id="btn-start">開始遊戲</button>
+    </div>
+  </div>
+
+  <div id="win-screen" class="overlay" hidden>
+    <div class="ov-card">
+      <div class="ov-glyph win">🏆</div>
+      <h2>你登頂了！</h2>
+      <p class="ov-sub">你吃掉了以太幣大魔王，成為市值最大的幣種 👑</p>
+      <p class="ov-score">最終市值 <strong id="win-final">0</strong> ｜ 最佳 <strong id="win-best">0</strong></p>
+      <a class="ov-btn cta" id="win-cta" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <div class="ov-actions">
+        <button class="ov-btn primary" id="btn-winretry">再玩一次</button>
+        <a class="ov-btn ghost" href="/#deals">看活動</a>
+      </div>
     </div>
   </div>
 
@@ -49,6 +63,7 @@ const shellStyle = variant === "hero"
   .ov-card{max-width:340px}
   .ov-glyph{font-family:var(--serif);font-size:56px;color:var(--amber);line-height:1;margin-bottom:6px}
   .ov-glyph.dead{font-size:50px}
+  .ov-glyph.win{font-size:54px}
   .ov-card h2{font-family:var(--serif);font-weight:600;font-size:26px;color:#fff;margin:0 0 10px;letter-spacing:-.01em}
   .ov-sub{color:#B9C0CC;font-size:14.5px;line-height:1.6;margin:0 0 20px}
   .ov-score{font-family:var(--mono);color:#fff;font-size:14.5px;margin:0 0 12px}
@@ -110,10 +125,17 @@ const shellStyle = variant === "hero"
   var player=null, foods=[], bots=[], running=false, userControlled=false;
   var target={x:0,y:0}, cam={x:0,y:0,s:1};
 
-  var BOT_GLYPHS = ["\u039E","\u25CE","\u20AE","$","\u25C8","\u00A4"];
-  var BOT_COLORS = ["#5B8DEF","#22B8A6","#8B7BEF","#EF6F6F","#3FA9F5","#E0a93f"];
+  var COINS = [
+    {s:"SOL",c:"#14F195"},{s:"BNB",c:"#F3BA2F"},{s:"XRP",c:"#3B4A57"},{s:"ADA",c:"#0033AD"},
+    {s:"DOGE",c:"#C2A633"},{s:"TRX",c:"#E50914"},{s:"LINK",c:"#2A5ADA"},{s:"AVAX",c:"#E84142"},
+    {s:"DOT",c:"#E6007A"},{s:"MATIC",c:"#8247E5"},{s:"SHIB",c:"#F00500"},{s:"LTC",c:"#345D9D"},
+    {s:"UNI",c:"#FF007A"},{s:"ATOM",c:"#2E3148"},{s:"NEAR",c:"#00C08B"},{s:"APT",c:"#1AC9B0"},
+    {s:"ARB",c:"#28A0F0"},{s:"OP",c:"#FF0420"},{s:"SUI",c:"#4DA2FF"},{s:"PEPE",c:"#4CA24C"},
+    {s:"FIL",c:"#0090FF"},{s:"INJ",c:"#00D2FF"},{s:"TON",c:"#0098EA"},{s:"XLM",c:"#6E4FD3"},
+    {s:"BCH",c:"#0AC18E"},{s:"ICP",c:"#3B00B9"},{s:"HBAR",c:"#222222"},{s:"VET",c:"#15BDFF"}
+  ];
   var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 240;
-  var nextSwan = 0, swanFx = null, shake = 0;
+  var nextSwan = 0, swanFx = null, shake = 0, swan168Done = false, firstSwan = true;
   var GENERIC = ["某交易所無預警跑路","SEC 一紙訴狀","巨鯨倒貨砸盤","穩定幣脫鉤了","交易所被駭客提光","Fed 升息超出預期"];
 
   // 川普頭像（迷因圖，之後把 /swan-trump.png 換成你的圖即可）
@@ -124,12 +146,19 @@ const shellStyle = variant === "hero"
 
   function spawnFood(){ return { x:rand(0,WORLD), y:rand(0,WORLD), hue:rand(38,50) }; }
   function makeBot(mass, minDist){
-    var i = (Math.random()*BOT_GLYPHS.length)|0;
+    var co = COINS[(Math.random()*COINS.length)|0];
     var x,y,tries=0;
     do { x=rand(0,WORLD); y=rand(0,WORLD); tries++; }
     while(player && dist2(x,y,player.x,player.y) < minDist*minDist && tries<60);
     return { x:x, y:y, mass:mass, tx:rand(0,WORLD), ty:rand(0,WORLD),
-             glyph:BOT_GLYPHS[i], color:BOT_COLORS[i], retarget:0 };
+             sym:co.s, color:co.c, retarget:0, spd:rand(0.55,1.35) };  // 速度隨機，有快有慢
+  }
+  function makeBoss(){
+    var x,y,tries=0;
+    do { x=rand(0,WORLD); y=rand(0,WORLD); tries++; }
+    while(player && dist2(x,y,player.x,player.y) < 1700*1700 && tries<80);
+    return { x:x, y:y, mass:1000, isBoss:true, sym:"ETH", color:"#627EEA",
+             tx:rand(0,WORLD), ty:rand(0,WORLD), retarget:0, spd:0.5 };
   }
 
   function init(){
@@ -137,16 +166,17 @@ const shellStyle = variant === "hero"
     target = { x:player.x, y:player.y };
     userControlled = false;
     foods = [];
-    for(var i=0;i<300;i++) foods.push(spawnFood());
+    for(var i=0;i<340;i++) foods.push(spawnFood());
     for(var j=0;j<46;j++) foods.push({ x:WORLD/2+rand(-320,320), y:WORLD/2+rand(-320,320), hue:rand(38,50) });
     bots = [];
-    for(var k=0;k<18;k++) bots.push(makeBot(rand(8,22), 520));      // 大量小幣（好吃）
-    for(var k2=0;k2<6;k2++) bots.push(makeBot(rand(38,60), 850));   // 中幣
-    for(var k3a=0;k3a<2;k3a++) bots.push(makeBot(rand(85,120), 1500)); // 大幣，遠遠生
+    for(var k=0;k<26;k++) bots.push(makeBot(rand(8,22), 520));      // 大量小幣（好吃）
+    for(var k2=0;k2<8;k2++) bots.push(makeBot(rand(34,62), 820));   // 中幣
+    for(var k3a=0;k3a<3;k3a++) bots.push(makeBot(rand(80,130), 1400)); // 大幣
+    bots.push(makeBoss());                                           // 以太幣大魔王（固定 1000）
     cam = { x:player.x, y:player.y, s:1 };
     pilotTip.hidden = false;
-    swanFx = null; shake = 0;
-    nextSwan = performance.now() + rand(35000, 55000);
+    swanFx = null; shake = 0; swan168Done = false; firstSwan = true;
+    nextSwan = performance.now() + rand(18000, 26000);              // 第一次較早，確保看得到
   }
 
   function triggerSwan(){
@@ -158,7 +188,8 @@ const shellStyle = variant === "hero"
     else { ev=GENERIC[(Math.random()*GENERIC.length)|0]; pct=Math.round(rand(0.40,0.60)*100); }
     swanFx = { type:type, t0:performance.now(), dur:2800, applied:false, ev:ev, pct:pct,
                fromX:(Math.random()<0.5?-0.25:1.25), fromY:rand(0.1,0.9), shards:null };
-    nextSwan = performance.now() + rand(35000, 60000);
+    nextSwan = performance.now() + (firstSwan ? rand(28000, 42000) : rand(35000, 60000));
+    firstSwan = false;
   }
 
   function applySwanCut(type, pct){
@@ -167,7 +198,7 @@ const shellStyle = variant === "hero"
     } else {
       var cut = pct/100;
       player.mass = Math.max(12, player.mass*(1-cut));
-      for(var i=0;i<bots.length;i++){ bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
+      for(var i=0;i<bots.length;i++){ if(bots[i].isBoss) continue; bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
     }
     shake = 22;
     var banner = document.getElementById("swan-banner");
@@ -273,7 +304,10 @@ const shellStyle = variant === "hero"
     var immune = now - player.born < IMMUNE_MS;
 
     // 黑天鵝事件
-    if(running && !swanFx && now > nextSwan && !grace){ triggerSwan(); }
+    if(running && !swanFx && !grace){
+      if(!swan168Done && player.mass >= 168){ swan168Done = true; triggerSwan(); }
+      else if(now > nextSwan){ triggerSwan(); }
+    }
     if(swanFx){
       var se = now - swanFx.t0;
       var impactT = swanFx.type==="trump" ? 1050 : (swanFx.type==="ftx" ? 620 : 420);
@@ -304,25 +338,27 @@ const shellStyle = variant === "hero"
         if(--b.retarget<=0 || dist2(b.x,b.y,b.tx,b.ty)<400){ b.tx=rand(0,WORLD); b.ty=rand(0,WORLD); b.retarget=120; }
         var tdx=b.tx-b.x, tdy=b.ty-b.y, tdd=Math.hypot(tdx,tdy)||1; steerx=tdx/tdd; steery=tdy/tdd;
       }
-      var bsp=speedFor(b.mass)*(grace?0.4:(chasingP?0.8:(fleeingP?0.62:0.9)));
+      var bsp=speedFor(b.mass)*(grace?0.4:(chasingP?0.8:(fleeingP?0.62:0.9)))*(b.spd||1);
       b.x=Math.max(0,Math.min(WORLD,b.x+steerx*bsp));
       b.y=Math.max(0,Math.min(WORLD,b.y+steery*bsp));
-      if(b.mass<BOT_MASS_CAP){
+      if(!b.isBoss && b.mass<BOT_MASS_CAP){
         for(var k3=0;k3<foods.length;k3+=2){ var ff=foods[k3]; if(dist2(b.x,b.y,ff.x,ff.y)<br*br){ b.mass+=1; foods[k3]=spawnFood(); } }
       }
 
       var collide = dist2(player.x,player.y,b.x,b.y);
       if(player.mass > b.mass*1.12 && collide < (pr+br*0.35)*(pr+br*0.35)){
+        if(b.isBoss){ return win(); }                        // 吃掉以太幣 → 勝利！
         player.mass += b.mass*0.85; bots[bi]=makeBot(rand(8,30), 700);
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
         if(!immune) return die();
       }
     }
 
-    // 幣吃幣：大的吃掉小的
+    // 幣吃幣：大的吃掉小的（魔王不參與）
     for(var a=0;a<bots.length;a++){
       for(var c=a+1;c<bots.length;c++){
         var ba=bots[a], bc=bots[c];
+        if(ba.isBoss||bc.isBoss) continue;
         var ra=m2r(ba.mass), rc=m2r(bc.mass);
         var dd=dist2(ba.x,ba.y,bc.x,bc.y);
         if(ba.mass > bc.mass*1.2 && dd < (ra-rc*0.4)*(ra-rc*0.4)){
@@ -343,9 +379,11 @@ const shellStyle = variant === "hero"
   function drawBlob(x,y,r,color,glyph,isPlayer){
     ctx.beginPath(); ctx.fillStyle=color; ctx.arc(x,y,r,0,6.283); ctx.fill();
     ctx.lineWidth=Math.max(2,r*0.08); ctx.strokeStyle="rgba(255,255,255,"+(isPlayer?0.9:0.55)+")"; ctx.stroke();
-    if(r>11){
-      ctx.fillStyle = isPlayer ? "#231600" : "rgba(255,255,255,.92)";
-      ctx.font="700 "+Math.min(r*1.1,40)+"px monospace";
+    if(r>11 && glyph){
+      var len=(""+glyph).length;
+      var fs=Math.min(r*1.15, r*1.7/Math.max(1,len*0.62), 38);
+      ctx.fillStyle = isPlayer ? "#231600" : "rgba(255,255,255,.95)";
+      ctx.font="700 "+fs+"px ui-sans-serif,system-ui,sans-serif";
       ctx.textAlign="center"; ctx.textBaseline="middle";
       ctx.fillText(glyph,x,y+1);
     }
@@ -363,7 +401,14 @@ const shellStyle = variant === "hero"
     for(var gy=0;gy<=WORLD;gy+=160){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(WORLD,gy); ctx.stroke(); }
     ctx.strokeStyle="rgba(245,165,36,.25)"; ctx.lineWidth=4; ctx.strokeRect(0,0,WORLD,WORLD);
     for(var i=0;i<foods.length;i++){ var f=foods[i]; ctx.beginPath(); ctx.fillStyle="hsl("+f.hue+",90%,60%)"; ctx.arc(f.x,f.y,3.2,0,6.283); ctx.fill(); }
-    for(var bi=0;bi<bots.length;bi++){ var b=bots[bi]; drawBlob(b.x,b.y,m2r(b.mass),b.color,b.glyph,false); }
+    for(var bi=0;bi<bots.length;bi++){ var b=bots[bi]; var brr=m2r(b.mass);
+      if(b.isBoss){
+        var gp=1+Math.sin(performance.now()/180)*0.06;
+        ctx.beginPath(); ctx.strokeStyle="rgba(98,126,234,.55)"; ctx.lineWidth=8;
+        ctx.arc(b.x,b.y,brr*1.18*gp,0,6.283); ctx.stroke();
+      }
+      drawBlob(b.x,b.y,brr,b.color,b.sym,false);
+    }
     var pr0 = m2r(player.mass);
     if(running && performance.now() - player.born < IMMUNE_MS){
       var pulse = 1 + Math.sin(performance.now()/120)*0.12;
@@ -457,6 +502,7 @@ const shellStyle = variant === "hero"
   function start(){
     init(); running=true;
     startScreen.hidden=true; deadScreen.hidden=true; hud.hidden=false;
+    var ws=document.getElementById("win-screen"); if(ws) ws.hidden=true;
     var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
     cancelAnimationFrame(raf); loop();
   }
@@ -480,7 +526,25 @@ const shellStyle = variant === "hero"
     deadScreen.hidden=false;
   }
 
+  function win(){
+    running=false; cancelAnimationFrame(raf);
+    swanFx=null; shake=0;
+    try{ draw(); }catch(e){}
+    var score=Math.floor(player.mass);
+    var best=0; try{ best=parseInt(localStorage.getItem("btc_game_best")||"0",10)||0; }catch(e){}
+    if(score>best){ best=score; try{ localStorage.setItem("btc_game_best",String(best)); }catch(e){} }
+    var fs=document.getElementById("win-final"); if(fs) fs.textContent=score;
+    var bs=document.getElementById("win-best"); if(bs) bs.textContent=best;
+    var ex=HOT[(Math.random()*HOT.length)|0]||{name:"\u4ea4\u6613\u6240",url:"/#deals",id:"none"};
+    var wcta=document.getElementById("win-cta");
+    if(wcta){ wcta.textContent="\u6211\u8981\u53bb "+ex.name+" \u8cb7\u4e00\u9846\u771f\u7684 \u20BF \u2197"; wcta.href=ex.url; wcta.setAttribute("data-track","game_win_cta:"+ex.id); }
+    hud.hidden=true; pilotTip.hidden=true;
+    var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
+    var ws=document.getElementById("win-screen"); if(ws) ws.hidden=false;
+  }
+
   document.getElementById("btn-start").addEventListener("click",start);
   document.getElementById("btn-retry").addEventListener("click",start);
+  var bw=document.getElementById("btn-winretry"); if(bw) bw.addEventListener("click",start);
 })();
 </script>
