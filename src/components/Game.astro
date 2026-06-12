@@ -113,10 +113,14 @@ const shellStyle = variant === "hero"
   var BOT_GLYPHS = ["\u039E","\u25CE","\u20AE","$","\u25C8","\u00A4"];
   var BOT_COLORS = ["#5B8DEF","#22B8A6","#8B7BEF","#EF6F6F","#3FA9F5","#E0a93f"];
   var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 240;
-  var nextSwan = 0;
-  var SWANS = [
-    "FTX 又暴雷了","川普發了一篇推文","某交易所無預警跑路","SEC 一紙訴狀","巨鯨倒貨砸盤","穩定幣脫鉤了","交易所被駭客提光","升息超出預期"
-  ];
+  var nextSwan = 0, swanFx = null, shake = 0;
+  var GENERIC = ["某交易所無預警跑路","SEC 一紙訴狀","巨鯨倒貨砸盤","穩定幣脫鉤了","交易所被駭客提光","Fed 升息超出預期"];
+
+  // 川普頭像（迷因圖，之後把 /swan-trump.png 換成你的圖即可）
+  var trumpImg = new Image();
+  var trumpReady = false;
+  trumpImg.onload = function(){ trumpReady = true; };
+  trumpImg.src = "/swan-trump.png";
 
   function spawnFood(){ return { x:rand(0,WORLD), y:rand(0,WORLD), hue:rand(38,50) }; }
   function makeBot(mass, minDist){
@@ -129,35 +133,53 @@ const shellStyle = variant === "hero"
   }
 
   function init(){
-    player = { x:WORLD/2, y:WORLD/2, mass:22, born:performance.now() };
+    player = { x:WORLD/2, y:WORLD/2, mass:22, born:performance.now(), hx:0, hy:-1 };
     target = { x:player.x, y:player.y };
     userControlled = false;
     foods = [];
     for(var i=0;i<300;i++) foods.push(spawnFood());
     for(var j=0;j<46;j++) foods.push({ x:WORLD/2+rand(-320,320), y:WORLD/2+rand(-320,320), hue:rand(38,50) });
     bots = [];
-    for(var k=0;k<10;k++) bots.push(makeBot(rand(8,24), 600));      // 小幣（多數可以吃）
-    for(var k2=0;k2<3;k2++) bots.push(makeBot(rand(40,62), 950));   // 中幣
-    bots.push(makeBot(rand(90,120), 1500));                          // 1 顆大幣，遠遠生
+    for(var k=0;k<18;k++) bots.push(makeBot(rand(8,22), 520));      // 大量小幣（好吃）
+    for(var k2=0;k2<6;k2++) bots.push(makeBot(rand(38,60), 850));   // 中幣
+    for(var k3a=0;k3a<2;k3a++) bots.push(makeBot(rand(85,120), 1500)); // 大幣，遠遠生
     cam = { x:player.x, y:player.y, s:1 };
     pilotTip.hidden = false;
-    nextSwan = performance.now() + rand(12000, 20000);
+    swanFx = null; shake = 0;
+    nextSwan = performance.now() + rand(35000, 55000);
   }
 
   function triggerSwan(){
-    var cut = rand(0.40, 0.60);
-    var pct = Math.round(cut*100);
-    var ev = SWANS[(Math.random()*SWANS.length)|0];
-    player.mass = Math.max(12, player.mass*(1-cut));
-    for(var i=0;i<bots.length;i++){ bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
+    var roll = Math.random();
+    var type = roll<0.34 ? "trump" : (roll<0.67 ? "ftx" : "generic");
+    var ev, pct;
+    if(type==="trump"){ ev="川普發了一篇推文"; pct=50; }
+    else if(type==="ftx"){ ev="FTX 又暴雷了"; pct=40; }
+    else { ev=GENERIC[(Math.random()*GENERIC.length)|0]; pct=Math.round(rand(0.40,0.60)*100); }
+    swanFx = { type:type, t0:performance.now(), dur:2800, applied:false, ev:ev, pct:pct,
+               fromX:(Math.random()<0.5?-0.25:1.25), fromY:rand(0.1,0.9), shards:null };
+    nextSwan = performance.now() + rand(35000, 60000);
+  }
+
+  function applySwanCut(type, pct){
+    if(type==="trump"){
+      player.mass = Math.max(12, player.mass*0.5);          // 川普只砸玩家
+    } else {
+      var cut = pct/100;
+      player.mass = Math.max(12, player.mass*(1-cut));
+      for(var i=0;i<bots.length;i++){ bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
+    }
+    shake = 22;
     var banner = document.getElementById("swan-banner");
     if(banner){
-      banner.textContent = "🦢 黑天鵝！" + ev + "，全場暴跌 " + pct + "%";
+      var msg = type==="trump" ? ("🦢 黑天鵝！川普發文，你的市值砍半！")
+              : type==="ftx"   ? ("🦢 黑天鵝！FTX 暴雷，全場蒸發 "+pct+"%！")
+              :                  ("🦢 黑天鵝！"+swanFx.ev+"，全場暴跌 "+pct+"%！");
+      banner.textContent = msg;
       banner.hidden = false;
       clearTimeout(banner._t);
-      banner._t = setTimeout(function(){ banner.hidden = true; }, 3200);
+      banner._t = setTimeout(function(){ banner.hidden = true; }, 3000);
     }
-    nextSwan = performance.now() + rand(15000, 26000);
   }
 
   function takeControl(){
@@ -217,26 +239,30 @@ const shellStyle = variant === "hero"
     var now = performance.now();
     if(!userControlled) autopilot();
 
-    // 滑鼠：持續朝游標方向移動（不會走到一半停）
+    // ── 想去的方向（游標 / 鍵盤 / 自動駕駛）──
+    var wantx=0, wanty=0, haveDir=false;
     if(userControlled && pointer.active){
-      target.x = cam.x + pointer.sx/cam.s;
-      target.y = cam.y + pointer.sy/cam.s;
+      var pl=Math.hypot(pointer.sx,pointer.sy);
+      if(pl>12){ wantx=pointer.sx/pl; wanty=pointer.sy/pl; haveDir=true; }
     }
-    // 鍵盤覆寫
     var kx=0, ky=0;
     if(keys["arrowleft"]||keys["a"]) kx-=1;
     if(keys["arrowright"]||keys["d"]) kx+=1;
     if(keys["arrowup"]||keys["w"]) ky-=1;
     if(keys["arrowdown"]||keys["s"]) ky+=1;
-    if(kx||ky){ target.x = player.x + kx*260; target.y = player.y + ky*260; }
+    if(kx||ky){ var kl=Math.hypot(kx,ky)||1; wantx=kx/kl; wanty=ky/kl; haveDir=true; }
+    if(!userControlled){ // 自動駕駛已設好 target
+      var adx=target.x-player.x, ady=target.y-player.y, al=Math.hypot(adx,ady)||1;
+      wantx=adx/al; wanty=ady/al; haveDir=true;
+    }
+    // 平滑轉向；沒有輸入就維持上一個方向（慣性，永遠不會停在半路）
+    if(haveDir){ player.hx += (wantx-player.hx)*0.28; player.hy += (wanty-player.hy)*0.28; }
+    var hl=Math.hypot(player.hx,player.hy)||1; player.hx/=hl; player.hy/=hl;
 
     var pr = m2r(player.mass);
-    var dx = target.x-player.x, dy = target.y-player.y;
-    var d = Math.hypot(dx,dy) || 1;
     var sp = speedFor(player.mass);
-    if(d>6){ player.x += (dx/d)*sp; player.y += (dy/d)*sp; }
-    player.x = Math.max(0,Math.min(WORLD,player.x));
-    player.y = Math.max(0,Math.min(WORLD,player.y));
+    player.x = Math.max(0,Math.min(WORLD, player.x + player.hx*sp));
+    player.y = Math.max(0,Math.min(WORLD, player.y + player.hy*sp));
 
     for(var i=0;i<foods.length;i++){
       var f=foods[i];
@@ -247,17 +273,24 @@ const shellStyle = variant === "hero"
     var immune = now - player.born < IMMUNE_MS;
 
     // 黑天鵝事件
-    if(running && now > nextSwan && !grace){ triggerSwan(); }
+    if(running && !swanFx && now > nextSwan && !grace){ triggerSwan(); }
+    if(swanFx){
+      var se = now - swanFx.t0;
+      var impactT = swanFx.type==="trump" ? 1050 : (swanFx.type==="ftx" ? 620 : 420);
+      if(!swanFx.applied && se >= impactT){ swanFx.applied = true; applySwanCut(swanFx.type, swanFx.pct); }
+      if(se > swanFx.dur) swanFx = null;
+    }
+    if(shake > 0.3) shake *= 0.9; else shake = 0;
 
     for(var bi=0;bi<bots.length;bi++){
       var b=bots[bi]; var br=m2r(b.mass);
       var steerx=0, steery=0;
       // 對玩家：大的追、小的逃
       var dpx=player.x-b.x, dpy=player.y-b.y, pd=Math.hypot(dpx,dpy)||1;
-      var chasingP=false;
+      var chasingP=false, fleeingP=false;
       if(!grace && pd<300){
         if(b.mass > player.mass*1.1){ steerx=dpx/pd; steery=dpy/pd; chasingP=true; }
-        else if(player.mass > b.mass*1.1){ steerx=-dpx/pd; steery=-dpy/pd; }
+        else if(player.mass > b.mass*1.1 && pd<170){ steerx=-dpx/pd; steery=-dpy/pd; fleeingP=true; }
       }
       // 對其他幣：找最近、比自己小的去追捕
       if(steerx===0 && steery===0){
@@ -271,7 +304,7 @@ const shellStyle = variant === "hero"
         if(--b.retarget<=0 || dist2(b.x,b.y,b.tx,b.ty)<400){ b.tx=rand(0,WORLD); b.ty=rand(0,WORLD); b.retarget=120; }
         var tdx=b.tx-b.x, tdy=b.ty-b.y, tdd=Math.hypot(tdx,tdy)||1; steerx=tdx/tdd; steery=tdy/tdd;
       }
-      var bsp=speedFor(b.mass)*(grace?0.4:(chasingP?0.78:0.92));
+      var bsp=speedFor(b.mass)*(grace?0.4:(chasingP?0.8:(fleeingP?0.62:0.9)));
       b.x=Math.max(0,Math.min(WORLD,b.x+steerx*bsp));
       b.y=Math.max(0,Math.min(WORLD,b.y+steery*bsp));
       if(b.mass<BOT_MASS_CAP){
@@ -279,8 +312,8 @@ const shellStyle = variant === "hero"
       }
 
       var collide = dist2(player.x,player.y,b.x,b.y);
-      if(player.mass > b.mass*1.15 && collide < (pr-br*0.4)*(pr-br*0.4)){
-        player.mass += b.mass*0.85; bots[bi]=makeBot(rand(8,34), 700);
+      if(player.mass > b.mass*1.12 && collide < (pr+br*0.35)*(pr+br*0.35)){
+        player.mass += b.mass*0.85; bots[bi]=makeBot(rand(8,30), 700);
       } else if(b.mass > player.mass*1.15 && collide < (br-pr*0.4)*(br-pr*0.4)){
         if(!immune) return die();
       }
@@ -322,7 +355,9 @@ const shellStyle = variant === "hero"
     ctx.clearRect(0,0,W,H);
     ctx.fillStyle="#0E1320"; ctx.fillRect(0,0,W,H);
     ctx.save();
-    ctx.translate(W/2,H/2); ctx.scale(cam.s,cam.s); ctx.translate(-cam.x,-cam.y);
+    var shx=0, shy=0;
+    if(shake>0){ shx=(Math.random()-0.5)*shake; shy=(Math.random()-0.5)*shake; }
+    ctx.translate(W/2+shx,H/2+shy); ctx.scale(cam.s,cam.s); ctx.translate(-cam.x,-cam.y);
     ctx.strokeStyle="rgba(255,255,255,.04)"; ctx.lineWidth=1;
     for(var gx=0;gx<=WORLD;gx+=160){ ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,WORLD); ctx.stroke(); }
     for(var gy=0;gy<=WORLD;gy+=160){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(WORLD,gy); ctx.stroke(); }
@@ -336,6 +371,77 @@ const shellStyle = variant === "hero"
       ctx.arc(player.x,player.y,pr0*1.5*pulse,0,6.283); ctx.stroke();
     }
     drawBlob(player.x,player.y,pr0,"#F5A524","\u20BF",true);
+    ctx.restore();
+
+    if(swanFx) drawSwanFx(performance.now());
+  }
+
+  function drawSwanFx(now){
+    var e = now - swanFx.t0;
+    var cx = W/2, cy = H/2;
+    if(swanFx.type==="trump"){
+      var impactT=1050;
+      if(e<impactT){ // 頭像球從邊緣高速衝向玩家
+        var t=e/impactT;
+        var sx=swanFx.fromX*W, sy=swanFx.fromY*H;
+        var x=sx+(cx-sx)*t, y=sy+(cy-sy)*t;
+        var rad=28+58*t;
+        drawHeadBall(x,y,rad, t);
+        // 拖尾
+        ctx.globalAlpha=0.25; drawHeadBall(sx+(cx-sx)*Math.max(0,t-0.08), sy+(cy-sy)*Math.max(0,t-0.08), rad*0.9, t); ctx.globalAlpha=1;
+      } else {
+        var f=(e-impactT)/(swanFx.dur-impactT);
+        // 衝擊白閃 + 頭像在中心彈開縮小
+        ctx.fillStyle="rgba(255,80,40,"+(0.5*(1-f))+")"; ctx.fillRect(0,0,W,H);
+        drawHeadBall(cx, cy-30*f, 86*(1-0.4*f), 1);
+      }
+    } else if(swanFx.type==="ftx"){
+      var impT=620;
+      if(e<impT){ var t2=e/impT; drawFTX(cx,cy, 0.4+1.2*t2, 1); }
+      else {
+        if(!swanFx.shards){ swanFx.shards=[]; for(var s=0;s<14;s++){ var an=rand(0,6.283); swanFx.shards.push({a:an,v:rand(3,9),rot:rand(-0.2,0.2)}); } }
+        var f2=(e-impT)/(swanFx.dur-impT);
+        ctx.fillStyle="rgba(220,40,30,"+(0.45*(1-f2))+")"; ctx.fillRect(0,0,W,H);
+        var prog=(e-impT);
+        for(var s2=0;s2<swanFx.shards.length;s2++){ var sh=swanFx.shards[s2];
+          var dx=Math.cos(sh.a)*sh.v*prog*0.25, dy=Math.sin(sh.a)*sh.v*prog*0.25 + 0.0008*prog*prog;
+          ctx.save(); ctx.globalAlpha=Math.max(0,1-f2); ctx.translate(cx+dx,cy+dy); ctx.rotate(sh.a+sh.rot*prog*0.02);
+          ctx.fillStyle="#0E2C2A"; ctx.strokeStyle="#2BD4C4"; ctx.lineWidth=2;
+          ctx.beginPath(); ctx.moveTo(-18,-14); ctx.lineTo(16,-8); ctx.lineTo(8,16); ctx.closePath(); ctx.fill(); ctx.stroke();
+          ctx.restore();
+        }
+      }
+    } else { // generic：紅光暈 + 下墜紅箭頭
+      var f3=e/swanFx.dur;
+      var g=ctx.createRadialGradient(cx,cy,Math.min(W,H)*0.2,cx,cy,Math.max(W,H)*0.7);
+      g.addColorStop(0,"rgba(200,30,30,0)"); g.addColorStop(1,"rgba(170,10,10,"+(0.5*(1-f3))+")");
+      ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle="rgba(255,70,70,"+(0.8*(1-f3))+")"; ctx.font="900 64px sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+      for(var ai=0;ai<5;ai++){ var ax=(ai+0.5)*W/5; var ay=((e*0.5+ai*120)%(H+120))-60; ctx.fillText("▼",ax,ay); }
+    }
+  }
+
+  function drawHeadBall(x,y,r,t){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(x,y,r,0,6.283); ctx.closePath();
+    ctx.fillStyle="#F5A524"; ctx.fill();
+    ctx.save(); ctx.clip();
+    if(trumpReady){ ctx.drawImage(trumpImg, x-r, y-r, r*2, r*2); }
+    else { // 佔位：橘臉 + 黃髮 + TRUMP
+      ctx.fillStyle="#E8A36B"; ctx.fillRect(x-r,y-r,2*r,2*r);
+      ctx.fillStyle="#F4D35E"; ctx.fillRect(x-r,y-r,2*r,r*0.5);
+      ctx.fillStyle="#231600"; ctx.font="700 "+(r*0.45)+"px sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+      ctx.fillText("TRUMP",x,y+r*0.4);
+    }
+    ctx.restore();
+    ctx.lineWidth=Math.max(3,r*0.08); ctx.strokeStyle="#fff"; ctx.beginPath(); ctx.arc(x,y,r,0,6.283); ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawFTX(x,y,scale,alpha){
+    ctx.save(); ctx.globalAlpha=alpha; ctx.translate(x,y); ctx.scale(scale,scale);
+    ctx.fillStyle="#11A8A0"; ctx.font="900 90px sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.fillText("FTX",0,0);
     ctx.restore();
   }
 
@@ -357,6 +463,7 @@ const shellStyle = variant === "hero"
 
   function die(){
     running=false; cancelAnimationFrame(raf);
+    swanFx=null; shake=0;
     try{ draw(); }catch(e){}
     var score=Math.floor(player.mass);
     var best=0; try{ best=parseInt(localStorage.getItem("btc_game_best")||"0",10)||0; }catch(e){}
