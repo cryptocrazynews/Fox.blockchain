@@ -1,0 +1,54 @@
+---
+import { SITE } from "../config";
+const cid = (SITE as any).youtubeChannelId || "";
+const playlist = cid.startsWith("UC") ? "UU" + cid.slice(2) : "";
+---
+
+<section class="latest" id="latest-video">
+  <div class="wrap">
+    <div class="latest-head">
+      <div>
+        <span class="eyebrow">最新影片</span>
+        <h3>頻道最新一支影片</h3>
+      </div>
+      <a class="latest-sub" href={SITE.youtube} target="_blank" rel="noopener noreferrer" data-track="latest_video:subscribe">▶ 訂閱頻道</a>
+    </div>
+
+    {playlist ? (
+      <div class="latest-frame">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlist}`}
+          title="小狐狸區塊鏈 最新影片"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    ) : (
+      <a class="latest-fallback" href={SITE.youtube} target="_blank" rel="noopener noreferrer" data-track="latest_video:channel">
+        <span class="latest-play">▶</span>
+        <span>
+          <strong>到 YouTube 看最新影片</strong>
+          <small>交易所實測、入金教學、U 卡開箱，每週更新</small>
+        </span>
+        <span class="latest-arrow">↗</span>
+      </a>
+    )}
+  </div>
+</section>
+
+<style>
+  .latest{padding:56px 0;border-bottom:1px solid var(--line)}
+  .latest-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+  .latest-head h3{font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.4vw,30px);letter-spacing:-.01em;margin:8px 0 0}
+  .latest-sub{display:inline-flex;align-items:center;gap:7px;background:#FF0000;color:#fff;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:999px;transition:transform .15s ease}
+  .latest-sub:hover{transform:translateY(-2px)}
+  .latest-frame{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#000}
+  .latest-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .latest-fallback{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow);transition:transform .15s ease}
+  .latest-fallback:hover{transform:translateY(-2px)}
+  .latest-play{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#FF0000;color:#fff;font-size:20px;flex:none}
+  .latest-fallback strong{display:block;font-size:16.5px}
+  .latest-fallback small{color:var(--slate);font-size:13.5px}
+  .latest-arrow{margin-left:auto;color:var(--slate);font-size:18px}
+</style>
