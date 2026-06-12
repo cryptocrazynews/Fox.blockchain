@@ -10,7 +10,7 @@ export const SITE = {
   locale: "zh-TW",
   youtube: "https://www.youtube.com/@Fox.blockchain",
  
-  youtubeChannelId: "Fox.blockchain",
+  youtubeChannelId: "UCMAy1wO8GDTZ8vFmOfFWzDg",
 
 
   gaId: "G-QM9443W2L9",
