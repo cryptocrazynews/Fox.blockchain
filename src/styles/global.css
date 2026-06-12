@@ -222,3 +222,20 @@ img{max-width:100%}
 .news-form input:focus{border-color:var(--cobalt)}
 .news-form button{background:var(--cobalt);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-weight:600;font-size:14px}
 .news-form button:hover{background:var(--cobalt-deep)}
+
+/* ── 深色模式 ── */
+[data-theme="dark"]{
+  --ink:#E9ECF2; --ink-soft:#C7CDD9; --slate:#98A2B3;
+  --paper:#0E1320; --surface:#151B2B; --mist:#1B2335; --line:#27304A;
+  --cobalt:#6E96FF; --cobalt-deep:#A8C0FF; --cobalt-tint:#172347;
+  --amber:#F5A524; --amber-deep:#FFC861; --amber-tint:#2A2110;
+  --shadow:0 1px 2px rgba(0,0,0,.45), 0 8px 28px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+[data-theme="dark"] .bar{background:rgba(14,19,32,.82)}
+[data-theme="dark"] .promo-pill{background:#fff;color:#13161D}
+[data-theme="dark"] .promo-pill:hover{background:#E8EAF0}
+[data-theme="dark"] .promo-pill code{color:#9A6206}
+.theme-btn{background:none;border:1px solid var(--line);border-radius:999px;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;line-height:1;transition:transform .15s ease}
+.theme-btn:hover{transform:translateY(-1px)}
+html,body{transition:background .25s ease,color .25s ease}
