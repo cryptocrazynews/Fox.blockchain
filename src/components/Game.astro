@@ -78,6 +78,7 @@ const shellStyle = variant === "hero"
   #hud{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.32);padding:6px 12px;border-radius:9px;pointer-events:none}
   #hud span{color:var(--amber)}
   #pilot-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#fff;background:rgba(27,77,255,.85);padding:7px 14px;border-radius:99px;pointer-events:none;white-space:nowrap}
+  #swan-banner.up{background:linear-gradient(90deg,#0E7A4F,#16A34A)}
   #swan-banner{position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#B4231D,#E0521B);color:#fff;font-weight:700;font-size:14px;text-align:center;padding:11px 14px;pointer-events:none;z-index:5;box-shadow:0 4px 16px rgba(0,0,0,.3);animation:swanIn .25s ease}
   @keyframes swanIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
   #swan-banner[hidden],#pilot-tip[hidden],#hud[hidden]{display:none!important}
@@ -136,7 +137,34 @@ const shellStyle = variant === "hero"
   ];
   var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 240;
   var nextSwan = 0, swanFx = null, shake = 0, swan168Done = false, firstSwan = true;
-  var GENERIC = ["某交易所無預警跑路","SEC 一紙訴狀","巨鯨倒貨砸盤","穩定幣脫鉤了","交易所被駭客提光","Fed 升息超出預期"];
+  var capBot = function(m){ return Math.min(m, 800); };
+  // 黑天鵝事件池：每場遊戲每個事件只會出現一次
+  var SWAN_POOL = [];
+  var SWAN_EVENTS = [
+    { id:"trump",    fx:"trump", banner:"川普發了一篇推文，全部幣種暴跌 44%！",
+      apply:function(){ player.mass=Math.max(12,player.mass*0.56); eachBot(function(b){ if(!b.isBoss) b.mass=Math.max(6,b.mass*0.56); }); } },
+    { id:"ftx",      fx:"ftx",   banner:"FTX 又暴雷了，全場蒸發 40%！",
+      apply:function(){ player.mass=Math.max(12,player.mass*0.6); eachBot(function(b){ if(!b.isBoss) b.mass=Math.max(6,b.mass*0.6); }); } },
+    { id:"mstr_buy", fx:"up",    banner:"微策略加倉比特幣，BTC 上漲 1%！",
+      apply:function(){ player.mass*=1.01; } },
+    { id:"mstr_sell",fx:"down",  banner:"微策略賣出比特幣，BTC 暴跌 10%！",
+      apply:function(){ player.mass=Math.max(12,player.mass*0.90); } },
+    { id:"etf",      fx:"up",    banner:"比特幣現貨 ETF 通過，所有幣種上漲 10%！",
+      apply:function(){ player.mass*=1.10; eachBot(function(b){ if(!b.isBoss) b.mass=capBot(b.mass*1.10); }); } },
+    { id:"doge",     fx:"up",    banner:"馬斯克送狗狗幣上月球，DOGE 暴漲 300%！",
+      apply:function(){ eachBot(function(b){ if(b.sym==="DOGE") b.mass=capBot(b.mass*4); }); } },
+    { id:"ada",      fx:"down",  banner:"ADA 創辦人說要休息一下，ADA 暴跌 69%！",
+      apply:function(){ eachBot(function(b){ if(b.sym==="ADA") b.mass=Math.max(6,b.mass*0.31); }); } },
+    { id:"sui",      fx:"up",    banner:"氣候異常全球下暴雨，SUI 暴漲 1111%！",
+      apply:function(){ eachBot(function(b){ if(b.sym==="SUI") b.mass=capBot(b.mass*12.11); }); } },
+    { id:"vitalik",  fx:"down",  banner:"Vitalik 交女友了，ETH 暴跌 6.9%！",
+      apply:function(){ eachBot(function(b){ if(b.isBoss) b.mass=Math.max(200,b.mass*0.931); }); } },
+    { id:"altseason",fx:"up",    banner:"山寨季來了！比特幣以外全部暴漲 33%！",
+      apply:function(){ eachBot(function(b){ if(!b.isBoss) b.mass=capBot(b.mass*1.33); }); } },
+    { id:"clarity",  fx:"up",    banner:"Clarity Act 法案通過，比特幣大漲 20%！",
+      apply:function(){ player.mass*=1.20; } }
+  ];
+  function eachBot(fn){ for(var i=0;i<bots.length;i++) fn(bots[i]); }
 
   // 川普頭像（迷因圖，之後把 /swan-trump.png 換成你的圖即可）
   var trumpImg = new Image();
@@ -176,37 +204,26 @@ const shellStyle = variant === "hero"
     cam = { x:player.x, y:player.y, s:1 };
     pilotTip.hidden = false;
     swanFx = null; shake = 0; swan168Done = false; firstSwan = true;
+    SWAN_POOL = SWAN_EVENTS.slice();                                 // 重置：每場每事件只出現一次
     nextSwan = performance.now() + rand(18000, 26000);              // 第一次較早，確保看得到
   }
 
   function triggerSwan(){
-    var roll = Math.random();
-    var type = roll<0.34 ? "trump" : (roll<0.67 ? "ftx" : "generic");
-    var ev, pct;
-    if(type==="trump"){ ev="川普發動關稅制裁"; pct=50; }
-    else if(type==="ftx"){ ev="FTX 又暴雷了"; pct=40; }
-    else { ev=GENERIC[(Math.random()*GENERIC.length)|0]; pct=Math.round(rand(0.40,0.60)*100); }
-    swanFx = { type:type, t0:performance.now(), dur:2800, applied:false, ev:ev, pct:pct,
+    if(SWAN_POOL.length===0) return;                                 // 事件用完就不再出現
+    var ev = SWAN_POOL.splice((Math.random()*SWAN_POOL.length)|0, 1)[0];
+    swanFx = { type:ev.fx, evObj:ev, t0:performance.now(), dur:2800, applied:false,
                fromX:(Math.random()<0.5?-0.25:1.25), fromY:rand(0.1,0.9), shards:null };
     nextSwan = performance.now() + (firstSwan ? rand(28000, 42000) : rand(35000, 60000));
     firstSwan = false;
   }
 
-  function applySwanCut(type, pct){
-    if(type==="trump"){
-      player.mass = Math.max(12, player.mass*0.5);          // 川普只砸玩家
-    } else {
-      var cut = pct/100;
-      player.mass = Math.max(12, player.mass*(1-cut));
-      for(var i=0;i<bots.length;i++){ if(bots[i].isBoss) continue; bots[i].mass = Math.max(6, bots[i].mass*(1-cut)); }
-    }
+  function applySwanCut(ev){
+    try{ ev.apply(); }catch(e){}
     shake = 22;
     var banner = document.getElementById("swan-banner");
     if(banner){
-      var msg = type==="trump" ? ("🦢 黑天鵝！川普發文，你的市值砍半！")
-              : type==="ftx"   ? ("🦢 黑天鵝！FTX 暴雷，全場蒸發 "+pct+"%！")
-              :                  ("🦢 黑天鵝！"+swanFx.ev+"，全場暴跌 "+pct+"%！");
-      banner.textContent = msg;
+      banner.textContent = "\uD83E\uDDA2 \u9ED1\u5929\u9D5D\uFF01" + ev.banner;
+      banner.className = (ev.fx==="up") ? "up" : "";
       banner.hidden = false;
       clearTimeout(banner._t);
       banner._t = setTimeout(function(){ banner.hidden = true; }, 3000);
@@ -238,7 +255,7 @@ const shellStyle = variant === "hero"
   });
   window.addEventListener("keyup",function(e){ keys[(e.key||"").toLowerCase()]=false; });
 
-  function speedFor(mass){ return Math.max(2.4, 6.5 - Math.sqrt(mass)*0.1); }
+  function speedFor(mass){ return Math.max(3.0, 9.2 - Math.sqrt(mass)*0.14); }
 
   function autopilot(){
     var pr = m2r(player.mass);
@@ -311,7 +328,7 @@ const shellStyle = variant === "hero"
     if(swanFx){
       var se = now - swanFx.t0;
       var impactT = swanFx.type==="trump" ? 1050 : (swanFx.type==="ftx" ? 620 : 420);
-      if(!swanFx.applied && se >= impactT){ swanFx.applied = true; applySwanCut(swanFx.type, swanFx.pct); }
+      if(!swanFx.applied && se >= impactT){ swanFx.applied = true; applySwanCut(swanFx.evObj); }
       if(se > swanFx.dur) swanFx = null;
     }
     if(shake > 0.3) shake *= 0.9; else shake = 0;
@@ -456,13 +473,20 @@ const shellStyle = variant === "hero"
           ctx.restore();
         }
       }
-    } else { // generic：紅光暈 + 下墜紅箭頭
+    } else if(swanFx.type==="down"){ // 紅光暈 + 下墜紅箭頭
       var f3=e/swanFx.dur;
       var g=ctx.createRadialGradient(cx,cy,Math.min(W,H)*0.2,cx,cy,Math.max(W,H)*0.7);
       g.addColorStop(0,"rgba(200,30,30,0)"); g.addColorStop(1,"rgba(170,10,10,"+(0.5*(1-f3))+")");
       ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
       ctx.fillStyle="rgba(255,70,70,"+(0.8*(1-f3))+")"; ctx.font="900 64px sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
       for(var ai=0;ai<5;ai++){ var ax=(ai+0.5)*W/5; var ay=((e*0.5+ai*120)%(H+120))-60; ctx.fillText("▼",ax,ay); }
+    } else { // up：綠光暈 + 上升綠箭頭
+      var f4=e/swanFx.dur;
+      var g2=ctx.createRadialGradient(cx,cy,Math.min(W,H)*0.2,cx,cy,Math.max(W,H)*0.7);
+      g2.addColorStop(0,"rgba(20,180,90,0)"); g2.addColorStop(1,"rgba(10,140,70,"+(0.5*(1-f4))+")");
+      ctx.fillStyle=g2; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle="rgba(60,230,140,"+(0.8*(1-f4))+")"; ctx.font="900 64px sans-serif"; ctx.textAlign="center"; ctx.textBaseline="middle";
+      for(var au=0;au<5;au++){ var ux=(au+0.5)*W/5; var uy=H+60-((e*0.5+au*120)%(H+120)); ctx.fillText("▲",ux,uy); }
     }
   }
 
