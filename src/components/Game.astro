@@ -52,6 +52,7 @@ const shellStyle = variant === "hero"
   <div id="hud" hidden>市值 <span id="hud-score">0</span></div>
   <div id="pilot-tip" hidden>🤖 自動駕駛中 — 移動滑鼠／按方向鍵／點一下 接手</div>
   <div id="swan-banner" hidden></div>
+  <img id="vitalik-gif" src="/vitalik.gif" alt="" hidden />
 </div>
 
 <style>
@@ -82,6 +83,8 @@ const shellStyle = variant === "hero"
   #swan-banner{position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#B4231D,#E0521B);color:#fff;font-weight:700;font-size:14px;text-align:center;padding:11px 14px;pointer-events:none;z-index:5;box-shadow:0 4px 16px rgba(0,0,0,.3);animation:swanIn .25s ease}
   @keyframes swanIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
   #swan-banner[hidden],#pilot-tip[hidden],#hud[hidden]{display:none!important}
+  #vitalik-gif{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(58%,300px);border-radius:14px;border:3px solid #627EEA;box-shadow:0 10px 40px rgba(0,0,0,.55);pointer-events:none;z-index:6;animation:swanIn .25s ease}
+  #vitalik-gif[hidden]{display:none!important}
   @media(prefers-reduced-motion:reduce){.ov-btn:hover{transform:none}}
 </style>
 
@@ -137,6 +140,7 @@ const shellStyle = variant === "hero"
   ];
   var IMMUNE_MS = 4000, GRACE_MS = 4000, BOT_MASS_CAP = 240;
   var nextSwan = 0, swanFx = null, shake = 0, swan168Done = false, firstSwan = true;
+  var marketNext = 0, marketTurn = 0;
   var capBot = function(m){ return Math.min(m, 800); };
   // 黑天鵝事件池：每場遊戲每個事件只會出現一次
   var SWAN_POOL = [];
@@ -158,7 +162,7 @@ const shellStyle = variant === "hero"
     { id:"sui",      fx:"up",    banner:"氣候異常全球下暴雨，SUI 暴漲 1111%！",
       apply:function(){ eachBot(function(b){ if(b.sym==="SUI") b.mass=capBot(b.mass*12.11); }); } },
     { id:"vitalik",  fx:"down",  banner:"Vitalik 交女友了，ETH 暴跌 6.9%！",
-      apply:function(){ eachBot(function(b){ if(b.isBoss) b.mass=Math.max(200,b.mass*0.931); }); } },
+      apply:function(){ eachBot(function(b){ if(b.isBoss) b.mass=Math.max(200,b.mass*0.931); }); showVitalikGif(); } },
     { id:"altseason",fx:"up",    banner:"山寨季來了！比特幣以外全部暴漲 33%！",
       apply:function(){ eachBot(function(b){ if(!b.isBoss) b.mass=capBot(b.mass*1.33); }); } },
     { id:"clarity",  fx:"up",    banner:"Clarity Act 法案通過，比特幣大漲 20%！",
@@ -206,6 +210,40 @@ const shellStyle = variant === "hero"
     swanFx = null; shake = 0; swan168Done = false; firstSwan = true;
     SWAN_POOL = SWAN_EVENTS.slice();                                 // 重置：每場每事件只出現一次
     nextSwan = performance.now() + rand(18000, 26000);              // 第一次較早，確保看得到
+    marketNext = performance.now() + rand(20000, 28000);            // 牛熊週期
+    marketTurn = 0;
+    var vg=document.getElementById("vitalik-gif"); if(vg) vg.hidden=true;
+  }
+
+  function showSwanBanner(text, up){
+    var b = document.getElementById("swan-banner");
+    if(!b) return;
+    b.textContent = text; b.className = up ? "up" : ""; b.hidden = false;
+    clearTimeout(b._t); b._t = setTimeout(function(){ b.hidden = true; }, 3000);
+  }
+
+  function showVitalikGif(){
+    var g = document.getElementById("vitalik-gif");
+    if(!g) return;
+    g.hidden = false;
+    clearTimeout(g._t); g._t = setTimeout(function(){ g.hidden = true; }, 2800);
+  }
+
+  // 牛市 / 熊市：依週期輪流觸發（與黑天鵝獨立）
+  function triggerMarket(){
+    var bull = (marketTurn % 2 === 0); marketTurn++;
+    if(bull){
+      player.mass *= 1.20;
+      eachBot(function(b){ if(!b.isBoss) b.mass = capBot(b.mass*1.20); });
+      showSwanBanner("\uD83D\uDC02 \u725B\u5E02\u4F86\u4E86\uFF01\u6240\u6709\u5E63\u7A2E\u66B4\u6F32 20%\uFF01", true);
+    } else {
+      player.mass = Math.max(12, player.mass*0.70);
+      eachBot(function(b){ if(!b.isBoss) b.mass = Math.max(6, b.mass*0.10); });
+      showSwanBanner("\uD83D\uDC3B \u718A\u5E02\u4F86\u4E86\uFF01\u6BD4\u7279\u5E63 -30%\uFF0C\u5176\u4ED6\u5E63\u7A2E -90%\uFF01", false);
+    }
+    shake = bull ? 10 : 22;
+    if(!swanFx){ swanFx = { type: bull?"up":"down", evObj:null, t0:performance.now(), dur:1600, applied:true, fromX:0, fromY:0, shards:null }; }
+    marketNext = performance.now() + rand(22000, 32000);
   }
 
   function triggerSwan(){
@@ -220,14 +258,7 @@ const shellStyle = variant === "hero"
   function applySwanCut(ev){
     try{ ev.apply(); }catch(e){}
     shake = 22;
-    var banner = document.getElementById("swan-banner");
-    if(banner){
-      banner.textContent = "\uD83E\uDDA2 \u9ED1\u5929\u9D5D\uFF01" + ev.banner;
-      banner.className = (ev.fx==="up") ? "up" : "";
-      banner.hidden = false;
-      clearTimeout(banner._t);
-      banner._t = setTimeout(function(){ banner.hidden = true; }, 3000);
-    }
+    showSwanBanner("\uD83E\uDDA2 \u9ED1\u5929\u9D5D\uFF01" + ev.banner, ev.fx==="up");
   }
 
   function takeControl(){
@@ -325,6 +356,8 @@ const shellStyle = variant === "hero"
       if(!swan168Done && player.mass >= 168){ swan168Done = true; triggerSwan(); }
       else if(now > nextSwan){ triggerSwan(); }
     }
+    // 牛市 / 熊市 週期（與黑天鵝獨立，可同時發生）
+    if(running && !grace && now > marketNext){ triggerMarket(); }
     if(swanFx){
       var se = now - swanFx.t0;
       var impactT = swanFx.type==="trump" ? 1050 : (swanFx.type==="ftx" ? 620 : 420);
@@ -547,6 +580,7 @@ const shellStyle = variant === "hero"
     cta.href=ex.url; cta.setAttribute("data-track","game_death_cta:"+ex.id);
     hud.hidden=true; pilotTip.hidden=true;
     var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
+    var vg=document.getElementById("vitalik-gif"); if(vg) vg.hidden=true;
     deadScreen.hidden=false;
   }
 
@@ -564,6 +598,7 @@ const shellStyle = variant === "hero"
     if(wcta){ wcta.textContent="\u6211\u8981\u53bb "+ex.name+" \u8cb7\u4e00\u9846\u771f\u7684 \u20BF \u2197"; wcta.href=ex.url; wcta.setAttribute("data-track","game_win_cta:"+ex.id); }
     hud.hidden=true; pilotTip.hidden=true;
     var sb=document.getElementById("swan-banner"); if(sb) sb.hidden=true;
+    var vg2=document.getElementById("vitalik-gif"); if(vg2) vg2.hidden=true;
     var ws=document.getElementById("win-screen"); if(ws) ws.hidden=false;
   }
 
