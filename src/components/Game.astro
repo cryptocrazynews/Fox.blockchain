@@ -17,7 +17,11 @@ const shellStyle = variant === "hero"
       <div class="ov-glyph">₿</div>
       <h2>比特幣大作戰</h2>
       <p class="ov-sub">吃幣長大、躲開大幣。終極目標：吃掉<b>以太幣大魔王 ETH</b>，登頂市值之王！<br>小心隨機降臨的黑天鵝事件。</p>
-      <button class="ov-btn primary" id="btn-start">開始遊戲</button>
+      <div class="ov-actions">
+        <button class="ov-btn easy" id="btn-easy">簡易版</button>
+        <button class="ov-btn primary" id="btn-normal">正常版</button>
+      </div>
+      <p class="ov-hint">簡易版：整體速度較慢，新手好上手</p>
     </div>
   </div>
 
@@ -73,6 +77,7 @@ const shellStyle = variant === "hero"
   .ov-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:none;border-radius:11px;font-weight:700;font-size:15px;padding:12px 22px;cursor:pointer;font-family:var(--sans);transition:transform .15s ease}
   .ov-btn:hover{transform:translateY(-2px)}
   .ov-btn.primary{background:var(--cobalt);color:#fff}
+  .ov-btn.easy{background:#1f9d6b;color:#fff}
   .ov-btn.cta{background:var(--amber);color:#231600;width:100%;margin-bottom:14px;font-size:15.5px}
   .ov-btn.ghost{background:rgba(255,255,255,.1);color:#fff}
   .ov-actions{display:flex;gap:10px;justify-content:center}
@@ -166,6 +171,7 @@ const shellStyle = variant === "hero"
   ];
   function eachBot(fn){ for(var i=0;i<bots.length;i++) fn(bots[i]); }
 
+  // 川普頭像（迷因圖，之後把 /swan-trump.png 換成你的圖即可）
   var trumpImg = new Image();
   var trumpReady = false;
   trumpImg.onload = function(){ trumpReady = true; };
@@ -220,8 +226,17 @@ const shellStyle = variant === "hero"
   function showEventMedia(src){
     var g = document.getElementById("event-media");
     if(!g) return;
-    g.src = src;
+    var tried = false;
+    g.onerror = function(){
+      if(tried){ g.hidden = true; return; }
+      tried = true;
+      // 大小寫容錯：自動再試一次相反大小寫的檔名（例如 ada.png ↔ ADA.png）
+      var i = src.lastIndexOf("/"); var dir = src.slice(0,i+1); var file = src.slice(i+1);
+      var dot = file.lastIndexOf("."); var nm = file.slice(0,dot); var ext = file.slice(dot);
+      g.src = dir + (nm===nm.toLowerCase() ? nm.toUpperCase() : nm.toLowerCase()) + ext;
+    };
     g.hidden = false;
+    g.src = src;
     clearTimeout(g._t); g._t = setTimeout(function(){ g.hidden = true; }, 2800);
   }
 
@@ -286,7 +301,8 @@ const shellStyle = variant === "hero"
   });
   window.addEventListener("keyup",function(e){ keys[(e.key||"").toLowerCase()]=false; });
 
-  function speedFor(mass){ return Math.max(2.1, 6.4 - Math.sqrt(mass)*0.1); }
+  var speedMul = 1;
+  function speedFor(mass){ return (Math.max(2.1, 6.4 - Math.sqrt(mass)*0.1)) * speedMul; }
 
   function autopilot(){
     var pr = m2r(player.mass);
@@ -556,7 +572,9 @@ const shellStyle = variant === "hero"
     raf=requestAnimationFrame(loop);
   }
 
-  function start(){
+  function start(mode){
+    if(mode==="easy") speedMul = 0.65;
+    else if(mode==="normal") speedMul = 1;
     init(); running=true;
     startScreen.hidden=true; deadScreen.hidden=true; hud.hidden=false;
     var ws=document.getElementById("win-screen"); if(ws) ws.hidden=true;
@@ -602,7 +620,8 @@ const shellStyle = variant === "hero"
     var ws=document.getElementById("win-screen"); if(ws) ws.hidden=false;
   }
 
-  document.getElementById("btn-start").addEventListener("click",start);
+  document.getElementById("btn-easy").addEventListener("click",function(){ start("easy"); });
+  document.getElementById("btn-normal").addEventListener("click",function(){ start("normal"); });
   document.getElementById("btn-retry").addEventListener("click",start);
   var bw=document.getElementById("btn-winretry"); if(bw) bw.addEventListener("click",start);
 })();
