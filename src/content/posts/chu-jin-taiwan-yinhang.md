@@ -1,4 +1,4 @@
-[chu-jin-taiwan-yinhang.md](https://github.com/user-attachments/files/28938821/chu-jin-taiwan-yinhang.md)
+
 ---
 title: "出金到台灣銀行要多久？2026 完整流程與時間實測"
 category: "出入金"
