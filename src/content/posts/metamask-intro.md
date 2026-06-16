@@ -3,7 +3,7 @@ title: "MetaMask 是什麼？小狐狸錢包安裝教學與 Rewards 點數計畫
 category: "錢包"
 excerpt: "從零認識小狐狸錢包（MetaMask）：它能做什麼、桌面與手機怎麼安裝、助記詞如何安全保管，以及 Rewards 點數計畫的真實機制、$MASK 代幣傳言與防詐重點，一篇看懂。"
 answer: "MetaMask（小狐狸錢包）是全球最多人用的自我保管加密錢包，你自己掌握助記詞、資產不歸任何公司控管，支援以太坊、Solana 與比特幣等多鏈。安裝只需下載官方擴充或 App、建立錢包並備份助記詞。Rewards 是它的點數計畫，靠交易、消費、推薦累積點數換手續費折扣與代幣分配，採季度制、規則每季調整，現行內容以 App 內為準。"
-author: "編輯部"
+author: "小狐狸"
 pubDate: 2026-06-16
 glyph: "🦊"
 faqs:
@@ -22,8 +22,6 @@ faqs:
   - q: "怎麼分辨真假 MetaMask Rewards 網站？"
     a: "只認官方網域 metamask.io，從 App 內的 Rewards 分頁進入最安全。任何要你「輸入助記詞才能領獎」「連錢包後簽署不明交易領 $100」的網站都是釣魚，官方絕不會要你提供助記詞。"
 ---
-
-# MetaMask 是什麼？小狐狸錢包安裝教學與 Rewards 點數計畫完整指南
 
 **先給你一句話總結：MetaMask（中文圈暱稱「小狐狸錢包」）是全球最多人使用的自我保管加密錢包——你自己掌握助記詞、資產不歸任何公司控管，現在更已支援以太坊、Solana 與原生比特幣等多條鏈。** 安裝只要下載官方擴充功能或手機 App、建立錢包、備份好助記詞就完成；而它的 Rewards 點數計畫，則是讓你用平常的交易與消費換取手續費折扣與代幣分配的回饋機制。
 
@@ -123,6 +121,8 @@ Season 1 採七個等級，從最低的 Origin（0 點、無獎勵）一路往�
 3. 連結你要納入計算的帳戶。
 4. 開始用錢包做你「本來就會做」的活動，點數會自動累積，可在 Rewards 分頁即時查看等級與已解鎖福利。
 
+> 🦊 **用我的邀請連結加入 Rewards**：透過 <a href="https://link.metamask.io/rewards?referral=R2Z63B" target="_blank" rel="noopener noreferrer" data-track="article_referral:metamask">這個連結加入 MetaMask Rewards（邀請碼 R2Z63B）</a>，你我都能獲得推薦回饋。記得只從官方 `metamask.io` 與 App 內操作，邀請連結只是幫你帶入推薦關係，不會要你的助記詞。
+
 ---
 
 ## 四、關於 $MASK 代幣傳言：誠實說清楚
@@ -162,7 +162,7 @@ MetaMask 太熱門，連帶釣魚詐騙也特別多。光是搜尋「MetaMask Re
 
 如果你看到這裡才發現自己連第一步都還沒走，正確順序是：
 
-1. **先在合法、可台幣出入金的交易所開戶**，完成身分驗證。
+1. **先在合法、可台幣出入金的交易所開戶**，完成身分驗證。推薦用 <a href="https://max.maicoin.com/?r=35d1aa4c" target="_blank" rel="noopener noreferrer" data-track="article_referral:max">MAX（推薦碼 35d1aa4c）</a> 或 <a href="https://www.bitopro.com/users/sign_up?referrer=9066419187" target="_blank" rel="noopener noreferrer" data-track="article_referral:bitopro">BitoPro（推薦碼 9066419187）</a>，透過我的推薦連結註冊還能享手續費折扣。
 2. **用台幣入金、買進你的第一筆加密貨幣。**
 3. **照本文教學安裝 MetaMask、建立錢包、備份好助記詞。**
 4. **把交易所的幣轉一小筆到 MetaMask**，熟悉自我保管的操作。
