@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/posts/shou-xu-fei-zen-me-suan",
+      "destination": "/posts/trading-fees",
+      "permanent": true
+    },
+    {
+      "source": "/posts/shou-xu-fei-zen-me-suan/",
+      "destination": "/posts/trading-fees/",
+      "permanent": true
+    }
+  ]
+}
