@@ -4,7 +4,7 @@ category: "錢包與 DeFi"
 excerpt: "最大的流動性質押協議之一：質押 ETH 賺收益與點數，還有走 DeFi 路線的加密信用卡。"
 answer: "EtherFi（ether.fi）是以太坊上最大的流動性再質押協議之一：存入 ETH 可獲得質押收益並保持資金流動性，透過推薦連結質押，質押者與推薦人雙方都能獲得忠誠點數。它也推出 DeFi 原生的 Cash 信用卡（推薦人可分得被推薦人消費額一定比例的回饋），但卡片有地區限制。"
 platform: "etherfi"
-author: "編輯部"
+author: "小狐狸"
 pubDate: 2026-06-10
 updatedDate: 2026-06-10
 glyph: "Ξ"
@@ -25,6 +25,10 @@ faqs:
 
 簡單講:你把 ETH 存進協議,它幫你做質押賺取以太坊的質押收益,同時給你一張流動性憑證(eETH),這張憑證還能繼續拿去 DeFi 裡使用——這就是「流動性質押」,魚與熊掌(收益與流動性)兼得的設計。EtherFi 是這個賽道規模最大的協議之一。
 
+> ▶️ **影片解說**：直接看我錄的版本，搭配下面文字一起看更清楚。
+
+<div style="position:relative;padding-top:56.25%;margin:24px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000"><iframe src="https://www.youtube-nocookie.com/embed/M6CHChvoD_Y" title="小狐狸區塊鏈 ether.fi 解說" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+
 ## 推薦機制:質押點數
 
 透過推薦連結質押 ETH,**質押的人和推薦的人雙方都能獲得忠誠點數**。點數是協議的激勵機制,歷史上曾與空投和會員權益掛鉤——但要老實說:點數的未來價值沒有保證,把它當 bonus,不要當投資理由。
@@ -32,6 +36,10 @@ faqs:
 ## Cash 信用卡
 
 EtherFi 也推出了 DeFi 原生的 Cash 卡:資產不用先賣掉、以鏈上資產為基礎進行消費,推薦人還能分得被推薦人消費金額一定比例的回饋(有上限與期限)。兩個務實提醒:**卡片有地區限制**(台灣不一定開放,申辦前先確認),且它的現金回饋活動是一檔一檔跑的,檔期外的宣傳數字不要當真。
+
+> ▶️ **影片實測**：Cash 卡與質押操作的實際畫面，看影片更直覺。
+
+<div style="position:relative;padding-top:56.25%;margin:24px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000"><iframe src="https://www.youtube-nocookie.com/embed/Dk89RZ__1Nk" title="小狐狸區塊鏈 ether.fi Cash 卡實測" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
 
 ## 風險要講清楚
 
