@@ -29,22 +29,16 @@ faqs:
 
 <div style="position:relative;padding-top:56.25%;margin:24px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000"><iframe src="https://www.youtube-nocookie.com/embed/M6CHChvoD_Y" title="小狐狸區塊鏈 ether.fi 解說" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
 
-## 推薦機制:質押點數
-
-透過推薦連結質押 ETH,**質押的人和推薦的人雙方都能獲得忠誠點數**。點數是協議的激勵機制,歷史上曾與空投和會員權益掛鉤——但要老實說:點數的未來價值沒有保證,把它當 bonus,不要當投資理由。
 
 ## Cash 信用卡
 
-EtherFi 也推出了 DeFi 原生的 Cash 卡:資產不用先賣掉、以鏈上資產為基礎進行消費,推薦人還能分得被推薦人消費金額一定比例的回饋(有上限與期限)。兩個務實提醒:**卡片有地區限制**(台灣不一定開放,申辦前先確認),且它的現金回饋活動是一檔一檔跑的,檔期外的宣傳數字不要當真。
+EtherFi 也推出了 DeFi 原生的 Cash 卡:資產不用先賣掉、以鏈上資產為基礎進行消費,推薦人還能分得被推薦人消費金額一定比例的回饋(有上限與期限)。它的現金回饋活動是一檔一檔跑的,檔期外的宣傳數字不要當真。
 
 > ▶️ **影片實測**：Cash 卡與質押操作的實際畫面，看影片更直覺。
 
 <div style="position:relative;padding-top:56.25%;margin:24px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000"><iframe src="https://www.youtube-nocookie.com/embed/Dk89RZ__1Nk" title="小狐狸區塊鏈 ether.fi Cash 卡實測" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
 
-## 風險要講清楚
-
-EtherFi 是鏈上協議,沒有客服幫你撤回打錯的交易。三個主要風險:智能合約風險(程式漏洞)、eETH 與 ETH 的脫鉤風險、以及 ETH 本身的價格波動。**新手請先把前面的基本功(錢包、小額測試)練熟再來。**
 
 ## 我們的建議
 
-定位是「進階選修」:適合長期看好以太坊、本來就打算持有 ETH 的人,把閒置的 ETH 拿來質押賺收益順便累點。完全新手請先從交易所與錢包開始。
+定位是「進階選修」:如果你只是新手想要先入手加密貨幣，可以透過交易所買幣就好。如果你已經在加密貨幣上盈利，想要改善生活品質的話，那 EtherFi 的信用卡就非常適合你，也可以享受現在還不用報稅的紅利。
