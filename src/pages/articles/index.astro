@@ -1,0 +1,100 @@
+---
+import Base from "../../layouts/Base.astro";
+import { SITE } from "../../config";
+import { getCollection } from "astro:content";
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
+  (a, b) =>
+    (b.data.updatedDate ?? b.data.pubDate).valueOf() -
+    (a.data.updatedDate ?? a.data.pubDate).valueOf()
+);
+
+// 分類整併：把分散的分類名稱對應到統一的顯示名稱
+const ALIAS: Record<string, string> = {
+  "錢包": "錢包與 DeFi",
+  "錢包與 DeFi": "錢包與 DeFi",
+  "交易所評測": "海外交易所",
+  "海外交易所": "海外交易所",
+  "台灣交易所": "台灣交易所",
+  "出入金": "出入金",
+  "手續費比較": "手續費比較",
+};
+const norm = (c: string) => ALIAS[c] ?? c;
+
+// 分類顯示順序與圖示
+const ORDER: { name: string; glyph: string; desc: string }[] = [
+  { name: "台灣交易所", glyph: "🇹🇼", desc: "支援台幣出入金的本土交易所評測" },
+  { name: "海外交易所", glyph: "🌐", desc: "全球主流交易所介紹與比較" },
+  { name: "出入金", glyph: "💵", desc: "台幣入金、出金到銀行的完整流程" },
+  { name: "手續費比較", glyph: "🧮", desc: "手續費怎麼算、怎麼省" },
+  { name: "錢包與 DeFi", glyph: "🦊", desc: "自我保管錢包、助記詞與鏈上應用" },
+];
+
+// 依整併後分類分組
+const groups = new Map<string, typeof posts>();
+for (const p of posts) {
+  const key = norm(p.data.category);
+  if (!groups.has(key)) groups.set(key, [] as unknown as typeof posts);
+  (groups.get(key) as any).push(p);
+}
+// 先照 ORDER，再補上沒列到的分類
+const orderedNames = [
+  ...ORDER.map((o) => o.name).filter((n) => groups.has(n)),
+  ...[...groups.keys()].filter((n) => !ORDER.some((o) => o.name === n)),
+];
+const metaOf = (name: string) =>
+  ORDER.find((o) => o.name === name) ?? { name, glyph: "📄", desc: "" };
+---
+
+<Base title={`全部文章｜${SITE.name}`} description="小狐狸區塊鏈的所有加密貨幣教學文章，依分類整理：台灣交易所、海外交易所、出入金、手續費、錢包與 DeFi。">
+  <div class="wrap">
+    <header class="art-head">
+      <h1 class="art-title">全部文章</h1>
+      <p class="art-sub">共 {posts.length} 篇，依分類整理。用白話把加密貨幣講得簡單。</p>
+      <nav class="cat-nav">
+        {orderedNames.map((name) => (
+          <a href={`#${encodeURIComponent(name)}`}>{metaOf(name).glyph} {name}</a>
+        ))}
+      </nav>
+    </header>
+
+    {orderedNames.map((name) => {
+      const m = metaOf(name);
+      const list = groups.get(name)!;
+      return (
+        <section class="cat-block" id={name}>
+          <div class="cat-h">
+            <h2>{m.glyph} {name}</h2>
+            <span class="cat-count">{list.length} 篇</span>
+          </div>
+          {m.desc && <p class="cat-desc">{m.desc}</p>}
+          <div class="grid">
+            {list.map((p) => (
+              <a class="card" href={`/posts/${p.id}/`}>
+                <span class="cat">{p.data.category}</span>
+                <h4>{p.data.title}</h4>
+                <p class="ex">{p.data.excerpt}</p>
+                <span class="meta">更新於 {fmt(p.data.updatedDate ?? p.data.pubDate)}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+
+  <style>
+    .art-head{padding:40px 0 8px}
+    .art-sub{color:var(--muted);font-size:16px;margin:8px 0 0}
+    .cat-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+    .cat-nav a{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--ink);text-decoration:none;background:var(--surface);transition:transform .12s ease}
+    .cat-nav a:hover{transform:translateY(-2px)}
+    .cat-block{padding:26px 0 6px;scroll-margin-top:80px}
+    .cat-h{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+    .cat-h h2{font-size:22px;margin:0}
+    .cat-count{font-family:var(--mono);font-size:13px;color:var(--muted)}
+    .cat-desc{color:var(--muted);font-size:14.5px;margin:6px 0 16px}
+  </style>
+</Base>
