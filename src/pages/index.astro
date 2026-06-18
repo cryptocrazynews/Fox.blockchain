@@ -17,8 +17,9 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
     (a.data.updatedDate ?? a.data.pubDate).valueOf()
 );
 const [lead, ...rest] = posts;
+const recent = rest.slice(0, 6);
 ---
- 
+
 <Base>
   <section class="hero">
     <div class="wrap hero-grid">
@@ -64,8 +65,8 @@ const [lead, ...rest] = posts;
           <h3>最新文章</h3>
           <span>{posts.length} 篇</span>
         </div>
-        <div class="grid" style="padding-bottom:24px">
-          {rest.map((p) => (
+        <div class="grid">
+          {recent.map((p) => (
             <a class="card" href={`/posts/${p.id}/`}>
               <span class="cat">{p.data.category}</span>
               <h4>{p.data.title}</h4>
@@ -73,6 +74,9 @@ const [lead, ...rest] = posts;
               <span class="meta">更新於 {fmt(p.data.updatedDate ?? p.data.pubDate)}</span>
             </a>
           ))}
+        </div>
+        <div class="all-row">
+          <a class="all-btn" href="/articles/">瀏覽全部 {posts.length} 篇文章 →</a>
         </div>
       </>
     )}
@@ -85,5 +89,8 @@ const [lead, ...rest] = posts;
   .hero-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
   @media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:44px}}
   .hero-game-cap{font-family:var(--mono);font-size:12px;color:#909aa8;text-align:center;margin:12px 0 0;line-height:1.6}
+  .all-row{display:flex;justify-content:center;padding:8px 0 28px}
+  .all-btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;font-size:15px;text-decoration:none;transition:transform .12s ease,opacity .12s ease}
+  .all-btn:hover{transform:translateY(-2px);opacity:.9}
 </style>
 </Base>
