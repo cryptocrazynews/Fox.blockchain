@@ -1,20 +1,30 @@
+// ───────────────────────────────────────────────────────────
+//  全站設定 — 你主要要改的就是這個檔案
+// ───────────────────────────────────────────────────────────
 
 export const SITE = {
-
+  // 部署後請改成你的正式網址（影響 canonical 與 sitemap）
   url: "https://fox-blockchain.com",
   name: "小狐狸區塊鏈",
-  tagline: "用白話文把加密貨幣講得簡單。",
+  tagline: "台灣加密貨幣入門教學，用白話講到你會。",
   description:
-    "《小狐狸區塊鏈》官方網站：幣圈活動與優惠統整入口。交易所推薦碼、手續費折扣、新手入金教學、U 卡與錢包實測，一站搞定。",
+    "小狐狸區塊鏈｜台灣加密貨幣入門教學。用白話教你在合規交易所買比特幣、出入金、挑錢包、算手續費、避開詐騙，每一家都實測比較過。",
   author: "小狐狸",
   locale: "zh-TW",
   youtube: "https://www.youtube.com/@Fox.blockchain",
- 
-  youtubeChannelId: "UCMAy1wO8GDTZ8vFmOfFWzDg",
+  // YouTube 頻道 ID（UC 開頭）。填入後首頁會自動嵌入你最新的影片。
+  // 到 YouTube 工作室 → 設定 → 頻道 → 進階設定，複製「頻道 ID」貼進來。
+  youtubeChannelId: "",
 
-
+  // ── 分析工具（擇一或都用；留空 = 不載入）──
+  // Plausible：填你的網域，例 "fox-blockchain.com"
+  plausibleDomain: "",
+  // GA4：填你的評估 ID，例 "G-XXXXXXXXXX"
   gaId: "G-QM9443W2L9",
 
+  // ── 電子報（留空 = 首頁不顯示訂閱框）──
+  // 填表單服務的 action URL（如 Buttondown / Formspree），見 README
+  newsletterAction: "",
 };
 
 export interface Platform {
