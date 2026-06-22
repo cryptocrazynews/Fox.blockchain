@@ -244,3 +244,8 @@ img{max-width:100%}
 [data-theme="dark"] .cta .copy-btn{background:#fff;color:#13161D}
 [data-theme="dark"] .deal-go{background:#1B4DFF;color:#fff}
 html,body{transition:background .25s ease,color .25s ease}
+
+/* 文章內插圖 */
+.pm-fig{margin:28px 0;text-align:center}
+.pm-fig img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.pm-fig figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.6;text-align:center}
