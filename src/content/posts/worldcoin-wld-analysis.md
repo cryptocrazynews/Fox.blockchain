@@ -4,7 +4,7 @@ category: "市場分析"
 excerpt: "OpenAI 創辦人 Sam Altman 的 World（前 Worldcoin）到底值不值得關注？這篇用 2026 年 6 月最新公開數據，全面拆解 WLD 的定位、代幣機制、World ID 應用、用戶成長、拋壓結構與實際用途，用表格整理、附來源、區分事實與估計。"
 answer: "World（前 Worldcoin，代幣 WLD）是由 OpenAI 執行長 Sam Altman 共同創辦的「真人網路」專案，用 Orb 虹膜掃描發出可保護隱私的 World ID，目標是在 AI 時代證明「你是獨一無二的真人」。截至 2026 年中，已有超過 1,800 萬人完成 Orb 驗證、World App 用戶逾 3,400 萬。代幣面上，WLD 自 2024 年 3 月高點約 11 美元下跌約 95%，2026 年中約在 0.6 美元附近；2026 年 7 月 24 日將把每日解鎖量砍 43%（從約 510 萬枚降到約 290 萬枚）以緩解拋壓。它的最大隱憂是 World ID 用戶成長與 WLD 代幣需求之間的脫節，加上生物辨識資料的監理風險。屬高敘事、高風險的投機性資產，本文不構成投資建議。"
 author: "小狐狸"
-pubDate: 2026-06-24
+pubDate: 2026-06-25
 glyph: "🌐"
 faqs:
   - q: "Worldcoin 和 World 是同一個東西嗎？WLD 是什麼？"
