@@ -4,7 +4,7 @@ category: "市場分析"
 excerpt: "Michael Saylor 的 Strategy 借錢買了 84 萬顆比特幣，比特幣大跌時它會不會像散戶一樣被強制平倉？這篇用最新 SEC 財報數據，精準計算它的償債門檻、債務結構與真正的風險點，觀點多元、不偏多也不偏空。"
 answer: "嚴格說，Strategy（前 MicroStrategy）幾乎不可能像散戶那樣「被強制平倉」，因為它的債務絕大多數是無擔保可轉換債券，債主無權在比特幣下跌時直接沒收它的幣。截至 2026 年 5 月，它持有約 84.4 萬顆比特幣、平均成本約每顆 6.6 萬美元，可轉債本金約 67 億美元、外加約 155 億美元的特別股。真正的風險不是「爆倉」，而是 2027 至 2028 年的可轉債到期與投資人贖回權（put），若屆時比特幣低迷、股價低於轉換價、又無法再融資，可能被迫賣幣還債。多數分析認為它的破產門檻約在比特幣 1.5 萬美元以下，短期償債無虞，但高槓桿與再融資依賴是長期隱憂。本文為數據分析，非投資建議。"
 author: "小狐狸"
-pubDate: 2026-06-26
+pubDate: 2026-06-24
 glyph: "🏛️"
 faqs:
   - q: "Strategy（MSTR）會像散戶一樣被強制平倉嗎？"
@@ -21,6 +21,11 @@ faqs:
 
 Michael Saylor 的 Strategy（前 MicroStrategy）大概是加密圈最受爭議的存在。它借錢買進超過 84 萬顆比特幣，市值一度暴漲又暴跌。每當比特幣大跌，網路上就會出現同一個問題：「Strategy 要爆倉了嗎？它會不會被迫拋售，引發整個市場崩盤？」這篇用最新的 SEC 財報數據，精準拆解它的債務結構與真正的風險點。我會盡量客觀，把看多與看空的論點都攤開，最後給出我的判斷。先講最重要的一個觀念，它會顛覆很多人的直覺。
 
+<figure class="pm-fig">
+<img src="/mstr/01-hero.png" alt="Saylor 的比特幣帝國會不會爆倉：Strategy MSTR 數據拆解" loading="lazy" />
+<figcaption>Saylor 的比特幣帝國會不會爆倉？借錢買進 84 萬顆比特幣，用 SEC 財報精準計算債務結構、償債門檻與真正風險。</figcaption>
+</figure>
+
 ## 一、最關鍵的觀念：Strategy 沒有「爆倉」這個機制
 
 很多人把 Strategy 想像成一個開了高槓桿的散戶，覺得比特幣一跌破某個價位，它就會像合約被強平那樣瞬間爆倉。這個想像是錯的。
@@ -30,6 +35,12 @@ Michael Saylor 的 Strategy（前 MicroStrategy）大概是加密圈最受爭議
 「無擔保」三個字是重點。這代表債主借錢給 Strategy 時，並沒有拿它的比特幣當抵押品。所以就算比特幣跌到 2 萬美元，債主也無權衝進來沒收或強賣它的幣。如一份償債能力分析所說，與在 10 倍槓桿平台上的散戶不同，Strategy 不會面臨傳統意義的「保證金追繳」，多數債務是無擔保可轉債，意味著比特幣跌到低價時，債主也不能直接扣押比特幣（[CryptoTicker](https://cryptoticker.io/en/microstrategy-solvency-bitcoin-price-liquidations/)）。
 
 所以嚴格講，**Strategy 不會「爆倉」**。但這不代表它沒有風險。它的風險是另一種形式，藏在債券的「到期日」和「贖回權」裡。要看懂這個，得先看它到底持有什麼、欠了什麼。
+
+<figure class="pm-fig">
+<img src="/mstr/02-no-liquidation.png" alt="Strategy 債務多為無擔保可轉債，跌到 2 萬也不能沒收" loading="lazy" />
+<figcaption>顛覆直覺的第一課：它沒有「爆倉」這個機制。債務多為無擔保可轉債，債主沒拿比特幣當抵押品，跌到 2 萬也不能沒收。</figcaption>
+</figure>
+
 
 ## 二、精準數據：它持有什麼、欠了什麼
 
@@ -44,9 +55,19 @@ Michael Saylor 的 Strategy（前 MicroStrategy）大概是加密圈最受爭議
 | 永續特別股 | 約 155 億美元（名目） |
 | 美元現金儲備 | 約 8.71 億美元 |
 
+<figure class="pm-fig">
+<img src="/mstr/03-holdings-debt.png" alt="Strategy 持有 84.4 萬顆比特幣、欠可轉債 67 億與特別股 155 億" loading="lazy" />
+<figcaption>2026 年 5 月 SEC 揭露：持有 84.4 萬顆比特幣、平均成本 6.6 萬美元；欠可轉債 67 億、永續特別股 155 億美元，現金僅 8.7 億。</figcaption>
+</figure>
+
 資料來源：[Strategy 官方 SEC 8-K](https://www.sec.gov/Archives/edgar/data/0001050446/000119312526237907/mstr-ex99_1.htm)、[Phemex](https://phemex.com/academy/mstr-stock-2026)、[BitcoinTreasuries](https://bitbo.io/treasuries/microstrategy/)。
 
 先講一個好消息（對它而言）：它的比特幣平均成本約 6.6 萬美元，以 2026 年比特幣多在 6 萬至 8 萬美元的區間，它的比特幣部位整體大致在「打平到小賺」之間，並沒有大幅套牢。而且它在 2026 年 5 月還主動花 13.8 億美元現金，以約 8% 的折價買回了 15 億美元的 2029 年到期可轉債，把可轉債總額從 82 億美元降到 67 億美元（[Strategy 官方](https://www.sec.gov/Archives/edgar/data/0001050446/000119312526237907/mstr-ex99_1.htm)），這是主動降低槓桿的動作。
+
+<figure class="pm-fig">
+<img src="/mstr/04-retail-vs.png" alt="散戶槓桿會強制平倉，Strategy 無擔保不會被沒收" loading="lazy" />
+<figcaption>為什麼不一樣：散戶槓桿跌破保證金會被自動強制平倉；Strategy 是無擔保，債主不能強賣它的幣。</figcaption>
+</figure>
 
 ## 三、真正的風險點：2027 至 2028 的「債務牆」
 
@@ -56,6 +77,11 @@ Strategy 的可轉債不是永遠不用還的。每一批債券都有「到期�
 
 可轉債的運作邏輯是這樣：如果到期時 MSTR 股價「高於」轉換價，債主會選擇把債券換成股票（因為更值錢），Strategy 就不用付現金，只是稀釋股權。但如果股價「低於」轉換價，債主不會換股，會選擇行使 put、要求拿回現金本金。
 
+<figure class="pm-fig">
+<img src="/mstr/05-debt-wall.png" alt="Strategy 投資人贖回權集中在 2028 年的債務牆" loading="lazy" />
+<figcaption>不是爆倉，是時間：2027 至 2028 的債務牆，投資人贖回權集中在 2028 年，單一批債約等於一張 20 億美元支票。</figcaption>
+</figure>
+
 關鍵的轉換價數據（[Strategy SEC 文件](https://www.sec.gov/Archives/edgar/data/1050446/000119312525133801/d125757dfwp.htm)）：
 
 | 到期年 | 轉換價（約） | 投資人可贖回日 |
@@ -64,6 +90,11 @@ Strategy 的可轉債不是永遠不用還的。每一批債券都有「到期�
 | 2029（Dec） | 每股 672 美元 | 2028 年 6 月 |
 | 2030（0.625%） | 每股 150 美元 | 2028 年 3 月 |
 | 2030（0%） | 每股 433 美元 | 2028 年 3 月 |
+
+<figure class="pm-fig">
+<img src="/mstr/06-convert-fork.png" alt="MSTR 股價高於或低於轉換價的兩種結局" loading="lazy" />
+<figcaption>到期時股價決定命運：股價高於轉換價，債主轉股、不用付現金；股價低於轉換價，債主要回本金、必須付現金，現金不夠就可能賣幣。</figcaption>
+</figure>
 
 你會發現一個危險的組合：好幾批債券的投資人贖回權都集中在 2028 年。如果到了 2028 年，比特幣正好處於熊市低點、MSTR 股價跌破這些轉換價，那麼大量債主可能同時要求贖回現金。一份案例分析估算，光是 2030 年那批債，就可能讓 Strategy 在 2028 年得寫一張約 20 億美元的支票（[RexShares](https://www.rexshares.com/case-study-strategys-2030-convertible-bond/)）。
 
@@ -76,6 +107,12 @@ Strategy 的可轉債不是永遠不用還的。每一批債券都有「到期�
 這些特別股（STRK、STRF、STRC、STRD 等）每年要支付固定股息，是實實在在的現金流出。問題在於，Strategy 的軟體本業每季營收僅約 1.2 億美元、且陷入鉅額帳面虧損（2025 年第四季因比特幣公允價值下跌，帳面淨虧損達 124 億美元，[Phemex](https://phemex.com/academy/mstr-stock-2026)），本業現金流根本不足以覆蓋這些股息。
 
 那它怎麼付？答案是「發更多證券」。它靠著持續在資本市場發新股、新特別股來籌錢，支應舊的股息與債務。這套模式被支持者稱為「無限金錢魔術（infinite money glitch）」，被批評者稱為「龐氏般的循環」。它能運作的前提是：資本市場願意一直買單。一旦 MSTR 股價長期低於每股淨資產價值（出現折價），這個增發機器就會卡住。
+
+<figure class="pm-fig">
+<img src="/mstr/07-dividend-loop.png" alt="Strategy 本業現金不夠付股息、靠發新證券以債養債" loading="lazy" />
+<figcaption>以債養債的循環：155 億特別股每年要付現金股息，但軟體本業每季營收僅約 1.2 億、2025 Q4 帳面淨虧 124 億，只能靠發新證券付舊股息。</figcaption>
+</figure>
+
 
 ## 五、觀點多元：看多方與看空方怎麼說
 
@@ -99,6 +136,11 @@ Strategy 的可轉債不是永遠不用還的。每一批債券都有「到期�
 | 中性偏壓力 | 4 萬至 6 萬美元 | 部分債券低於轉換價，2028 年 put 須付現金，靠賣少量幣或再融資可應付 |
 | 嚴峻 | 低於 3 萬美元且持續 | 股價可能跌破淨值、增發困難，2028 年集中贖回恐被迫賣幣，但仍未達破產門檻（約 1.5 萬美元） |
 
+<figure class="pm-fig">
+<img src="/mstr/08-scenarios.png" alt="Strategy 三情境推演：8 萬以上樂觀、4 至 6 萬偏壓力、3 萬以下嚴峻" loading="lazy" />
+<figcaption>三個情境推演：比特幣 8 萬以上可繼續擴張、4 至 6 萬靠賣少量幣應付、低於 3 萬恐被迫賣幣，但破產門檻估計仍在 1.5 萬以下。</figcaption>
+</figure>
+
 關鍵結論：**真正的危險不是「某個價位瞬間爆倉」，而是「低價 + 到期 + 無法再融資」這三個條件在 2028 年同時發生。** 只要其中一個條件不成立（例如比特幣回升、或它成功再融資），危機就能化解。這也是為什麼 Strategy 的命運，本質上是一場「比特幣能不能在 2028 年前夠強」的時間賽跑。
 
 ## 七、我的判斷
@@ -112,6 +154,11 @@ Strategy 的可轉債不是永遠不用還的。每一批債券都有「到期�
 第三，2027 至 2028 是真正的考驗。 在那之前，它的償債壓力都不算大。真正要盯的，是 2028 年那道債務牆來臨時，比特幣在什麼價位、它的再融資管道是否暢通。
 
 第四，它的風險會外溢。 因為它持有超過 84 萬顆比特幣（約佔比特幣總量 4%），萬一它真的在熊市被迫拋售，會對整個市場造成踩踏。所以它的健康，已經不只是它自己的事，而是整個比特幣市場都該關注的系統性變數。
+
+<figure class="pm-fig">
+<img src="/mstr/09-verdict.png" alt="Strategy 不是爆倉而是一場時間賽跑：迷思與真正考驗" loading="lazy" />
+<figcaption>我的判斷：不是爆倉，是一場時間賽跑。「明天就爆倉」是迷思；真正考驗是「低價 + 到期 + 無法再融資」三者在 2028 同時發生，且持 4% 流通量、風險會外溢。</figcaption>
+</figure>
 
 ## 結語
 
