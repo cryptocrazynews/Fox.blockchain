@@ -14,7 +14,7 @@ export const SITE = {
   youtube: "https://www.youtube.com/@Fox.blockchain",
   // YouTube 頻道 ID（UC 開頭）。填入後首頁會自動嵌入你最新的影片。
   // 到 YouTube 工作室 → 設定 → 頻道 → 進階設定，複製「頻道 ID」貼進來。
-  youtubeChannelId: "",
+  youtubeChannelId: "UCMAy1wO8GDTZ8vFmOfFWzDg",
 
   // ── 分析工具（擇一或都用；留空 = 不載入）──
   // Plausible：填你的網域，例 "fox-blockchain.com"
