@@ -7,13 +7,18 @@ interface Props {
   description?: string;
   ogType?: string;
   path?: string;
+  image?: string;
 }
 const {
   title,
   description = SITE.description,
   ogType = "website",
   path = Astro.url.pathname,
+  image,
 } = Astro.props;
+
+// 分享縮圖：有傳 image 就用文章圖片，沒有就用預設的 og-image（logo）
+const ogImage = new URL(image ?? "/og-image.png", SITE.url).href;
 
 const fullTitle = title ? `${title}｜${SITE.name}` : `${SITE.name}｜${SITE.tagline}`;
 const canonical = new URL(path, SITE.url).href;
@@ -60,11 +65,11 @@ const websiteSchema = {
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:locale" content="zh_TW" />
-    <meta property="og:image" content={new URL("/og-image.png", SITE.url).href} />
+    <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL("/og-image.png", SITE.url).href} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
