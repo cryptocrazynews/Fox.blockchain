@@ -19,6 +19,10 @@ const author = data.author ?? SITE.author;
 const updated = data.updatedDate ?? data.pubDate;
 const canonical = new URL(`/posts/${entry.id}/`, SITE.url).href;
 
+// 分享縮圖：抓文章內文第一張圖；沒有圖就傳 undefined，Base 會自動用預設 og-image（logo）
+const firstImageMatch = entry.body?.match(/<img[^>]+src=["']([^"']+)["']/i);
+const ogImage = firstImageMatch ? firstImageMatch[1] : undefined;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -51,7 +55,7 @@ const others = (await getCollection("posts", ({ data: d }) => !d.draft))
   .slice(0, 2);
 ---
 
-<Base title={data.title} description={data.excerpt} ogType="article" path={`/posts/${entry.id}/`}>
+<Base title={data.title} description={data.excerpt} ogType="article" path={`/posts/${entry.id}/`} image={ogImage}>
   <article class="article">
     <div class="read">
       <a class="back" href="/">← 回到首頁</a>
