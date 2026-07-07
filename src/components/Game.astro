@@ -9,12 +9,13 @@ const shellStyle = variant === "hero"
   : "height:min(70vh,620px)";
 ---
 
-{variant === "page" && (
-  <div id="game-intro">
-    <span class="gi-badge">🎮 比特幣大作戰</span>
-    <span class="gi-text">你是一顆小比特幣 ₿，吃碎幣和比你小的幣長大，躲開大幣，終極目標是吃掉以太幣大魔王 ETH。遊戲已自動開始示範，隨時動一下滑鼠或點擊畫面即可接手！</span>
-  </div>
-)}
+<div id="game-intro">
+  <span class="gi-badge">🎮 比特幣大作戰</span>
+  <span class="gi-chip goal">🏆 目標：吃掉 ETH 大魔王</span>
+  <span class="gi-chip grow">🍬 吃碎幣和小幣長大</span>
+  <span class="gi-chip danger">⚠️ 躲開比你大的幣</span>
+  <span class="gi-chip swan">🦢 小心黑天鵝事件</span>
+</div>
 
 <div id="game-shell" style={shellStyle}>
   <canvas id="game"></canvas>
@@ -63,7 +64,7 @@ const shellStyle = variant === "hero"
   </div>
 
   <div id="hud" hidden>市值 <span id="hud-score">0</span></div>
-  <div id="pilot-tip" hidden>🤖 自動駕駛示範中（簡易版）：AI 正在幫你吃幣長大｜移動滑鼠、按方向鍵或點一下畫面，隨時接手開玩</div>
+  <div id="pilot-tip" hidden>🤖 自動導航中｜動一下滑鼠即可接手</div>
   <div id="swan-banner" hidden></div>
   <img id="event-media" alt="" hidden />
 </div>
@@ -92,10 +93,14 @@ const shellStyle = variant === "hero"
   .ov-actions{display:flex;gap:10px;justify-content:center}
   #hud{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.32);padding:6px 12px;border-radius:9px;pointer-events:none}
   #hud span{color:var(--amber)}
-  #game-intro{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--surface,#fff);border:1px solid var(--line,#e5e9f0);border-radius:14px;padding:12px 16px;margin:0 0 12px}
-  .gi-badge{font-weight:700;font-size:14px;white-space:nowrap}
-  .gi-text{font-size:13px;color:var(--slate,#5b6472);line-height:1.65;flex:1;min-width:240px}
-  #pilot-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#fff;background:rgba(27,77,255,.85);padding:7px 14px;border-radius:99px;pointer-events:none;white-space:nowrap}
+  #game-intro{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px}
+  .gi-badge{font-weight:800;font-size:14px;white-space:nowrap;padding:7px 12px;border-radius:99px;background:linear-gradient(135deg,#F5A524,#E0821B);color:#231600}
+  .gi-chip{font-size:12.5px;font-weight:600;white-space:nowrap;padding:6px 12px;border-radius:99px;border:1px solid transparent}
+  .gi-chip.goal{background:rgba(98,126,234,.14);border-color:rgba(98,126,234,.4);color:#5B79EE}
+  .gi-chip.grow{background:rgba(31,157,107,.14);border-color:rgba(31,157,107,.4);color:#1f9d6b}
+  .gi-chip.danger{background:rgba(224,82,27,.12);border-color:rgba(224,82,27,.4);color:#E0521B}
+  .gi-chip.swan{background:rgba(130,71,229,.12);border-color:rgba(130,71,229,.4);color:#8247E5}
+  #pilot-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#fff;background:rgba(27,77,255,.85);padding:7px 14px;border-radius:99px;pointer-events:none;white-space:nowrap;max-width:calc(100% - 28px)}
   #swan-banner.up{background:linear-gradient(90deg,#0E7A4F,#16A34A)}
   #swan-banner{position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#B4231D,#E0521B);color:#fff;font-weight:700;font-size:14px;text-align:center;padding:11px 14px;pointer-events:none;z-index:5;box-shadow:0 4px 16px rgba(0,0,0,.3);animation:swanIn .25s ease}
   @keyframes swanIn{from{transform:translateY(-100%)}to{transform:translateY(0)}}
