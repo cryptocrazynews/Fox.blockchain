@@ -58,8 +58,12 @@ const shellStyle = variant === "hero"
       <p class="ov-score">最終市值 <strong id="final-score">0</strong> ｜ 最佳 <strong id="best-score">0</strong></p>
       <p class="ov-joke" id="joke-line"></p>
       <a class="ov-btn cta" id="cta-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <p class="ov-replay">再玩一次</p>
       <div class="ov-actions">
-        <button class="ov-btn primary" id="btn-retry">再玩一次</button>
+        <button class="ov-btn easy" id="btn-retry-easy">簡易版</button>
+        <button class="ov-btn primary" id="btn-retry-normal">正常版</button>
+      </div>
+      <div class="ov-actions ov-actions-sub">
         {variant === "hero"
           ? <a class="ov-btn ghost" href="/play/">⛶ 全螢幕</a>
           : <a class="ov-btn ghost" href="/#deals">看活動</a>}
@@ -94,7 +98,9 @@ const shellStyle = variant === "hero"
   .ov-btn.easy{background:#1f9d6b;color:#fff}
   .ov-btn.cta{background:var(--amber);color:#231600;width:100%;margin-bottom:14px;font-size:15.5px}
   .ov-btn.ghost{background:rgba(255,255,255,.1);color:#fff}
-  .ov-actions{display:flex;gap:10px;justify-content:center}
+  .ov-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .ov-replay{color:#8C93A1;font-size:12.5px;font-weight:600;margin:0 0 8px;letter-spacing:.02em}
+  .ov-actions-sub{margin-top:10px}
   #hud{position:absolute;top:12px;left:14px;font-family:var(--mono);font-size:13.5px;font-weight:600;color:#fff;background:rgba(0,0,0,.32);padding:6px 12px;border-radius:9px;pointer-events:none}
   #hud span{color:var(--amber)}
   #game-intro{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;background:#141B2C;border:1px solid rgba(245,165,36,.25);border-radius:14px;padding:10px 16px;margin:0 0 12px}
@@ -646,7 +652,8 @@ const shellStyle = variant === "hero"
   // 進頁面自動以「簡易版」開始示範（自動駕駛），玩家隨時可接手
   startScreen.hidden = true;
   start("easy");
-  document.getElementById("btn-retry").addEventListener("click",start);
+  document.getElementById("btn-retry-easy").addEventListener("click",function(){ start("easy"); });
+  document.getElementById("btn-retry-normal").addEventListener("click",function(){ start("normal"); });
   var bw=document.getElementById("btn-winretry"); if(bw) bw.addEventListener("click",start);
 })();
 </script>
