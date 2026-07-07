@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="82" font-size="44" font-weight="700" fill="#2b2320">8 家完成洗錢防制登記的合法業者</text>
+  <text x="80" y="122" font-size="22" fill="#8a7a6d">在這幾家買幣，就是走在最清楚的合法路徑上</text>
+
+  <!-- 8 cards, 4 x 2 grid -->
+  <g>
+    <rect x="80" y="160" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="207" y="222" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">MAX</text>
+    <text x="207" y="258" font-size="18" fill="#8a7a6d" text-anchor="middle">現代財富 / MaiCoin</text>
+
+    <rect x="355" y="160" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="482" y="222" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">BitoPro</text>
+    <text x="482" y="258" font-size="18" fill="#8a7a6d" text-anchor="middle">幣託科技</text>
+
+    <rect x="630" y="160" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="757" y="222" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">HOYA BIT</text>
+    <text x="757" y="258" font-size="18" fill="#8a7a6d" text-anchor="middle">禾亞數位科技</text>
+
+    <rect x="905" y="160" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="1032" y="222" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">TWEX</text>
+    <text x="1032" y="258" font-size="18" fill="#8a7a6d" text-anchor="middle">富昇數位</text>
+
+    <rect x="80" y="310" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="207" y="372" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">KryptoGO</text>
+    <text x="207" y="408" font-size="18" fill="#8a7a6d" text-anchor="middle">重量科技</text>
+
+    <rect x="355" y="310" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="482" y="372" font-size="28" font-weight="700" fill="#c85a1c" text-anchor="middle">Chainss</text>
+    <text x="482" y="408" font-size="18" fill="#8a7a6d" text-anchor="middle">跨鏈科技</text>
+
+    <rect x="630" y="310" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="757" y="365" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">拓荒數碼科技</text>
+    <text x="757" y="405" font-size="18" fill="#8a7a6d" text-anchor="middle">已完成登記</text>
+
+    <rect x="905" y="310" width="255" height="130" rx="16" fill="#ffffff" stroke="#e8a76a" stroke-width="2"/>
+    <text x="1032" y="365" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">鏈科</text>
+    <text x="1032" y="405" font-size="18" fill="#8a7a6d" text-anchor="middle">已完成登記</text>
+  </g>
+
+  <!-- check tip -->
+  <rect x="80" y="480" width="1080" height="120" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="530" font-size="26" font-weight="700" fill="#c85a1c">怎麼查？</text>
+  <text x="110" y="572" font-size="22" fill="#2b2320">到金管會官網查「完成洗錢防制登記的虛擬資產服務業者名單」，對得上再開戶，這一步能擋掉多數詐騙平台。</text>
+
+  <text x="80" y="646" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  名單以主管機關最新公告為準</text>
+</svg>
