@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="88" font-size="46" font-weight="700" fill="#2b2320">新法兩條最重刑責</text>
+  <text x="80" y="128" font-size="22" fill="#8a7a6d">不是罰錢了事，是真的會坐牢</text>
+
+  <!-- card 1: 無照經營 -->
+  <rect x="80" y="180" width="500" height="360" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="240" font-size="28" font-weight="700" fill="#c85a1c">無照經營</text>
+  <text x="110" y="276" font-size="19" fill="#8a7a6d">未經許可經營業務，或擅自發行穩定幣</text>
+
+  <line x1="110" y1="300" x2="550" y2="300" stroke="#e8c3a0" stroke-width="1.5"/>
+
+  <text x="110" y="352" font-size="20" fill="#2b2320">最重</text>
+  <text x="110" y="400" font-size="54" font-weight="700" fill="#e8722a">關 7 年</text>
+  <text x="110" y="452" font-size="20" fill="#2b2320">得併科罰金</text>
+  <text x="110" y="500" font-size="42" font-weight="700" fill="#e8722a">1 億元以下</text>
+
+  <!-- card 2: 詐欺操縱 -->
+  <rect x="620" y="180" width="500" height="360" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="650" y="240" font-size="28" font-weight="700" fill="#b0451a">詐欺 / 操縱市場</text>
+  <text x="650" y="276" font-size="19" fill="#8a7a6d">散布不實資訊、拉抬出貨、做假交易</text>
+
+  <line x1="650" y1="300" x2="1090" y2="300" stroke="#e6b9a3" stroke-width="1.5"/>
+
+  <text x="650" y="352" font-size="20" fill="#2b2320">刑度</text>
+  <text x="650" y="400" font-size="54" font-weight="700" fill="#c03d12">關 3 至 10 年</text>
+  <text x="650" y="452" font-size="20" fill="#2b2320">得併科罰金</text>
+  <text x="650" y="500" font-size="42" font-weight="700" fill="#c03d12">1000 萬至 2 億</text>
+
+  <text x="80" y="600" font-size="20" fill="#2b2320">操縱市場刑度更重，因為它直接掏空其他投資人的口袋。</text>
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  數字依 2026/6/30 三讀通過之《虛擬資產服務法》條文</text>
+</svg>

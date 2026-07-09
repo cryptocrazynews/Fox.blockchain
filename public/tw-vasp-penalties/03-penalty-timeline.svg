@@ -1,0 +1,46 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8f1"/>
+      <stop offset="1" stop-color="#fdeede"/>
+    </linearGradient>
+    <linearGradient id="line3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f0a35e"/>
+      <stop offset="1" stop-color="#e8722a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+  <text x="80" y="88" font-size="46" font-weight="700" fill="#2b2320">罰則什麼時候開始算？</text>
+  <text x="80" y="128" font-size="22" fill="#8a7a6d">通過不等於生效，但詐欺洗錢現在就違法</text>
+
+  <!-- timeline -->
+  <rect x="130" y="330" width="940" height="10" rx="5" fill="url(#line3)"/>
+
+  <!-- node 1 -->
+  <circle cx="220" cy="335" r="16" fill="#e8722a" stroke="#fff" stroke-width="4"/>
+  <rect x="105" y="180" width="240" height="120" rx="14" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="225" y="220" font-size="24" font-weight="700" fill="#e8722a" text-anchor="middle">2026 / 6 / 30</text>
+  <text x="225" y="254" font-size="19" fill="#2b2320" text-anchor="middle">三讀通過</text>
+  <text x="225" y="282" font-size="16" fill="#8a7a6d" text-anchor="middle">法律誕生，罰則還沒適用</text>
+
+  <!-- node 2 -->
+  <circle cx="600" cy="335" r="16" fill="#e8722a" stroke="#fff" stroke-width="4"/>
+  <rect x="480" y="380" width="240" height="120" rx="14" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="600" y="420" font-size="22" font-weight="700" fill="#e8722a" text-anchor="middle">最快 2027 Q1</text>
+  <text x="600" y="454" font-size="18" fill="#2b2320" text-anchor="middle">子法訂完、正式施行</text>
+  <text x="600" y="482" font-size="16" fill="#8a7a6d" text-anchor="middle">新法罰則從這天起適用</text>
+
+  <!-- node 3 -->
+  <circle cx="980" cy="335" r="16" fill="#c85a1c" stroke="#fff" stroke-width="4"/>
+  <rect x="855" y="180" width="255" height="120" rx="14" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="982" y="220" font-size="21" font-weight="700" fill="#c85a1c" text-anchor="middle">業者過渡期</text>
+  <text x="982" y="254" font-size="16" fill="#2b2320" text-anchor="middle">施行後 12 個月內申請</text>
+  <text x="982" y="282" font-size="16" fill="#2b2320" text-anchor="middle">21 個月內取得證照</text>
+
+  <!-- warning bar -->
+  <rect x="80" y="540" width="1040" height="80" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="110" y="574" font-size="22" font-weight="700" fill="#b0451a">別把「還沒施行」當免死金牌</text>
+  <text x="110" y="606" font-size="19" fill="#2b2320">詐欺、洗錢在現行刑法與洗錢防制法下本來就會被辦，不用等 2027。</text>
+
+  <text x="80" y="655" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  施行時程以金管會子法進度與正式公告為準</text>
+</svg>

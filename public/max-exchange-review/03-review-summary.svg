@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">MAX 實測重點懶人包</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">合規、好用、費率合理，缺點是要等審核</text>
+
+  <!-- item 1 -->
+  <rect x="80" y="165" width="510" height="115" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="132" cy="222" r="22" fill="#e8722a"/>
+  <text x="132" y="230" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+  <text x="175" y="212" font-size="23" font-weight="700" fill="#c85a1c">合規業者</text>
+  <text x="175" y="248" font-size="18" fill="#2b2320">8 家完成洗防登記之一，MaiCoin 經營</text>
+
+  <!-- item 2 -->
+  <rect x="610" y="165" width="510" height="115" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="662" cy="222" r="22" fill="#e8722a"/>
+  <text x="662" y="230" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+  <text x="705" y="212" font-size="23" font-weight="700" fill="#c85a1c">台幣進出方便</text>
+  <text x="705" y="248" font-size="18" fill="#2b2320">遠東商銀虛擬帳戶，支援約 30 間銀行</text>
+
+  <!-- item 3 -->
+  <rect x="80" y="300" width="510" height="115" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="132" cy="357" r="22" fill="#e8722a"/>
+  <text x="132" y="365" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+  <text x="175" y="347" font-size="23" font-weight="700" fill="#c85a1c">資產保管</text>
+  <text x="175" y="383" font-size="18" fill="#2b2320">約 95% 冷錢包，新台幣銀行信託保管</text>
+
+  <!-- item 4 -->
+  <rect x="610" y="300" width="510" height="115" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="662" cy="357" r="22" fill="#e8722a"/>
+  <text x="662" y="365" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+  <text x="705" y="347" font-size="23" font-weight="700" fill="#c85a1c">安全設定</text>
+  <text x="705" y="383" font-size="18" fill="#2b2320">開戶先綁 2FA，別只靠簡訊驗證</text>
+
+  <!-- caution -->
+  <rect x="80" y="440" width="1040" height="120" rx="16" fill="#fdeede" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="132" cy="500" r="22" fill="#c85a1c"/>
+  <text x="132" y="509" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">!</text>
+  <text x="175" y="490" font-size="23" font-weight="700" fill="#c85a1c">先知道的兩個坑</text>
+  <text x="175" y="527" font-size="19" fill="#2b2320">新戶每日入金上限 10 萬元　KYC 與綁銀行都要等 3~5 個工作天</text>
+
+  <text x="80" y="605" font-size="19" fill="#8a7a6d">長期大額仍建議提部分到自己保管的錢包，幣不在自己手上就不完全是自己的。</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  實測於 2026 年 7 月，數字以 MAX 官方最新公告為準</text>
+</svg>

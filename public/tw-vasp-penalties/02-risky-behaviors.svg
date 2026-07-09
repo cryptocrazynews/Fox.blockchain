@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">你以為只是幫忙，其實踩在線上</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">這部法罰的是「經營」與「傷害別人」，不是你自己買賣自己的幣</text>
+
+  <!-- row 1 -->
+  <rect x="80" y="170" width="510" height="150" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="130" cy="220" r="22" fill="#e8722a"/>
+  <text x="130" y="228" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="172" y="216" font-size="24" font-weight="700" fill="#c85a1c">幫人代換現金與 USDT</text>
+  <text x="172" y="252" font-size="18" fill="#2b2320">常態面交、抽手續費、賺價差</text>
+  <text x="172" y="284" font-size="17" fill="#8a7a6d">可能被當成無照經營交換／移轉業務</text>
+
+  <rect x="610" y="170" width="510" height="150" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="660" cy="220" r="22" fill="#e8722a"/>
+  <text x="660" y="228" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="702" y="216" font-size="24" font-weight="700" fill="#c85a1c">在群組喊單、拉抬幣價</text>
+  <text x="702" y="252" font-size="18" fill="#2b2320">散布不實利多，配合出貨接盤</text>
+  <text x="702" y="284" font-size="17" fill="#8a7a6d">落入操縱市場，關 3 到 10 年那條</text>
+
+  <!-- row 2 -->
+  <rect x="80" y="345" width="510" height="150" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="130" cy="395" r="22" fill="#e8722a"/>
+  <text x="130" y="403" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="172" y="391" font-size="24" font-weight="700" fill="#c85a1c">配合做假交易、衝交易量</text>
+  <text x="172" y="427" font-size="18" fill="#2b2320">對敲洗量，把成交量做漂亮騙人</text>
+  <text x="172" y="459" font-size="17" fill="#8a7a6d">製造虛假交易表象，也是操縱一種</text>
+
+  <rect x="610" y="345" width="510" height="150" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="660" cy="395" r="22" fill="#e8722a"/>
+  <text x="660" y="403" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="702" y="391" font-size="24" font-weight="700" fill="#c85a1c">私下幫人代操抽成</text>
+  <text x="702" y="427" font-size="18" fill="#2b2320">常態、有對價、面對不特定人</text>
+  <text x="702" y="459" font-size="17" fill="#8a7a6d">可能被認定為經營業務，需要牌照</text>
+
+  <!-- safe line -->
+  <rect x="80" y="525" width="1040" height="80" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="558" font-size="22" font-weight="700" fill="#4f7a3a">安全區</text>
+  <text x="110" y="590" font-size="20" fill="#2b2320">用合規平台，買賣自己的幣、自己放著，不在射程內。</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  個案是否觸法仍以具體事實與司法機關見解為準</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">MAX 費用一覽，該省的都在這</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">開啟 MAX Token 折抵，交易費直接砍一半</text>
+
+  <!-- card 1 -->
+  <rect x="80" y="170" width="345" height="200" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="252" y="220" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">掛單 Maker</text>
+  <text x="252" y="290" font-size="52" font-weight="700" fill="#e8722a" text-anchor="middle">0.05%</text>
+  <text x="252" y="335" font-size="18" fill="#8a7a6d" text-anchor="middle">限價單，最高費率</text>
+
+  <!-- card 2 -->
+  <rect x="440" y="170" width="345" height="200" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="612" y="220" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">吃單 Taker</text>
+  <text x="612" y="290" font-size="52" font-weight="700" fill="#e8722a" text-anchor="middle">0.15%</text>
+  <text x="612" y="335" font-size="18" fill="#8a7a6d" text-anchor="middle">市價單，最高費率</text>
+
+  <!-- card 3 -->
+  <rect x="800" y="170" width="320" height="200" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="960" y="220" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">新台幣出金</text>
+  <text x="960" y="283" font-size="34" font-weight="700" fill="#e8722a" text-anchor="middle">個人 15 元</text>
+  <text x="960" y="330" font-size="24" fill="#2b2320" text-anchor="middle">公司戶 100 元／筆</text>
+
+  <!-- discount bar -->
+  <rect x="80" y="400" width="1040" height="120" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="448" font-size="24" font-weight="700" fill="#4f7a3a">開啟 MAX Token 折抵</text>
+  <text x="110" y="492" font-size="22" fill="#2b2320">交易手續費打 5 折（省一半）　出金手續費打 8 折　頻繁交易幾乎必開</text>
+
+  <!-- vip note -->
+  <rect x="80" y="545" width="1040" height="70" rx="14" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="588" font-size="20" fill="#2b2320">VIP 等級：依近 30 天交易量＋鎖倉 MAX Token 數量分級，量越大費率越低。</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  費率為官方最高標準，實際依帳戶等級與活動調整</text>
+</svg>
