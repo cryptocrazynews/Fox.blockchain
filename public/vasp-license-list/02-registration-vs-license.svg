@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="70" y="82" font-size="44" font-weight="700" fill="#2b2320">登記制 vs 許可制：門檻換一次</text>
+  <text x="70" y="122" font-size="22" fill="#8a7a6d">2027 年新法上路後，這份名單會重洗一次</text>
+
+  <!-- 登記制 -->
+  <rect x="70" y="168" width="500" height="330" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="100" y="222" font-size="28" font-weight="700" fill="#c85a1c">現在：洗錢防制登記</text>
+  <text x="100" y="262" font-size="20" fill="#8a7a6d">門檻較低，像最低及格線</text>
+  <line x1="100" y1="284" x2="540" y2="284" stroke="#e8c3a0" stroke-width="1.5"/>
+  <text x="100" y="330" font-size="21" fill="#2b2320">→ 報備制：符合基本要求即登記</text>
+  <text x="100" y="374" font-size="21" fill="#2b2320">→ 管的是 KYC、金流監控、通報</text>
+  <text x="100" y="418" font-size="21" fill="#2b2320">→ 目前名單：8 家本土業者</text>
+  <text x="100" y="462" font-size="20" fill="#b0451a">過了只代表「不是非法」，不等於安全</text>
+
+  <!-- 許可制 -->
+  <rect x="630" y="168" width="500" height="330" rx="20" fill="#e8722a"/>
+  <text x="660" y="222" font-size="28" font-weight="700" fill="#fff8f1">2027：新法許可制</text>
+  <text x="660" y="262" font-size="20" fill="#ffe6d2">門檻高很多，要審核發證</text>
+  <line x1="660" y1="284" x2="1100" y2="284" stroke="#f4b184" stroke-width="1.5"/>
+  <text x="660" y="330" font-size="21" fill="#fff8f1">→ 許可制：審核通過才發證照</text>
+  <text x="660" y="374" font-size="21" fill="#fff8f1">→ 施行後 12 個月內提申請</text>
+  <text x="660" y="418" font-size="21" fill="#fff8f1">→ 21 個月內取得證照（得延 3 個月）</text>
+  <text x="660" y="462" font-size="20" fill="#ffe6d2">能不能拿到許可，才是真正分水嶺</text>
+
+  <text x="70" y="558" font-size="21" fill="#2b2320">《虛擬資產服務法》2026/6/30 三讀通過，施行日由行政院另定，外界估最快 2027 Q1。</text>
+  <text x="70" y="596" font-size="21" fill="#2b2320">現名單上的 8 家，不保證每家都能拿到新制許可，也可能有新業者進場。</text>
+  <text x="70" y="650" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依 2026/6/30 三讀通過之《虛擬資產服務法》整理</text>
+</svg>

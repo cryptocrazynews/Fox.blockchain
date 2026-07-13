@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="60" y="78" font-size="42" font-weight="700" fill="#2b2320">台灣 8 家完成洗錢防制登記的 VASP</text>
+  <text x="60" y="116" font-size="21" fill="#8a7a6d">金管會公告「公司名」，你聽到的是「品牌」，這裡並排給你看</text>
+
+  <!-- table header -->
+  <rect x="60" y="140" width="1080" height="52" rx="10" fill="#e8722a"/>
+  <text x="90" y="175" font-size="22" font-weight="700" fill="#fff8f1">公司名</text>
+  <text x="470" y="175" font-size="22" font-weight="700" fill="#fff8f1">對應交易所／品牌</text>
+  <text x="850" y="175" font-size="22" font-weight="700" fill="#fff8f1">定位</text>
+
+  <!-- rows -->
+  <g font-size="21" fill="#2b2320">
+    <rect x="60" y="196" width="1080" height="52" fill="#fff3e8"/>
+    <text x="90" y="230">現代財富科技</text><text x="470" y="230" font-weight="700" fill="#c85a1c">MaiCoin／MAX</text><text x="850" y="230" font-size="19">台灣最大，台幣信託</text>
+
+    <rect x="60" y="250" width="1080" height="52" fill="#fdece0"/>
+    <text x="90" y="284">幣託科技</text><text x="470" y="284" font-weight="700" fill="#c85a1c">BitoPro</text><text x="850" y="284" font-size="19">老牌，超商買幣起家</text>
+
+    <rect x="60" y="304" width="1080" height="52" fill="#fff3e8"/>
+    <text x="90" y="338">鏈科</text><text x="470" y="338" font-weight="700" fill="#c85a1c">XREX</text><text x="850" y="338" font-size="19">美元出入金、跨境支付</text>
+
+    <rect x="60" y="358" width="1080" height="52" fill="#fdece0"/>
+    <text x="90" y="392">禾亞數位科技</text><text x="470" y="392" font-weight="700" fill="#c85a1c">HOYA BIT</text><text x="850" y="392" font-size="19">主打新手友善</text>
+
+    <rect x="60" y="412" width="1080" height="52" fill="#fff3e8"/>
+    <text x="90" y="446">重量科技</text><text x="470" y="446" font-weight="700" fill="#c85a1c">KryptoGO</text><text x="850" y="446" font-size="19">錢包與合規科技</text>
+
+    <rect x="60" y="466" width="1080" height="52" fill="#fdece0"/>
+    <text x="90" y="500">富昇數位</text><text x="470" y="500" font-weight="700" fill="#c85a1c">TWEX 台灣大交易所</text><text x="850" y="500" font-size="19">電信背景，富邦整合</text>
+
+    <rect x="60" y="520" width="1080" height="52" fill="#fff3e8"/>
+    <text x="90" y="554">拓荒數碼科技</text><text x="470" y="554" font-weight="700" fill="#c85a1c">Zone</text><text x="850" y="554" font-size="19">錢包與交易，多鏈</text>
+
+    <rect x="60" y="574" width="1080" height="52" fill="#fdece0"/>
+    <text x="90" y="608">跨鏈科技</text><text x="470" y="608" font-weight="700" fill="#c85a1c">跨鏈科技</text><text x="850" y="608" font-size="19">公會理事業者</text>
+  </g>
+
+  <text x="60" y="656" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  名單以金管會證期局與虛擬通貨公會最新公告為準，家數會變動</text>
+</svg>
