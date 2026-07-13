@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="84" font-size="46" font-weight="700" fill="#2b2320">從三讀到你真的有感，中間隔多久</text>
+  <text x="80" y="124" font-size="22" fill="#8a7a6d">《虛擬資產服務法》上路時間軸：是一道長坡，不是懸崖</text>
+
+  <!-- baseline -->
+  <line x1="140" y1="330" x2="1090" y2="330" stroke="#e8c3a0" stroke-width="4"/>
+
+  <!-- node 1 -->
+  <circle cx="200" cy="330" r="16" fill="#e8722a"/>
+  <rect x="90" y="200" width="230" height="96" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="205" y="238" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">2026 / 6 / 30</text>
+  <text x="205" y="272" font-size="20" fill="#2b2320" text-anchor="middle">立法院三讀通過</text>
+  <text x="205" y="392" font-size="18" fill="#8a7a6d" text-anchor="middle">母法拍板</text>
+
+  <!-- node 2 -->
+  <circle cx="500" cy="330" r="16" fill="#e8722a"/>
+  <rect x="385" y="200" width="230" height="96" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="500" y="238" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">最快 2027 Q1</text>
+  <text x="500" y="272" font-size="20" fill="#2b2320" text-anchor="middle">9 項子法 + 母法上路</text>
+  <text x="500" y="392" font-size="18" fill="#8a7a6d" text-anchor="middle">改為許可制</text>
+
+  <!-- node 3 -->
+  <circle cx="790" cy="330" r="16" fill="#c85a1c"/>
+  <rect x="675" y="360" width="230" height="96" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="790" y="398" font-size="24" font-weight="700" fill="#b0451a" text-anchor="middle">施行後 12 個月</text>
+  <text x="790" y="432" font-size="20" fill="#2b2320" text-anchor="middle">業者須提出許可申請</text>
+  <text x="790" y="300" font-size="18" fill="#8a7a6d" text-anchor="middle">8 家已登記業者</text>
+
+  <!-- node 4 -->
+  <circle cx="1050" cy="330" r="16" fill="#c85a1c"/>
+  <rect x="935" y="200" width="215" height="96" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="1042" y="238" font-size="24" font-weight="700" fill="#b0451a" text-anchor="middle">施行後 21 個月</text>
+  <text x="1042" y="272" font-size="20" fill="#2b2320" text-anchor="middle">須取得許可證照</text>
+  <text x="1042" y="392" font-size="18" fill="#8a7a6d" text-anchor="middle">得延長 3 個月一次</text>
+
+  <text x="80" y="560" font-size="22" fill="#2b2320">母法過了，真正決定細節的 9 項子法還在路上。從上路到業者全部就位，最長約 2 年。</text>
+  <text x="80" y="600" font-size="20" fill="#2b2320">這段緩衝期，你有足夠時間觀察自己用的平台有沒有認真走程序。</text>
+  <text x="80" y="650" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  時程依金管會公開說明，實際以正式公告為準</text>
+</svg>

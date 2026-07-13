@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="88" font-size="46" font-weight="700" fill="#2b2320">FTX 不是被駭，是自己花掉的</text>
+  <text x="80" y="128" font-size="22" fill="#8a7a6d">帳上美元被挪空，資產遠遠不夠還負債</text>
+
+  <!-- left: 帳上剩 vs 負債 -->
+  <rect x="80" y="180" width="500" height="360" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="238" font-size="26" font-weight="700" fill="#c85a1c">錢，早就不在了</text>
+
+  <text x="110" y="300" font-size="20" fill="#2b2320">帳上美元資產只剩</text>
+  <text x="110" y="356" font-size="56" font-weight="700" fill="#e8722a">2 億美元</text>
+
+  <text x="110" y="424" font-size="20" fill="#2b2320">卻要應付美元負債</text>
+  <text x="110" y="480" font-size="56" font-weight="700" fill="#c03d12">51.4 億美元</text>
+  <text x="110" y="522" font-size="18" fill="#8a7a6d">缺口約 25 倍，客戶提領時才爆開</text>
+
+  <!-- right: 挪用去向 + 台灣受害 -->
+  <rect x="620" y="180" width="500" height="360" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="650" y="238" font-size="26" font-weight="700" fill="#b0451a">客戶的錢被挪去哪</text>
+
+  <text x="650" y="288" font-size="21" fill="#2b2320">→ 借給關係企業 Alameda</text>
+  <text x="650" y="326" font-size="21" fill="#2b2320">→ 借給老闆 SBF 與公司高層</text>
+  <text x="650" y="364" font-size="21" fill="#2b2320">→ 買房、周轉、補其他窟窿</text>
+
+  <line x1="650" y1="398" x2="1090" y2="398" stroke="#e6b9a3" stroke-width="1.5"/>
+
+  <text x="650" y="446" font-size="20" fill="#2b2320">台灣受害人數約</text>
+  <text x="650" y="500" font-size="46" font-weight="700" fill="#c03d12">30 萬人 · 損失 4 億美元</text>
+
+  <text x="80" y="600" font-size="21" fill="#2b2320">服務條款寫著「資產屬於客戶」，卻擋不住它把你的錢跟自己的錢混在一起花。</text>
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  數字依 FTX 破產公開資訊與金管會、央行報告整理</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#e8722a"/>
+  <text x="60" y="80" font-size="44" font-weight="700" fill="#2b2320">新手避雷懶人包：五條記牢就少賠</text>
+  <text x="60" y="122" font-size="24" fill="#8a7a6d">比任何操作技巧都重要的五個安全底線</text>
+
+  <g>
+    <rect x="60" y="160" width="1080" height="88" rx="14" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+    <text x="92" y="212" font-size="40">🚫</text>
+    <text x="160" y="200" font-size="27" font-weight="700" fill="#2b2320">保證獲利的都是詐騙</text>
+    <text x="160" y="232" font-size="21" fill="#8a7a6d">LINE、Telegram「老師帶單」「穩賺」叫你下載陌生 App，別碰</text>
+
+    <rect x="60" y="256" width="1080" height="88" rx="14" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+    <text x="92" y="308" font-size="40">🏦</text>
+    <text x="160" y="296" font-size="27" font-weight="700" fill="#2b2320">只用你本人的銀行帳戶</text>
+    <text x="160" y="328" font-size="21" fill="#8a7a6d">用別人帳戶入金會被判定異常，輕則卡關重則凍結</text>
+
+    <rect x="60" y="352" width="1080" height="88" rx="14" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+    <text x="92" y="404" font-size="40">🔑</text>
+    <text x="160" y="392" font-size="27" font-weight="700" fill="#2b2320">密碼、助記詞、驗證碼絕不外流</text>
+    <text x="160" y="424" font-size="21" fill="#8a7a6d">正派平台客服永遠不會跟你要這些，有人要就是詐騙</text>
+
+    <rect x="60" y="448" width="1080" height="88" rx="14" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+    <text x="92" y="500" font-size="40">🪙</text>
+    <text x="160" y="488" font-size="27" font-weight="700" fill="#2b2320">先小額，走完一次流程再說</text>
+    <text x="160" y="520" font-size="21" fill="#8a7a6d">第一次的目標是學會操作，不是賺錢，幾百元的學費最划算</text>
+
+    <rect x="60" y="544" width="1080" height="88" rx="14" fill="#fff2e6" stroke="#c85a1c" stroke-width="2"/>
+    <text x="92" y="596" font-size="40">💤</text>
+    <text x="160" y="584" font-size="27" font-weight="700" fill="#2b2320">只投你賠得起的錢</text>
+    <text x="160" y="616" font-size="21" fill="#8a7a6d">價格一天可漲跌好幾成，用閒錢參與才睡得著、玩得久</text>
+  </g>
+
+  <text x="1140" y="660" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈</text>
+</svg>

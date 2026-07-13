@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="84" font-size="46" font-weight="700" fill="#2b2320">本週六篇一次看</text>
+  <text x="80" y="124" font-size="22" fill="#8a7a6d">從「法規」走到「實作」，新手照著讀最順</text>
+
+  <!-- 法規段標 -->
+  <rect x="80" y="164" width="150" height="40" rx="20" fill="#e8722a"/>
+  <text x="155" y="192" font-size="22" font-weight="700" fill="#fff8f1" text-anchor="middle">先懂法規</text>
+
+  <!-- row mon -->
+  <rect x="80" y="220" width="1040" height="70" rx="14" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="264" font-size="24" font-weight="700" fill="#c85a1c">週一</text>
+  <text x="210" y="264" font-size="24" fill="#2b2320">虛擬資產服務法完全指南（支柱文，把新法從頭講一遍）</text>
+
+  <!-- row tue -->
+  <rect x="80" y="300" width="510" height="70" rx="14" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="344" font-size="24" font-weight="700" fill="#c85a1c">週二</text>
+  <text x="210" y="344" font-size="23" fill="#2b2320">在台灣買比特幣合法嗎</text>
+
+  <rect x="610" y="300" width="510" height="70" rx="14" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="640" y="344" font-size="24" font-weight="700" fill="#c85a1c">週三</text>
+  <text x="740" y="344" font-size="23" fill="#2b2320">新法罰則白話拆解</text>
+
+  <!-- 實作段標 -->
+  <rect x="80" y="392" width="150" height="40" rx="20" fill="#c85a1c"/>
+  <text x="155" y="420" font-size="22" font-weight="700" fill="#fff8f1" text-anchor="middle">再動手做</text>
+
+  <!-- row thu -->
+  <rect x="80" y="448" width="510" height="70" rx="14" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="110" y="492" font-size="24" font-weight="700" fill="#b0451a">週四</text>
+  <text x="210" y="492" font-size="23" fill="#2b2320">MAX 交易所完整實測</text>
+
+  <rect x="610" y="448" width="510" height="70" rx="14" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="640" y="492" font-size="24" font-weight="700" fill="#b0451a">週五</text>
+  <text x="740" y="492" font-size="23" fill="#2b2320">8 家合規交易所總覽</text>
+
+  <!-- row sat -->
+  <rect x="80" y="528" width="1040" height="70" rx="14" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="110" y="572" font-size="24" font-weight="700" fill="#b0451a">週六</text>
+  <text x="210" y="572" font-size="24" fill="#2b2320">第一次買加密貨幣完整流程（開戶到下單拆成五步）</text>
+
+  <text x="80" y="646" font-size="19" fill="#a89a8d">小狐狸區塊鏈  ·  一週法規快報 #1  ·  2026/07/06 至 07/12</text>
+</svg>

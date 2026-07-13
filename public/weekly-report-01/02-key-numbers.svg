@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="84" font-size="46" font-weight="700" fill="#2b2320">新法重點數字懶人包</text>
+  <text x="80" y="124" font-size="22" fill="#8a7a6d">這週只帶走這幾個數字就夠了</text>
+
+  <!-- card 1 -->
+  <rect x="80" y="170" width="340" height="200" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="110" y="222" font-size="22" fill="#8a7a6d">無照經營，最重</text>
+  <text x="110" y="290" font-size="60" font-weight="700" fill="#c03d12">關 7 年</text>
+  <text x="110" y="336" font-size="26" fill="#2b2320">併科 1 億元以下</text>
+
+  <!-- card 2 -->
+  <rect x="440" y="170" width="340" height="200" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="470" y="222" font-size="22" fill="#8a7a6d">詐欺 / 操縱市場</text>
+  <text x="470" y="290" font-size="52" font-weight="700" fill="#c03d12">關 3 至 10 年</text>
+  <text x="470" y="336" font-size="26" fill="#2b2320">併科最高 2 億元</text>
+
+  <!-- card 3 -->
+  <rect x="800" y="170" width="320" height="200" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="830" y="222" font-size="22" fill="#8a7a6d">配套子法</text>
+  <text x="830" y="290" font-size="60" font-weight="700" fill="#e8722a">9 項</text>
+  <text x="830" y="336" font-size="26" fill="#2b2320">拚 2027 Q1 完成</text>
+
+  <!-- card 4 -->
+  <rect x="80" y="392" width="340" height="180" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="444" font-size="22" fill="#8a7a6d">已完成洗防登記</text>
+  <text x="110" y="508" font-size="60" font-weight="700" fill="#e8722a">8 家</text>
+  <text x="110" y="550" font-size="24" fill="#2b2320">合規業者</text>
+
+  <!-- card 5 -->
+  <rect x="440" y="392" width="340" height="180" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="470" y="444" font-size="22" fill="#8a7a6d">牌照分成</text>
+  <text x="470" y="508" font-size="60" font-weight="700" fill="#e8722a">6 大類</text>
+  <text x="470" y="550" font-size="22" fill="#2b2320">交換·平台·移轉·保管·承銷·借貸</text>
+
+  <!-- card 6 -->
+  <rect x="800" y="392" width="320" height="180" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="830" y="444" font-size="22" fill="#8a7a6d">穩定幣紅線</text>
+  <text x="830" y="500" font-size="30" font-weight="700" fill="#e8722a">十足準備</text>
+  <text x="830" y="540" font-size="22" fill="#2b2320">存境內·信託·不得付息</text>
+
+  <text x="80" y="628" font-size="20" fill="#2b2320">罰的是「經營業務」和「操縱詐欺」的人，單純用合規平台買賣自己幣的散戶不在射程內。</text>
+  <text x="80" y="662" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  數字依 2026/6/30 三讀通過之《虛擬資產服務法》條文與金管會說明</text>
+</svg>

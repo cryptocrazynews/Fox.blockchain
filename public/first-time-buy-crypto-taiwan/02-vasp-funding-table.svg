@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#e8722a"/>
+  <text x="60" y="76" font-size="42" font-weight="700" fill="#2b2320">台灣 8 家合規交易所．台幣入金一覽</text>
+  <text x="60" y="116" font-size="22" fill="#8a7a6d">皆已完成金管會洗錢防制登記，各自合作銀行不同</text>
+
+  <!-- Header row -->
+  <rect x="60" y="150" width="1080" height="56" fill="#e8722a"/>
+  <text x="90" y="187" font-size="24" font-weight="700" fill="#ffffff">平台</text>
+  <text x="360" y="187" font-size="24" font-weight="700" fill="#ffffff">台幣入金 / 合作銀行</text>
+  <text x="840" y="187" font-size="24" font-weight="700" fill="#ffffff">新手小提示</text>
+
+  <!-- Rows -->
+  <g font-size="22" fill="#2b2320">
+    <rect x="60" y="206" width="1080" height="52" fill="#fff8f1"/>
+    <text x="90" y="240" font-weight="700">BitoPro 幣託</text>
+    <text x="360" y="240" fill="#5a4d43">遠東銀行代收代付，約 1 個工作天</text>
+    <text x="840" y="240" fill="#8a7a6d">超商買幣起家的老牌</text>
+
+    <rect x="60" y="258" width="1080" height="52" fill="#fdf0e4"/>
+    <text x="90" y="292" font-weight="700">HOYA BIT</text>
+    <text x="360" y="292" fill="#5a4d43">台新銀行信託，支援即時入金</text>
+    <text x="840" y="292" fill="#8a7a6d">出金 24 小時內匯回</text>
+
+    <rect x="60" y="310" width="1080" height="52" fill="#fff8f1"/>
+    <text x="90" y="344" font-weight="700">TWEX</text>
+    <text x="360" y="344" fill="#5a4d43">台北富邦銀行信託託管</text>
+    <text x="840" y="344" fill="#8a7a6d">最低 100 元起買 BTC/ETH</text>
+
+    <rect x="60" y="362" width="1080" height="52" fill="#fdf0e4"/>
+    <text x="90" y="396" font-weight="700">MAX / MaiCoin</text>
+    <text x="360" y="396" fill="#5a4d43">支援台幣出入金，信託保障</text>
+    <text x="840" y="396" fill="#8a7a6d">介面清爽、老平台</text>
+
+    <rect x="60" y="414" width="1080" height="52" fill="#fff8f1"/>
+    <text x="90" y="448" font-weight="700">XREX</text>
+    <text x="360" y="448" fill="#5a4d43">支援台幣、美元出入金</text>
+    <text x="840" y="448" fill="#8a7a6d">偏跨境支付導向</text>
+
+    <rect x="60" y="466" width="1080" height="52" fill="#fdf0e4"/>
+    <text x="90" y="500" font-weight="700" font-size="20">KryptoGO・拓荒數碼・Chainss</text>
+    <text x="490" y="500" fill="#5a4d43" font-size="20">同為合規登記業者</text>
+    <text x="840" y="500" fill="#8a7a6d">下載前先認明官方名單</text>
+  </g>
+
+  <rect x="60" y="540" width="1080" height="70" rx="12" fill="#fff2e6" stroke="#e8722a" stroke-width="2"/>
+  <text x="90" y="575" font-size="23" font-weight="700" fill="#c85a1c">關鍵原則</text>
+  <text x="90" y="600" font-size="22" fill="#2b2320">人、證件、銀行帳戶三者必須是同一個你，用別人的帳戶入金會被判定異常而卡關。</text>
+
+  <text x="1140" y="655" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="46" font-weight="700" fill="#2b2320">第 18 條：四道財務防火牆</text>
+  <text x="80" y="126" font-size="22" fill="#8a7a6d">《虛擬資產服務法》怎麼把你的錢跟交易所切開</text>
+
+  <!-- 4 cards 2x2 -->
+  <rect x="80" y="170" width="510" height="150" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="108" y="220" font-size="26" font-weight="700" fill="#c85a1c">1 · 你的歸你，它的歸它</text>
+  <text x="108" y="262" font-size="20" fill="#2b2320">客戶資產與交易所自有財產</text>
+  <text x="108" y="294" font-size="20" fill="#2b2320">必須「分別獨立」，不得混同</text>
+
+  <rect x="610" y="170" width="510" height="150" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="638" y="220" font-size="26" font-weight="700" fill="#c85a1c">2 · 它的債主碰不到你</text>
+  <text x="638" y="262" font-size="20" fill="#2b2320">交易所的債權人不得對客戶</text>
+  <text x="638" y="294" font-size="20" fill="#2b2320">資產請求或行使任何權利</text>
+
+  <rect x="80" y="340" width="510" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="108" y="390" font-size="26" font-weight="700" fill="#b0451a">3 · 它倒了，你不陪葬</text>
+  <text x="108" y="432" font-size="20" fill="#2b2320">交易所破產時，客戶資產</text>
+  <text x="108" y="464" font-size="20" fill="#2b2320">「不屬於破產財團」</text>
+
+  <rect x="610" y="340" width="510" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="638" y="390" font-size="26" font-weight="700" fill="#b0451a">4 · 沒你同意不得動用</text>
+  <text x="638" y="432" font-size="20" fill="#2b2320">除依你的指示等法定事由外，</text>
+  <text x="638" y="464" font-size="20" fill="#2b2320">不得挪用你的資產</text>
+
+  <!-- 法幣加碼 -->
+  <rect x="80" y="510" width="1040" height="86" rx="18" fill="#e8722a"/>
+  <text x="108" y="558" font-size="24" font-weight="700" fill="#fff8f1">法定貨幣再加一層鎖</text>
+  <text x="108" y="586" font-size="20" fill="#ffe6d2">你存的新台幣，交易所須「交付信託」或「取得銀行十足履約保證」</text>
+
+  <text x="80" y="646" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依 2026/6/30 三讀通過之《虛擬資產服務法》第 18 條整理</text>
+</svg>

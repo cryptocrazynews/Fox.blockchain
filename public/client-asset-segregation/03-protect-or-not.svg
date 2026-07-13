@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="86" font-size="46" font-weight="700" fill="#2b2320">分離保管保護你什麼，不保護什麼</text>
+  <text x="80" y="126" font-size="22" fill="#8a7a6d">它是財務防火牆，不是萬靈丹，界線先劃清楚</text>
+
+  <!-- 保護 -->
+  <rect x="80" y="172" width="500" height="410" rx="20" fill="#eef6ec" stroke="#7fa86a" stroke-width="2"/>
+  <text x="110" y="228" font-size="28" font-weight="700" fill="#4f7a3a">✓ 它擋得住</text>
+  <line x1="110" y1="252" x2="550" y2="252" stroke="#bcd4ac" stroke-width="1.5"/>
+  <text x="110" y="308" font-size="22" fill="#2b2320">交易所倒閉，資產不被</text>
+  <text x="110" y="340" font-size="22" fill="#2b2320">當成遺產拿去還債</text>
+  <text x="110" y="404" font-size="22" fill="#2b2320">交易所的債權人來討債，</text>
+  <text x="110" y="436" font-size="22" fill="#2b2320">碰不到你的帳戶</text>
+  <text x="110" y="500" font-size="22" fill="#2b2320">交易所偷偷挪用你的錢，</text>
+  <text x="110" y="532" font-size="22" fill="#2b2320">變成違法、有刑責</text>
+
+  <!-- 不保護 -->
+  <rect x="620" y="172" width="500" height="410" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="650" y="228" font-size="28" font-weight="700" fill="#b0451a">✗ 它擋不住</text>
+  <line x1="650" y1="252" x2="1090" y2="252" stroke="#e6b9a3" stroke-width="1.5"/>
+  <text x="650" y="308" font-size="22" fill="#2b2320">駭客入侵、私鑰外洩</text>
+  <text x="650" y="340" font-size="19" fill="#8a7a6d">要靠冷錢包、多簽、資安控管</text>
+  <text x="650" y="404" font-size="22" fill="#2b2320">幣價下跌</text>
+  <text x="650" y="436" font-size="19" fill="#8a7a6d">保的是所有權，不是購買力</text>
+  <text x="650" y="500" font-size="22" fill="#2b2320">帳目造假、鑽監理漏洞</text>
+  <text x="650" y="532" font-size="19" fill="#8a7a6d">能事後懲罰，未必能全額拿回</text>
+
+  <text x="80" y="628" font-size="21" fill="#2b2320">長期、大額資產最穩的做法，還是提到自己掌握助記詞的錢包，自我保管。</text>
+  <text x="80" y="660" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依《虛擬資產服務法》第 18 條與實務整理</text>
+</svg>
