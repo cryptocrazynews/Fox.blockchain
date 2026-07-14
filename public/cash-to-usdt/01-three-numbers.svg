@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#e8722a"/>
+  <text x="60" y="90" font-size="46" font-weight="700" fill="#2b2320">現金換 USDT 的三個關鍵數字</text>
+  <text x="60" y="132" font-size="24" fill="#8a7a6d">《虛擬資產服務法》與洗錢防制辦法把現金交易的規矩寫死了</text>
+
+  <!-- Card 1 -->
+  <rect x="60" y="180" width="340" height="380" rx="20" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+  <text x="230" y="270" font-size="72" font-weight="800" fill="#e8722a" text-anchor="middle">3 萬</text>
+  <text x="230" y="308" font-size="24" fill="#8a7a6d" text-anchor="middle">新臺幣．臨時性交易</text>
+  <line x1="100" y1="340" x2="360" y2="340" stroke="#eaddce" stroke-width="2"/>
+  <text x="230" y="392" font-size="25" fill="#2b2320" text-anchor="middle">等值 3 萬元以上的</text>
+  <text x="230" y="430" font-size="25" fill="#2b2320" text-anchor="middle">臨時交易，業者要先</text>
+  <text x="230" y="468" font-size="25" font-weight="700" fill="#c85a1c" text-anchor="middle">完成身分確認（實名）</text>
+  <text x="230" y="510" font-size="25" fill="#2b2320" text-anchor="middle">才能做，匿名面交</text>
+  <text x="230" y="544" font-size="25" fill="#2b2320" text-anchor="middle">直接違反</text>
+
+  <!-- Card 2 -->
+  <rect x="430" y="180" width="340" height="380" rx="20" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+  <text x="600" y="270" font-size="72" font-weight="800" fill="#e8722a" text-anchor="middle">50 萬</text>
+  <text x="600" y="308" font-size="24" fill="#8a7a6d" text-anchor="middle">新臺幣．現金交易</text>
+  <line x1="470" y1="340" x2="730" y2="340" stroke="#eaddce" stroke-width="2"/>
+  <text x="600" y="392" font-size="25" fill="#2b2320" text-anchor="middle">單筆 50 萬元以上</text>
+  <text x="600" y="430" font-size="25" fill="#2b2320" text-anchor="middle">現金交易，要在</text>
+  <text x="600" y="468" font-size="25" font-weight="700" fill="#c85a1c" text-anchor="middle">5 個營業日內申報</text>
+  <text x="600" y="516" font-size="25" fill="#2b2320" text-anchor="middle">向法務部調查局通報</text>
+
+  <!-- Card 3 -->
+  <rect x="800" y="180" width="340" height="380" rx="20" fill="#fff8f1" stroke="#e8722a" stroke-width="2"/>
+  <text x="970" y="270" font-size="72" font-weight="800" fill="#e8722a" text-anchor="middle">2 年</text>
+  <text x="970" y="308" font-size="24" fill="#8a7a6d" text-anchor="middle">未登記．刑事責任</text>
+  <line x1="840" y1="340" x2="1100" y2="340" stroke="#eaddce" stroke-width="2"/>
+  <text x="970" y="392" font-size="25" fill="#2b2320" text-anchor="middle">沒完成登記卻</text>
+  <text x="970" y="430" font-size="25" fill="#2b2320" text-anchor="middle">提供服務，最重</text>
+  <text x="970" y="468" font-size="25" font-weight="700" fill="#c85a1c" text-anchor="middle">2 年徒刑＋500 萬</text>
+  <text x="970" y="516" font-size="25" fill="#2b2320" text-anchor="middle">施行後改許可制更重</text>
+
+  <text x="60" y="628" font-size="20" fill="#8a7a6d">資料：金管會、法務部調查局、《虛擬資產服務法》　｜　數字以主管機關公告為準</text>
+  <text x="1140" y="655" font-size="20" font-weight="700" fill="#e8722a" text-anchor="end">小狐狸區塊鏈</text>
+</svg>

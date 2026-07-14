@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#e8722a"/>
+  <text x="60" y="90" font-size="46" font-weight="700" fill="#2b2320">未登記 vs 無照經營：罰則差多少</text>
+  <text x="60" y="132" font-size="24" fill="#8a7a6d">現行是登記制，《虛擬資產服務法》施行後升級為許可制，門檻與代價都往上跳</text>
+
+  <!-- Left: current -->
+  <rect x="60" y="185" width="510" height="400" rx="20" fill="#fff8f1" stroke="#c85a1c" stroke-width="2"/>
+  <rect x="60" y="185" width="510" height="70" rx="20" fill="#f0d9c4"/>
+  <rect x="60" y="225" width="510" height="30" fill="#f0d9c4"/>
+  <text x="315" y="230" font-size="30" font-weight="700" fill="#c85a1c" text-anchor="middle">現行．登記制</text>
+  <text x="315" y="318" font-size="27" fill="#2b2320" text-anchor="middle">沒完成洗錢防制登記</text>
+  <text x="315" y="356" font-size="27" fill="#2b2320" text-anchor="middle">就提供虛擬資產服務</text>
+  <text x="315" y="426" font-size="58" font-weight="800" fill="#c85a1c" text-anchor="middle">2 年以下</text>
+  <text x="315" y="470" font-size="27" fill="#2b2320" text-anchor="middle">有期徒刑、拘役</text>
+  <text x="315" y="524" font-size="40" font-weight="800" fill="#c85a1c" text-anchor="middle">併科 500 萬</text>
+  <text x="315" y="558" font-size="23" fill="#8a7a6d" text-anchor="middle">高雄幣商案就是踩這條</text>
+
+  <!-- arrow -->
+  <text x="600" y="400" font-size="60" fill="#e8722a" text-anchor="middle">→</text>
+
+  <!-- Right: after -->
+  <rect x="630" y="185" width="510" height="400" rx="20" fill="#fff8f1" stroke="#e8722a" stroke-width="3"/>
+  <rect x="630" y="185" width="510" height="70" rx="20" fill="#e8722a"/>
+  <rect x="630" y="225" width="510" height="30" fill="#e8722a"/>
+  <text x="885" y="230" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">施行後．許可制</text>
+  <text x="885" y="318" font-size="27" fill="#2b2320" text-anchor="middle">未取得許可</text>
+  <text x="885" y="356" font-size="27" fill="#2b2320" text-anchor="middle">就經營虛擬資產服務</text>
+  <text x="885" y="426" font-size="58" font-weight="800" fill="#e8722a" text-anchor="middle">7 年以下</text>
+  <text x="885" y="470" font-size="27" fill="#2b2320" text-anchor="middle">有期徒刑</text>
+  <text x="885" y="524" font-size="40" font-weight="800" fill="#e8722a" text-anchor="middle">併科 1 億</text>
+  <text x="885" y="558" font-size="23" fill="#8a7a6d" text-anchor="middle">最快 2027 Q1 施行</text>
+
+  <text x="60" y="628" font-size="20" fill="#8a7a6d">若另涉詐欺、洗錢者加重併罰，非二擇一　｜　資料：《虛擬資產服務法》、洗錢防制相關辦法</text>
+  <text x="1140" y="655" font-size="20" font-weight="700" fill="#e8722a" text-anchor="end">小狐狸區塊鏈</text>
+</svg>

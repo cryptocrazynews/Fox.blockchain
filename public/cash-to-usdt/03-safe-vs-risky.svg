@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#e8722a"/>
+  <text x="60" y="90" font-size="46" font-weight="700" fill="#2b2320">換 USDT 的兩條路：一條乾淨，一條危險</text>
+  <text x="60" y="132" font-size="24" fill="#8a7a6d">省下的那點價差，換不回一個能被證明的交易紀錄</text>
+
+  <!-- Risky -->
+  <rect x="60" y="180" width="510" height="410" rx="20" fill="#fbeee6" stroke="#b04a3a" stroke-width="2"/>
+  <circle cx="110" cy="235" r="22" fill="#b04a3a"/>
+  <text x="110" y="245" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">✕</text>
+  <text x="150" y="246" font-size="32" font-weight="700" fill="#b04a3a">現金面交街邊幣商</text>
+
+  <text x="95" y="316" font-size="26" fill="#2b2320">匿名交易，完全沒有金流紀錄</text>
+  <text x="95" y="372" font-size="26" fill="#2b2320">對方可能沒登記，本身就違法</text>
+  <text x="95" y="428" font-size="26" fill="#2b2320">現金可能流進詐騙集團金流</text>
+  <text x="95" y="484" font-size="26" fill="#2b2320">換到贓款 U，帳戶恐被凍結</text>
+  <text x="95" y="540" font-size="26" fill="#2b2320">被害人求償時你難自證清白</text>
+
+  <!-- Safe -->
+  <rect x="630" y="180" width="510" height="410" rx="20" fill="#fff8f1" stroke="#e8722a" stroke-width="3"/>
+  <circle cx="680" cy="235" r="22" fill="#e8722a"/>
+  <text x="680" y="245" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">✓</text>
+  <text x="720" y="246" font-size="32" font-weight="700" fill="#c85a1c">合規交易所台幣入金</text>
+
+  <text x="665" y="316" font-size="26" fill="#2b2320">全程實名，自帶完整金流紀錄</text>
+  <text x="665" y="372" font-size="26" fill="#2b2320">平台在金管會合規名單上</text>
+  <text x="665" y="428" font-size="26" fill="#2b2320">資產受信託與分離保管保護</text>
+  <text x="665" y="484" font-size="26" fill="#2b2320">U 來源清楚，不怕被風控標記</text>
+  <text x="665" y="540" font-size="26" fill="#2b2320">出事時你的錢和平台的錢分開</text>
+
+  <text x="60" y="632" font-size="21" fill="#8a7a6d">先對照合規名單再入金，別用現金跟陌生人面交</text>
+  <text x="1140" y="655" font-size="20" font-weight="700" fill="#e8722a" text-anchor="end">小狐狸區塊鏈</text>
+</svg>
