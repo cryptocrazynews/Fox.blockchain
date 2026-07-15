@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="86" font-size="46" font-weight="700" fill="#2b2320">你該留哪些紀錄？懶人包</text>
+  <text x="80" y="126" font-size="22" fill="#8a7a6d">湊齊這些，成本跟價差才算得出來</text>
+
+  <!-- left: 欄位清單 -->
+  <rect x="80" y="176" width="560" height="384" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="228" font-size="26" font-weight="700" fill="#c85a1c">每筆交易要能還原</text>
+
+  <text x="118" y="286" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="286" font-size="21" fill="#2b2320">交易時間</text>
+  <text x="118" y="332" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="332" font-size="21" fill="#2b2320">幣種與買賣方向</text>
+  <text x="118" y="378" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="378" font-size="21" fill="#2b2320">數量與成交價格</text>
+  <text x="118" y="424" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="424" font-size="21" fill="#2b2320">手續費</text>
+  <text x="118" y="470" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="470" font-size="21" fill="#2b2320">台幣入金與出金紀錄</text>
+  <text x="118" y="516" font-size="30" fill="#e8722a">✓</text>
+  <text x="158" y="516" font-size="21" fill="#2b2320">對應的銀行金流明細</text>
+
+  <!-- right: 三個習慣 -->
+  <rect x="680" y="176" width="440" height="384" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="710" y="228" font-size="26" font-weight="700" fill="#b0451a">現在就養成三習慣</text>
+
+  <text x="710" y="290" font-size="30" font-weight="700" fill="#c03d12">1</text>
+  <text x="748" y="290" font-size="21" fill="#2b2320">定期匯出</text>
+  <text x="748" y="320" font-size="17" fill="#8a7a6d">每季存 CSV／對帳單到自己硬碟</text>
+
+  <text x="710" y="384" font-size="30" font-weight="700" fill="#c03d12">2</text>
+  <text x="748" y="384" font-size="21" fill="#2b2320">金流分開存</text>
+  <text x="748" y="414" font-size="17" fill="#8a7a6d">交易紀錄與銀行入出金各留一份</text>
+
+  <text x="710" y="478" font-size="30" font-weight="700" fill="#c03d12">3</text>
+  <text x="748" y="478" font-size="21" fill="#2b2320">一個帳戶管到底</text>
+  <text x="748" y="508" font-size="17" fill="#8a7a6d">別到處開戶，成本鏈才拼得起來</text>
+
+  <text x="80" y="616" font-size="20" fill="#2b2320">境內走綜所稅、境外走最低稅負制，兩邊都要靠這些紀錄佐證。</text>
+  <text x="80" y="656" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  報稅請以財政部最新規定為準</text>
+</svg>

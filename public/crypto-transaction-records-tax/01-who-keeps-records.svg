@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="86" font-size="46" font-weight="700" fill="#2b2320">交易所留它的，你留你的</text>
+  <text x="80" y="126" font-size="22" fill="#8a7a6d">兩份紀錄目的不同，缺一不可</text>
+
+  <!-- card 1: 交易所 -->
+  <rect x="80" y="176" width="500" height="384" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="232" font-size="28" font-weight="700" fill="#c85a1c">交易所保存</text>
+  <text x="110" y="266" font-size="19" fill="#8a7a6d">《虛擬資產服務法》第 23 條</text>
+  <line x1="110" y1="290" x2="550" y2="290" stroke="#e8c3a0" stroke-width="1.5"/>
+
+  <text x="110" y="332" font-size="20" fill="#8a7a6d">保存期限</text>
+  <text x="110" y="380" font-size="46" font-weight="700" fill="#e8722a">至少 5 年</text>
+  <text x="110" y="414" font-size="18" fill="#2b2320">自服務關係終止時起算，有爭議則保存到爭議消除</text>
+
+  <text x="110" y="466" font-size="20" fill="#8a7a6d">目的</text>
+  <text x="110" y="502" font-size="22" font-weight="700" fill="#2b2320">備供主管機關查核</text>
+  <text x="110" y="536" font-size="18" fill="#2b2320">不會幫你算稅、不保證你隨時調得到</text>
+
+  <!-- card 2: 你自己 -->
+  <rect x="620" y="176" width="500" height="384" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="650" y="232" font-size="28" font-weight="700" fill="#b0451a">你自己保存</text>
+  <text x="650" y="266" font-size="19" fill="#8a7a6d">報稅舉證責任在你身上</text>
+  <line x1="650" y1="290" x2="1090" y2="290" stroke="#e6b9a3" stroke-width="1.5"/>
+
+  <text x="650" y="332" font-size="20" fill="#8a7a6d">建議期限</text>
+  <text x="650" y="380" font-size="46" font-weight="700" fill="#c03d12">7 年以上</text>
+  <text x="650" y="414" font-size="18" fill="#2b2320">對齊稅捐核課期間，逃漏最長可回查 7 年</text>
+
+  <text x="650" y="466" font-size="20" fill="#8a7a6d">目的</text>
+  <text x="650" y="502" font-size="22" font-weight="700" fill="#2b2320">證明買入成本，只為價差繳稅</text>
+  <text x="650" y="536" font-size="18" fill="#2b2320">拿不出成本，最壞整筆賣出金額被課</text>
+
+  <text x="80" y="616" font-size="20" fill="#2b2320">交易所的 5 年是它的合規義務，不等於你報稅沒問題。</text>
+  <text x="80" y="656" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依《虛擬資產服務法》第 23 條與《稅捐稽徵法》第 21 條</text>
+</svg>

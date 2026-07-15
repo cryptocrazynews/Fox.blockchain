@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="46" font-weight="700" fill="#2b2320">拿不出成本，稅差多少</text>
+  <text x="80" y="126" font-size="22" fill="#8a7a6d">同一筆交易，有沒有紀錄結果天差地遠</text>
+
+  <!-- scenario -->
+  <text x="80" y="188" font-size="22" fill="#2b2320">情境：三年前買入 30 萬，今年賣出拿回 80 萬</text>
+
+  <!-- card A: 有紀錄 -->
+  <rect x="80" y="220" width="500" height="330" rx="20" fill="#fff3e8" stroke="#7ba05b" stroke-width="2.5"/>
+  <text x="110" y="272" font-size="26" font-weight="700" fill="#4f7a34">能證明成本</text>
+  <line x1="110" y1="294" x2="550" y2="294" stroke="#cfe0bd" stroke-width="1.5"/>
+  <text x="110" y="340" font-size="20" fill="#2b2320">賣出成交金額</text>
+  <text x="430" y="340" font-size="20" font-weight="700" fill="#2b2320" text-anchor="end">80 萬</text>
+  <text x="110" y="382" font-size="20" fill="#2b2320">減除買入成本</text>
+  <text x="430" y="382" font-size="20" font-weight="700" fill="#2b2320" text-anchor="end">- 30 萬</text>
+  <line x1="110" y1="404" x2="430" y2="404" stroke="#cfe0bd" stroke-width="1.5"/>
+  <text x="110" y="452" font-size="22" fill="#4f7a34">應稅財產交易所得</text>
+  <text x="110" y="510" font-size="52" font-weight="700" fill="#4f7a34">50 萬</text>
+
+  <!-- card B: 無紀錄 -->
+  <rect x="620" y="220" width="500" height="330" rx="20" fill="#fbe6dc" stroke="#c03d12" stroke-width="2.5"/>
+  <text x="650" y="272" font-size="26" font-weight="700" fill="#b0451a">無法舉證成本</text>
+  <line x1="650" y1="294" x2="1090" y2="294" stroke="#e6b9a3" stroke-width="1.5"/>
+  <text x="650" y="340" font-size="20" fill="#2b2320">賣出成交金額</text>
+  <text x="970" y="340" font-size="20" font-weight="700" fill="#2b2320" text-anchor="end">80 萬</text>
+  <text x="650" y="382" font-size="20" fill="#2b2320">成本無法認列</text>
+  <text x="970" y="382" font-size="20" font-weight="700" fill="#c03d12" text-anchor="end">- 0 元</text>
+  <line x1="650" y1="404" x2="970" y2="404" stroke="#e6b9a3" stroke-width="1.5"/>
+  <text x="650" y="452" font-size="22" fill="#b0451a">最壞情況：全額當所得</text>
+  <text x="650" y="510" font-size="52" font-weight="700" fill="#c03d12">80 萬</text>
+
+  <text x="80" y="602" font-size="21" fill="#2b2320">稅基硬生生多 30 萬。留好成本紀錄，就是最扎實的合法節稅。</text>
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  個人買賣加密貨幣屬財產交易所得，數字為示意</text>
+</svg>
