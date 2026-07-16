@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">BitoPro 費用一覽，先算清楚再下單</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">開啟 BITO 折抵，交易手續費再打 8 折</text>
+
+  <!-- card 1 -->
+  <rect x="80" y="170" width="255" height="200" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="207" y="220" font-size="23" font-weight="700" fill="#c85a1c" text-anchor="middle">掛單 Maker</text>
+  <text x="207" y="292" font-size="50" font-weight="700" fill="#e8722a" text-anchor="middle">0.1%</text>
+  <text x="207" y="336" font-size="18" fill="#8a7a6d" text-anchor="middle">限價單</text>
+
+  <!-- card 2 -->
+  <rect x="350" y="170" width="255" height="200" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="477" y="220" font-size="23" font-weight="700" fill="#c85a1c" text-anchor="middle">吃單 Taker</text>
+  <text x="477" y="292" font-size="50" font-weight="700" fill="#e8722a" text-anchor="middle">0.2%</text>
+  <text x="477" y="336" font-size="18" fill="#8a7a6d" text-anchor="middle">市價單</text>
+
+  <!-- card 3 -->
+  <rect x="620" y="170" width="255" height="200" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="747" y="220" font-size="23" font-weight="700" fill="#c85a1c" text-anchor="middle">網格機器人</text>
+  <text x="747" y="292" font-size="50" font-weight="700" fill="#e8722a" text-anchor="middle">0.05%</text>
+  <text x="747" y="336" font-size="18" fill="#8a7a6d" text-anchor="middle">統一費率</text>
+
+  <!-- card 4 -->
+  <rect x="890" y="170" width="230" height="200" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="1005" y="220" font-size="23" font-weight="700" fill="#c85a1c" text-anchor="middle">新台幣出金</text>
+  <text x="1005" y="286" font-size="40" font-weight="700" fill="#e8722a" text-anchor="middle">30 元</text>
+  <text x="1005" y="332" font-size="18" fill="#2b2320" text-anchor="middle">每筆，直接扣除</text>
+
+  <!-- discount bar -->
+  <rect x="80" y="400" width="1040" height="115" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="446" font-size="24" font-weight="700" fill="#4f7a3a">開啟 BITO 平台幣折抵</text>
+  <text x="110" y="490" font-size="22" fill="#2b2320">交易手續費打 8 折（省 20%）　常交易的人幾乎必開，但別為省小錢重壓平台幣</text>
+
+  <!-- speed note -->
+  <rect x="80" y="540" width="510" height="75" rx="14" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="576" font-size="20" font-weight="700" fill="#c85a1c">台幣入金</text>
+  <text x="110" y="603" font-size="19" fill="#2b2320">實測不到 3 分鐘到帳，可馬上下單</text>
+
+  <rect x="610" y="540" width="510" height="75" rx="14" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="640" y="576" font-size="20" font-weight="700" fill="#c85a1c">台幣出金</text>
+  <text x="640" y="603" font-size="19" fill="#2b2320">實測約 1 到 2 個工作天入帳</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  費率為官方標準，實際依帳戶等級與活動調整</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="84" font-size="44" font-weight="700" fill="#2b2320">BitoPro 開戶到買幣，五步走完</text>
+  <text x="80" y="124" font-size="21" fill="#8a7a6d">純線上實名制，綁同名銀行帳戶，台幣入金不到 3 分鐘到帳</text>
+
+  <!-- step 1 -->
+  <rect x="70" y="180" width="200" height="300" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="170" cy="235" r="30" fill="#e8722a"/>
+  <text x="170" y="247" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="170" y="315" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">註冊帳號</text>
+  <text x="170" y="360" font-size="18" fill="#2b2320" text-anchor="middle">填 email</text>
+  <text x="170" y="392" font-size="18" fill="#2b2320" text-anchor="middle">設定密碼</text>
+  <text x="170" y="424" font-size="18" fill="#2b2320" text-anchor="middle">開啟兩步驟</text>
+  <text x="170" y="456" font-size="18" fill="#2b2320" text-anchor="middle">驗證</text>
+
+  <!-- step 2 -->
+  <rect x="290" y="180" width="200" height="300" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="390" cy="235" r="30" fill="#e8722a"/>
+  <text x="390" y="247" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="390" y="315" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">身分驗證</text>
+  <text x="390" y="360" font-size="18" fill="#2b2320" text-anchor="middle">上傳身分證</text>
+  <text x="390" y="392" font-size="18" fill="#2b2320" text-anchor="middle">第二證件</text>
+  <text x="390" y="424" font-size="18" fill="#2b2320" text-anchor="middle">臉部辨識</text>
+  <text x="390" y="456" font-size="18" fill="#2b2320" text-anchor="middle">KYC</text>
+
+  <!-- step 3 -->
+  <rect x="510" y="180" width="200" height="300" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="610" cy="235" r="30" fill="#e8722a"/>
+  <text x="610" y="247" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="610" y="315" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">綁銀行帳戶</text>
+  <text x="610" y="360" font-size="18" fill="#2b2320" text-anchor="middle">本人同名</text>
+  <text x="610" y="392" font-size="18" fill="#2b2320" text-anchor="middle">帳戶才會過</text>
+  <text x="610" y="424" font-size="18" fill="#2b2320" text-anchor="middle">出入金通道</text>
+
+  <!-- step 4 -->
+  <rect x="730" y="180" width="200" height="300" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="830" cy="235" r="30" fill="#e8722a"/>
+  <text x="830" y="247" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="830" y="315" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">台幣入金</text>
+  <text x="830" y="360" font-size="18" fill="#2b2320" text-anchor="middle">銀行轉帳</text>
+  <text x="830" y="392" font-size="18" fill="#2b2320" text-anchor="middle">實測</text>
+  <text x="830" y="424" font-size="20" font-weight="700" fill="#e8722a" text-anchor="middle">3 分鐘內到</text>
+
+  <!-- step 5 -->
+  <rect x="950" y="180" width="200" height="300" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="1050" cy="235" r="30" fill="#c85a1c"/>
+  <text x="1050" y="247" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+  <text x="1050" y="315" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">下單買幣</text>
+  <text x="1050" y="360" font-size="18" fill="#2b2320" text-anchor="middle">買比特幣</text>
+  <text x="1050" y="392" font-size="18" fill="#2b2320" text-anchor="middle">以太幣</text>
+  <text x="1050" y="424" font-size="18" fill="#2b2320" text-anchor="middle">主流幣為主</text>
+
+  <!-- arrows -->
+  <text x="280" y="340" font-size="28" fill="#e8a76a" text-anchor="middle">›</text>
+  <text x="500" y="340" font-size="28" fill="#e8a76a" text-anchor="middle">›</text>
+  <text x="720" y="340" font-size="28" fill="#e8a76a" text-anchor="middle">›</text>
+  <text x="940" y="340" font-size="28" fill="#e8a76a" text-anchor="middle">›</text>
+
+  <rect x="70" y="520" width="1080" height="70" rx="14" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="100" y="563" font-size="20" fill="#2b2320">提醒：超商買幣服務已於 2025 年 5 月 20 日停止，現在只能用綁定的同名銀行帳戶入金。</text>
+
+  <text x="80" y="646" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  流程與到帳時間為實測參考，實際依帳戶審核與銀行作業調整</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="84" font-size="44" font-weight="700" fill="#2b2320">BitoPro 實測懶人包</text>
+  <text x="80" y="124" font-size="21" fill="#8a7a6d">台灣老牌交易所，合規到位，資安是你要自己衡量的一課</text>
+
+  <!-- pros -->
+  <rect x="80" y="165" width="510" height="300" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="212" font-size="26" font-weight="700" fill="#4f7a3a">優點</text>
+  <text x="110" y="258" font-size="20" fill="#2b2320">台灣元老、在地經營，中文客服在台灣</text>
+  <text x="110" y="298" font-size="20" fill="#2b2320">台幣入金 3 分鐘、出金 1 到 2 天穩定</text>
+  <text x="110" y="338" font-size="20" fill="#2b2320">2025/9/22 完成 VASP 洗錢防制登記</text>
+  <text x="110" y="378" font-size="20" fill="#2b2320">被駭後自行認賠，用戶資產未短少</text>
+  <text x="110" y="418" font-size="20" fill="#2b2320">介面好上手，適合傳統金融轉入的新手</text>
+
+  <!-- cons -->
+  <rect x="610" y="165" width="510" height="300" rx="16" fill="#faeae4" stroke="#d98a6a" stroke-width="2"/>
+  <text x="640" y="212" font-size="26" font-weight="700" fill="#b5502a">缺點與風險</text>
+  <text x="640" y="258" font-size="20" fill="#2b2320">費率非市場最低，大量交易更有感</text>
+  <text x="640" y="298" font-size="20" fill="#2b2320">幣種不如國際大所豐富</text>
+  <text x="640" y="338" font-size="20" fill="#2b2320">2025/5 遭北韓 Lazarus 駭走約 1150 萬美元</text>
+  <text x="640" y="378" font-size="20" fill="#2b2320">超商買幣服務已停止（2025/5/20）</text>
+  <text x="640" y="418" font-size="20" fill="#2b2320">資安信任成本要自己消化</text>
+
+  <!-- verdict -->
+  <rect x="80" y="495" width="1040" height="115" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="540" font-size="24" font-weight="700" fill="#c85a1c">適合誰</text>
+  <text x="110" y="582" font-size="21" fill="#2b2320">重視台幣通道與合規、以買賣主流幣為主的用戶。長期部位仍建議搬去自我保管，別長放交易所。</text>
+
+  <text x="80" y="648" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  數據以 2026 年 7 月公開資訊為準，投資有風險請自行評估</text>
+</svg>
