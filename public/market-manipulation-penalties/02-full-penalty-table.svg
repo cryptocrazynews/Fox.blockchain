@@ -1,0 +1,59 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="76" font-size="42" font-weight="700" fill="#2b2320">罰則全表：會被罰的四大類行為</text>
+  <text x="80" y="112" font-size="20" fill="#8a7a6d">對照自己的情況，看落在哪一格</text>
+
+  <!-- header -->
+  <rect x="80" y="136" width="1040" height="52" rx="10" fill="#e8722a"/>
+  <text x="110" y="170" font-size="21" font-weight="700" fill="#fff">類型</text>
+  <text x="360" y="170" font-size="21" font-weight="700" fill="#fff">具體樣態</text>
+  <text x="830" y="170" font-size="21" font-weight="700" fill="#fff">刑度／罰金</text>
+
+  <!-- row 1 -->
+  <rect x="80" y="192" width="1040" height="76" fill="#fff" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="222" font-size="20" font-weight="700" fill="#c85a1c">無照經營</text>
+  <text x="110" y="250" font-size="15" fill="#8a7a6d">交換／平台／移轉／保管等</text>
+  <text x="360" y="238" font-size="18" fill="#2b2320">未經許可就經營各類虛擬資產業務</text>
+  <text x="830" y="230" font-size="19" font-weight="700" fill="#c85a1c">7 年以下有期徒刑</text>
+  <text x="830" y="256" font-size="17" fill="#2b2320">得併科 1 億以下</text>
+
+  <!-- row 2 -->
+  <rect x="80" y="268" width="1040" height="76" fill="#fdf4ea" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="298" font-size="20" font-weight="700" fill="#c85a1c">無照發穩定幣</text>
+  <text x="360" y="314" font-size="18" fill="#2b2320">未取得許可就發行穩定幣</text>
+  <text x="830" y="306" font-size="19" font-weight="700" fill="#c85a1c">同無照經營</text>
+  <text x="830" y="332" font-size="17" fill="#2b2320">7 年以下、併科 1 億以下</text>
+
+  <!-- row 3 -->
+  <rect x="80" y="344" width="1040" height="76" fill="#fff" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="374" font-size="20" font-weight="700" fill="#b23c1c">操縱市場</text>
+  <text x="110" y="402" font-size="15" fill="#8a7a6d">最重的一條</text>
+  <text x="360" y="390" font-size="18" fill="#2b2320">拉抬幣價、對敲洗量、影響供需</text>
+  <text x="830" y="382" font-size="19" font-weight="700" fill="#b23c1c">3 至 10 年有期徒刑</text>
+  <text x="830" y="408" font-size="17" fill="#2b2320">併科 1000 萬至 2 億</text>
+
+  <!-- row 4 -->
+  <rect x="80" y="420" width="1040" height="76" fill="#fdf4ea" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="450" font-size="20" font-weight="700" fill="#b23c1c">詐欺、散布不實</text>
+  <text x="360" y="466" font-size="18" fill="#2b2320">對重大資訊虛偽、隱匿，致他人誤信</text>
+  <text x="830" y="458" font-size="19" font-weight="700" fill="#b23c1c">同操縱市場</text>
+  <text x="830" y="484" font-size="17" fill="#2b2320">3 至 10 年、併科 1000 萬至 2 億</text>
+
+  <!-- row 5 -->
+  <rect x="80" y="496" width="1040" height="76" fill="#fff" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="526" font-size="20" font-weight="700" fill="#e8722a">穩定幣違規</text>
+  <text x="360" y="514" font-size="17" fill="#2b2320">未足額準備、未存境內、付息、</text>
+  <text x="360" y="540" font-size="17" fill="#2b2320">未依面額發行贖回</text>
+  <text x="830" y="522" font-size="18" font-weight="700" fill="#e8722a">行政＋刑事</text>
+  <text x="830" y="548" font-size="16" fill="#2b2320">限期改善、罰鍰、重大者廢照究刑責</text>
+
+  <!-- row 6 -->
+  <rect x="80" y="572" width="1040" height="72" fill="#fdf4ea" stroke="#eaddce" stroke-width="1"/>
+  <text x="110" y="602" font-size="20" font-weight="700" fill="#e8722a">業者義務違反</text>
+  <text x="360" y="590" font-size="17" fill="#2b2320">未分離保管客戶資產、誇大不實廣告、</text>
+  <text x="360" y="616" font-size="17" fill="#2b2320">未入公會、未落實 KYC／AML</text>
+  <text x="830" y="600" font-size="18" font-weight="700" fill="#e8722a">行政為主</text>
+  <text x="830" y="626" font-size="16" fill="#2b2320">限期改善、罰鍰、停業或廢止許可</text>
+
+  <text x="80" y="666" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  金額單位新台幣  ·  另有負責人消極資格：曾犯詐欺洗錢等罪未滿 5 年不得任負責人</text>
+</svg>

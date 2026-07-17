@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="82" font-size="44" font-weight="700" fill="#2b2320">散戶最容易誤觸的三條線</text>
+  <text x="80" y="122" font-size="21" fill="#8a7a6d">而且大多落在最重的操縱市場，不是你以為的無照經營</text>
+
+  <!-- redline 1 -->
+  <rect x="80" y="162" width="1040" height="112" rx="16" fill="#fff" stroke="#c85a1c" stroke-width="2"/>
+  <circle cx="134" cy="218" r="24" fill="#c85a1c"/>
+  <text x="134" y="227" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="178" y="206" font-size="25" font-weight="700" fill="#c85a1c">群組喊單、配合拉抬出貨</text>
+  <text x="178" y="242" font-size="19" fill="#2b2320">散布假利多製造買氣，對方趁高點倒貨給接盤的人</text>
+  <text x="178" y="268" font-size="18" fill="#8a7a6d">落入操縱市場，關 3 到 10 年那條</text>
+
+  <!-- redline 2 -->
+  <rect x="80" y="286" width="1040" height="112" rx="16" fill="#fff" stroke="#c85a1c" stroke-width="2"/>
+  <circle cx="134" cy="342" r="24" fill="#c85a1c"/>
+  <text x="134" y="351" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="178" y="330" font-size="25" font-weight="700" fill="#c85a1c">對敲洗量、做假交易</text>
+  <text x="178" y="366" font-size="19" fill="#2b2320">左手賣右手買，把成交量做漂亮騙人進場</text>
+  <text x="178" y="392" font-size="18" fill="#8a7a6d">製造虛假交易表象，同樣是操縱的一種</text>
+
+  <!-- redline 3 -->
+  <rect x="80" y="410" width="1040" height="112" rx="16" fill="#fff" stroke="#e8722a" stroke-width="2"/>
+  <circle cx="134" cy="466" r="24" fill="#e8722a"/>
+  <text x="134" y="475" font-size="26" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="178" y="454" font-size="25" font-weight="700" fill="#e8722a">常態幫人代換現金與 USDT 抽成</text>
+  <text x="178" y="490" font-size="19" fill="#2b2320">常態、有對價、面對不特定人</text>
+  <text x="178" y="516" font-size="18" fill="#8a7a6d">可能被當成無照經營的交換／移轉業務</text>
+
+  <!-- safe zone -->
+  <rect x="80" y="534" width="1040" height="82" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="112" y="568" font-size="22" font-weight="700" fill="#4f7a3a">安全區</text>
+  <text x="112" y="600" font-size="20" fill="#2b2320">用合規平台，買賣自己的幣、自己放著、自己做紀錄，不在射程內。</text>
+
+  <text x="80" y="656" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  個案是否觸法仍以具體事實與司法機關見解為準</text>
+</svg>
