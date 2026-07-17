@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="82" font-size="44" font-weight="700" fill="#2b2320">刑度排序：誰罰得最重</text>
+  <text x="80" y="122" font-size="21" fill="#8a7a6d">很多人以為無照經營最重，其實操縱市場才是天花板</text>
+
+  <!-- rank 1 -->
+  <rect x="80" y="160" width="1040" height="130" rx="16" fill="#fff" stroke="#c85a1c" stroke-width="3"/>
+  <circle cx="140" cy="225" r="30" fill="#c85a1c"/>
+  <text x="140" y="236" font-size="32" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="196" y="210" font-size="28" font-weight="700" fill="#c85a1c">詐欺與操縱市場</text>
+  <text x="196" y="248" font-size="20" fill="#2b2320">散布不實、隱匿、拉抬幣價、對敲洗量</text>
+  <text x="196" y="278" font-size="19" fill="#8a7a6d">傷害的是其他投資人的錢包，定位為重罪</text>
+  <text x="1090" y="212" font-size="26" font-weight="700" fill="#c85a1c" text-anchor="end">3 至 10 年</text>
+  <text x="1090" y="248" font-size="19" fill="#2b2320" text-anchor="end">併科 1000 萬至 2 億</text>
+  <text x="1090" y="278" font-size="17" fill="#8a7a6d" text-anchor="end">有下限、天花板最高</text>
+
+  <!-- rank 2 -->
+  <rect x="80" y="308" width="1040" height="130" rx="16" fill="#fff" stroke="#e8722a" stroke-width="2"/>
+  <circle cx="140" cy="373" r="30" fill="#e8722a"/>
+  <text x="140" y="384" font-size="32" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="196" y="358" font-size="28" font-weight="700" fill="#e8722a">無照經營</text>
+  <text x="196" y="396" font-size="20" fill="#2b2320">未經許可經營業務，或未經許可發行穩定幣</text>
+  <text x="196" y="426" font-size="19" fill="#8a7a6d">傷害的是監理秩序，最重關 7 年</text>
+  <text x="1090" y="360" font-size="26" font-weight="700" fill="#e8722a" text-anchor="end">7 年以下</text>
+  <text x="1090" y="396" font-size="19" fill="#2b2320" text-anchor="end">併科 1 億以下</text>
+  <text x="1090" y="426" font-size="17" fill="#8a7a6d" text-anchor="end">無下限</text>
+
+  <!-- rank 3 -->
+  <rect x="80" y="456" width="1040" height="120" rx="16" fill="#f4ede4" stroke="#c9b8a6" stroke-width="2"/>
+  <circle cx="140" cy="516" r="28" fill="#a89a8d"/>
+  <text x="140" y="526" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">舊</text>
+  <text x="196" y="504" font-size="26" font-weight="700" fill="#8a7a6d">現行洗錢防制法（對照組）</text>
+  <text x="196" y="540" font-size="20" fill="#2b2320">專法上路前，未登記就提供服務</text>
+  <text x="196" y="568" font-size="18" fill="#8a7a6d">新法一上路，力道完全不同量級</text>
+  <text x="1090" y="506" font-size="24" font-weight="700" fill="#8a7a6d" text-anchor="end">2 年以下</text>
+  <text x="1090" y="542" font-size="19" fill="#2b2320" text-anchor="end">科或併科 500 萬以下</text>
+
+  <text x="80" y="640" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  金額單位新台幣  ·  刑度以《虛擬資產服務法》為準</text>
+</svg>
