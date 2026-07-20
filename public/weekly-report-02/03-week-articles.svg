@@ -1,0 +1,64 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8f1"/>
+      <stop offset="1" stop-color="#fdeede"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+
+  <text x="80" y="90" font-size="44" font-weight="700" fill="#2b2320">本週六篇一次看</text>
+  <text x="80" y="130" font-size="22" fill="#8a7a6d">主題：資產安全與現金交易時代的終結（7/13 至 7/18）</text>
+
+  <!-- rows -->
+  <g>
+    <rect x="80" y="168" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="168" width="120" height="66" rx="12" fill="#e8722a"/>
+    <text x="140" y="200" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週一</text>
+    <text x="140" y="223" font-size="15" fill="#ffe6cf" text-anchor="middle">深度</text>
+    <text x="225" y="211" font-size="23" font-weight="700" fill="#2b2320">客戶資產分離保管</text>
+    <text x="640" y="211" font-size="18" fill="#8a7a6d">FTX 之後最重要的一條規定</text>
+  </g>
+  <g>
+    <rect x="80" y="244" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="244" width="120" height="66" rx="12" fill="#e8722a"/>
+    <text x="140" y="276" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週二</text>
+    <text x="140" y="299" font-size="15" fill="#ffe6cf" text-anchor="middle">長尾</text>
+    <text x="225" y="287" font-size="23" font-weight="700" fill="#2b2320">現金換 USDT 違法嗎</text>
+    <text x="640" y="287" font-size="18" fill="#8a7a6d">幣商門市時代的終結，呼應防詐主線</text>
+  </g>
+  <g>
+    <rect x="80" y="320" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="320" width="120" height="66" rx="12" fill="#e8722a"/>
+    <text x="140" y="352" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週三</text>
+    <text x="140" y="375" font-size="15" fill="#ffe6cf" text-anchor="middle">時效</text>
+    <text x="225" y="363" font-size="23" font-weight="700" fill="#2b2320">交易紀錄保存 5 年</text>
+    <text x="640" y="363" font-size="18" fill="#8a7a6d">對報稅的影響，被照會時也用得上</text>
+  </g>
+  <g>
+    <rect x="80" y="396" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="396" width="120" height="66" rx="12" fill="#c85a1c"/>
+    <text x="140" y="428" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週四</text>
+    <text x="140" y="451" font-size="15" fill="#f7d9c0" text-anchor="middle">實測</text>
+    <text x="225" y="439" font-size="23" font-weight="700" fill="#2b2320">BitoPro 幣託完整實測</text>
+    <text x="640" y="439" font-size="18" fill="#8a7a6d">台灣老牌交易所還能打嗎</text>
+  </g>
+  <g>
+    <rect x="80" y="472" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="472" width="120" height="66" rx="12" fill="#e8722a"/>
+    <text x="140" y="504" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週五</text>
+    <text x="140" y="527" font-size="15" fill="#ffe6cf" text-anchor="middle">數據</text>
+    <text x="225" y="515" font-size="23" font-weight="700" fill="#2b2320">新法罰則全表</text>
+    <text x="640" y="515" font-size="18" fill="#8a7a6d">從喊單到操縱市場，哪些行為會坐牢</text>
+  </g>
+  <g>
+    <rect x="80" y="548" width="1040" height="66" rx="12" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <rect x="80" y="548" width="120" height="66" rx="12" fill="#e8722a"/>
+    <text x="140" y="580" font-size="20" font-weight="700" fill="#fff8f1" text-anchor="middle">週六</text>
+    <text x="140" y="603" font-size="15" fill="#ffe6cf" text-anchor="middle">新手</text>
+    <text x="225" y="591" font-size="23" font-weight="700" fill="#2b2320">冷錢包熱錢包是什麼</text>
+    <text x="640" y="591" font-size="18" fill="#8a7a6d">新手保管加密資產的第一課</text>
+  </g>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  一週法規快報 #2</text>
+</svg>

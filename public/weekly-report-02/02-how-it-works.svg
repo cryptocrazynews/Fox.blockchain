@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8f1"/>
+      <stop offset="1" stop-color="#fdeede"/>
+    </linearGradient>
+    <marker id="arrOr" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8722a"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg2)"/>
+
+  <text x="80" y="90" font-size="44" font-weight="700" fill="#2b2320">照會機制怎麼運作？</text>
+  <text x="80" y="130" font-size="22" fill="#8a7a6d">錢的軌跡不再一進幣圈就斷線</text>
+
+  <!-- Bank box -->
+  <rect x="90" y="210" width="330" height="180" rx="18" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="255" y="262" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">銀行 / 電支 / 信用卡</text>
+  <text x="255" y="308" font-size="19" fill="#2b2320" text-anchor="middle">發現帳戶資金異常</text>
+  <text x="255" y="340" font-size="19" fill="#2b2320" text-anchor="middle">流向幣圈平台</text>
+  <text x="255" y="372" font-size="17" fill="#8a7a6d" text-anchor="middle">看得到錢出去</text>
+
+  <!-- VASP box -->
+  <rect x="780" y="210" width="330" height="180" rx="18" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="945" y="262" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">虛擬資產服務商</text>
+  <text x="945" y="308" font-size="19" fill="#2b2320" text-anchor="middle">發現異常幣流</text>
+  <text x="945" y="340" font-size="19" fill="#2b2320" text-anchor="middle">或可疑帳號</text>
+  <text x="945" y="372" font-size="17" fill="#8a7a6d" text-anchor="middle">看得到幣去哪</text>
+
+  <!-- two-way arrows -->
+  <line x1="430" y1="278" x2="770" y2="278" stroke="#e8722a" stroke-width="4" marker-end="url(#arrOr)"/>
+  <line x1="770" y1="322" x2="430" y2="322" stroke="#e8722a" stroke-width="4" marker-end="url(#arrOr)"/>
+  <rect x="500" y="248" width="200" height="46" rx="12" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="600" y="278" font-size="19" font-weight="700" fill="#c85a1c" text-anchor="middle">互相照會查詢</text>
+
+  <!-- what they can ask -->
+  <rect x="90" y="430" width="1020" height="150" rx="18" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="120" y="470" font-size="22" font-weight="700" fill="#2b2320">兩邊可以查到什麼？</text>
+  <text x="120" y="512" font-size="19" fill="#2b2320">銀行 → VASP：虛擬資產帳號的客戶姓名、開戶日期、交易目的</text>
+  <text x="120" y="548" font-size="19" fill="#2b2320">VASP → 銀行：異常幣流對應的金流來源與帳戶資料</text>
+  <text x="700" y="512" font-size="17" fill="#8a7a6d">管道：電話 · 電子郵件</text>
+  <text x="700" y="548" font-size="17" fill="#8a7a6d">· 防制詐欺犯罪平台</text>
+
+  <text x="80" y="640" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依《打詐專法》授權子法，細節以金管會公告為準</text>
+</svg>

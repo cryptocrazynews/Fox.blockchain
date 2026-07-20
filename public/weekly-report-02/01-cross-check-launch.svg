@@ -1,0 +1,64 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8f1"/>
+      <stop offset="1" stop-color="#fdeede"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg1)"/>
+
+  <!-- date badge -->
+  <rect x="80" y="66" width="230" height="72" rx="16" fill="#e8722a"/>
+  <text x="195" y="103" font-size="30" font-weight="700" fill="#fff8f1" text-anchor="middle">2026 / 7 / 21</text>
+  <text x="195" y="128" font-size="17" fill="#ffe6cf" text-anchor="middle">預計上路</text>
+
+  <text x="340" y="102" font-size="44" font-weight="700" fill="#2b2320">跨業照會聯防機制上路</text>
+  <text x="340" y="140" font-size="22" fill="#8a7a6d">把虛擬資產正式接進全國阻詐體系，這次不用等 2027</text>
+
+  <!-- three key cards -->
+  <g>
+    <rect x="80" y="200" width="330" height="270" rx="18" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <circle cx="130" cy="252" r="26" fill="#e8722a"/>
+    <text x="130" y="263" font-size="28" font-weight="700" fill="#fff8f1" text-anchor="middle">1</text>
+    <text x="176" y="248" font-size="24" font-weight="700" fill="#e8722a">互相照會</text>
+    <text x="176" y="278" font-size="17" fill="#8a7a6d">銀行與 VASP 打得通電話</text>
+    <line x1="110" y1="300" x2="380" y2="300" stroke="#f2e4d5" stroke-width="2"/>
+    <text x="110" y="340" font-size="19" fill="#2b2320">銀行、電支、信用卡業者</text>
+    <text x="110" y="372" font-size="19" fill="#2b2320">與虛擬資產服務商之間，</text>
+    <text x="110" y="404" font-size="19" fill="#2b2320">可互查異常帳戶與幣流，</text>
+    <text x="110" y="436" font-size="19" fill="#2b2320">補上「進幣圈就斷線」破口</text>
+  </g>
+
+  <g>
+    <rect x="435" y="200" width="330" height="270" rx="18" fill="#fff" stroke="#f2c9a3" stroke-width="2"/>
+    <circle cx="485" cy="252" r="26" fill="#e8722a"/>
+    <text x="485" y="263" font-size="28" font-weight="700" fill="#fff8f1" text-anchor="middle">2</text>
+    <text x="531" y="248" font-size="24" font-weight="700" fill="#e8722a">防詐平台</text>
+    <text x="531" y="278" font-size="17" fill="#8a7a6d">科技分析異常金流幣流</text>
+    <line x1="465" y1="300" x2="735" y2="300" stroke="#f2e4d5" stroke-width="2"/>
+    <text x="465" y="340" font-size="19" fill="#2b2320">財金公司與聯徵中心</text>
+    <text x="465" y="372" font-size="19" fill="#2b2320">共同建置跨機構</text>
+    <text x="465" y="404" font-size="19" fill="#2b2320">防制詐欺犯罪平台，</text>
+    <text x="465" y="436" font-size="19" fill="#2b2320">把預警能力再往前拉</text>
+  </g>
+
+  <g>
+    <rect x="790" y="200" width="330" height="270" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+    <circle cx="840" cy="252" r="26" fill="#c85a1c"/>
+    <text x="840" y="263" font-size="28" font-weight="700" fill="#fff8f1" text-anchor="middle">3</text>
+    <text x="886" y="248" font-size="24" font-weight="700" fill="#c85a1c">被害人返還</text>
+    <text x="886" y="278" font-size="17" fill="#8a7a6d">卡住的幣有機會拿回</text>
+    <line x1="820" y1="300" x2="1090" y2="300" stroke="#f2d9c2" stroke-width="2"/>
+    <text x="820" y="340" font-size="19" fill="#2b2320">VASP 可將警示帳戶內</text>
+    <text x="820" y="372" font-size="19" fill="#2b2320">剩餘虛擬資產先變賣，</text>
+    <text x="820" y="404" font-size="19" fill="#2b2320">再把現金返還被害人，</text>
+    <text x="820" y="436" font-size="19" fill="#2b2320">降低求償無門的困境</text>
+  </g>
+
+  <!-- bottom note -->
+  <rect x="80" y="505" width="1040" height="80" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="110" y="540" font-size="22" font-weight="700" fill="#b0451a">對一般用戶：正常使用不受影響</text>
+  <text x="110" y="572" font-size="19" fill="#2b2320">用本人帳戶、留好紀錄、不幫人代收代轉，被照會關切的機率就低。</text>
+
+  <text x="80" y="640" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  上路日期與細節以金管會正式公告為準</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="82" font-size="46" font-weight="700" fill="#2b2320">熱錢包 vs 冷錢包</text>
+  <text x="80" y="122" font-size="22" fill="#8a7a6d">差別只在一件事：私鑰有沒有連上網路</text>
+
+  <!-- 熱錢包 card -->
+  <rect x="80" y="168" width="500" height="392" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="112" y="228" font-size="30" font-weight="700" fill="#c85a1c">熱錢包</text>
+  <text x="112" y="262" font-size="19" fill="#8a7a6d">私鑰存在連網裝置上</text>
+  <line x1="112" y1="286" x2="548" y2="286" stroke="#e8c3a0" stroke-width="1.5"/>
+
+  <text x="112" y="330" font-size="21" fill="#2b2320">常見形式</text>
+  <text x="112" y="366" font-size="22" font-weight="700" fill="#2b2320">手機 App、瀏覽器外掛、交易所帳戶</text>
+
+  <text x="112" y="420" font-size="21" fill="#2b2320">優點</text>
+  <text x="112" y="454" font-size="24" font-weight="700" fill="#e8722a">隨開隨用，適合日常買賣</text>
+
+  <text x="112" y="506" font-size="21" fill="#2b2320">風險</text>
+  <text x="112" y="540" font-size="24" font-weight="700" fill="#b0451a">連網就有攻擊面，適合放小額</text>
+
+  <!-- 冷錢包 card -->
+  <rect x="620" y="168" width="500" height="392" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="652" y="228" font-size="30" font-weight="700" fill="#b0451a">冷錢包</text>
+  <text x="652" y="262" font-size="19" fill="#8a7a6d">私鑰永遠不觸網</text>
+  <line x1="652" y1="286" x2="1088" y2="286" stroke="#e6b9a3" stroke-width="1.5"/>
+
+  <text x="652" y="330" font-size="21" fill="#2b2320">常見形式</text>
+  <text x="652" y="366" font-size="22" font-weight="700" fill="#2b2320">硬體錢包（隨身碟或卡片狀）</text>
+
+  <text x="652" y="420" font-size="21" fill="#2b2320">優點</text>
+  <text x="652" y="454" font-size="24" font-weight="700" fill="#c03d12">私鑰離線，安全性最高</text>
+
+  <text x="652" y="506" font-size="21" fill="#2b2320">代價</text>
+  <text x="652" y="540" font-size="24" font-weight="700" fill="#c03d12">要花錢買、操作較慢，適合大額</text>
+
+  <text x="80" y="618" font-size="21" fill="#2b2320">口訣：小額圖方便用熱錢包，大額求安穩用冷錢包。</text>
+  <text x="80" y="656" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  入門款硬體錢包約 79 美元起</text>
+</svg>

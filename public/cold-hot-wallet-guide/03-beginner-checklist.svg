@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="82" font-size="46" font-weight="700" fill="#2b2320">新手保管三原則</text>
+  <text x="80" y="122" font-size="22" fill="#8a7a6d">買不買冷錢包都適用，助記詞保管是重點</text>
+
+  <!-- rule 1 -->
+  <rect x="80" y="168" width="1040" height="118" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="140" cy="227" r="34" fill="#e8722a"/>
+  <text x="140" y="240" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="205" y="218" font-size="28" font-weight="700" fill="#c85a1c">依金額分階段</text>
+  <text x="205" y="258" font-size="21" fill="#2b2320">小額練手感留熱錢包或交易所，長期大額才轉進冷錢包隔離。</text>
+
+  <!-- rule 2 -->
+  <rect x="80" y="302" width="1040" height="118" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="140" cy="361" r="34" fill="#e8722a"/>
+  <text x="140" y="374" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="205" y="352" font-size="28" font-weight="700" fill="#c85a1c">助記詞絕不數位化</text>
+  <text x="205" y="392" font-size="21" fill="#2b2320">不拍照、不存雲端、不傳訊息。手寫紙上或刻金屬板，分兩三份異地存放。</text>
+
+  <!-- rule 3 -->
+  <rect x="80" y="436" width="1040" height="118" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="140" cy="495" r="34" fill="#c85a1c"/>
+  <text x="140" y="508" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="205" y="486" font-size="28" font-weight="700" fill="#b0451a">誰跟你要助記詞，誰就是騙子</text>
+  <text x="205" y="526" font-size="21" fill="#2b2320">官方客服、空投活動永遠不會問。冷錢包只到官網或授權通路買，不買二手。</text>
+
+  <text x="80" y="612" font-size="21" fill="#2b2320">2025 年 Bybit 被偷 15 億美元，證明工具再好也要搭配正確習慣。</text>
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  本文為知識分享，不構成投資或法律建議</text>
+</svg>

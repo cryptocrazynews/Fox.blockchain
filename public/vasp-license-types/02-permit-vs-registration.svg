@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="60" y="80" font-size="44" font-weight="700" fill="#2b2320">制度升級：從登記制到許可制</text>
+  <text x="60" y="118" font-size="21" fill="#8a7a6d">從「先登記再說」變成「先審過才准做」</text>
+
+  <!-- Left card: 舊 登記制 -->
+  <rect x="60" y="164" width="470" height="392" rx="20" fill="#f3ece2" stroke="#c9b79f" stroke-width="2"/>
+  <text x="92" y="222" font-size="30" font-weight="700" fill="#7a6a58">過去 · 登記制</text>
+  <text x="92" y="256" font-size="19" fill="#8a7a6d">依《洗錢防制法》登記</text>
+  <line x1="92" y1="282" x2="498" y2="282" stroke="#d8c9b5" stroke-width="1.5"/>
+  <text x="92" y="330" font-size="21" fill="#5c5045">· 門檻低，先讓你做</text>
+  <text x="92" y="378" font-size="21" fill="#5c5045">· 主要只管洗錢那一塊</text>
+  <text x="92" y="426" font-size="21" fill="#5c5045">· 出事再說</text>
+  <text x="92" y="474" font-size="21" fill="#5c5045">· 個人幣商也能玩</text>
+  <text x="92" y="522" font-size="19" fill="#a89a8d">結果：FTX 挪用、幣商門市亂象</text>
+
+  <!-- Arrow -->
+  <text x="560" y="376" font-size="52" font-weight="700" fill="#e8722a">→</text>
+
+  <!-- Right card: 新 許可制 -->
+  <rect x="632" y="164" width="508" height="392" rx="20" fill="#fff3e8" stroke="#e8722a" stroke-width="3"/>
+  <text x="664" y="222" font-size="30" font-weight="700" fill="#c85a1c">現在 · 事前許可制</text>
+  <text x="664" y="256" font-size="19" fill="#8a7a6d">金管會審過、拿到執照才能開業</text>
+  <line x1="664" y1="282" x2="1108" y2="282" stroke="#e8c3a0" stroke-width="1.5"/>
+  <text x="664" y="330" font-size="21" fill="#2b2320">· 須為股份有限公司組織</text>
+  <text x="664" y="378" font-size="21" fill="#2b2320">· 要有最低資本額</text>
+  <text x="664" y="426" font-size="21" fill="#2b2320">· 要繳營業保證金</text>
+  <text x="664" y="474" font-size="21" fill="#2b2320">· 要建立內控與內稽制度</text>
+  <text x="664" y="522" font-size="19" fill="#b0451a">門檻抬高，皮包公司時代收掉</text>
+
+  <text x="60" y="620" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依 2026/6/30 三讀通過之《虛擬資產服務法》</text>
+</svg>

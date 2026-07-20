@@ -1,0 +1,52 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="60" y="76" font-size="44" font-weight="700" fill="#2b2320">七類 VASP 牌照，各管一件事</text>
+  <text x="60" y="114" font-size="21" fill="#8a7a6d">《虛擬資產服務法》第 6 條，做哪一項就拿哪一張牌</text>
+
+  <!-- Row 1 -->
+  <g>
+    <rect x="60" y="150" width="352" height="150" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+    <text x="84" y="196" font-size="26" font-weight="700" fill="#c85a1c">1 交換商</text>
+    <text x="84" y="234" font-size="19" fill="#2b2320">台幣、外幣跟幣互換，</text>
+    <text x="84" y="262" font-size="19" fill="#2b2320">幣跟幣互換的兌換窗口</text>
+  </g>
+  <g>
+    <rect x="424" y="150" width="352" height="150" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+    <text x="448" y="196" font-size="26" font-weight="700" fill="#c85a1c">2 交易平台商</text>
+    <text x="448" y="234" font-size="19" fill="#2b2320">有掛單簿的交易所，</text>
+    <text x="448" y="262" font-size="19" fill="#2b2320">集中撮合眾人買賣</text>
+  </g>
+  <g>
+    <rect x="788" y="150" width="352" height="150" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+    <text x="812" y="196" font-size="26" font-weight="700" fill="#c85a1c">3 移轉商</text>
+    <text x="812" y="234" font-size="19" fill="#2b2320">幫你把幣從一個地址</text>
+    <text x="812" y="262" font-size="19" fill="#2b2320">搬到另一個地址</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g>
+    <rect x="60" y="318" width="352" height="150" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+    <text x="84" y="364" font-size="26" font-weight="700" fill="#b0451a">4 保管商</text>
+    <text x="84" y="402" font-size="19" fill="#2b2320">替你保管私鑰與資產，</text>
+    <text x="84" y="430" font-size="19" fill="#2b2320">加密版的金庫</text>
+  </g>
+  <g>
+    <rect x="424" y="318" width="352" height="150" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+    <text x="448" y="364" font-size="26" font-weight="700" fill="#b0451a">5 承銷商</text>
+    <text x="448" y="402" font-size="19" fill="#2b2320">幫新的幣對外發行、</text>
+    <text x="448" y="430" font-size="19" fill="#2b2320">募資的中間人</text>
+  </g>
+  <g>
+    <rect x="788" y="318" width="352" height="150" rx="16" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+    <text x="812" y="364" font-size="26" font-weight="700" fill="#b0451a">6 借貸商</text>
+    <text x="812" y="402" font-size="19" fill="#2b2320">提供幣的借出與借入，</text>
+    <text x="812" y="430" font-size="19" fill="#2b2320">高利息背後藏槓桿</text>
+  </g>
+
+  <!-- Row 3: 其他 -->
+  <rect x="60" y="486" width="1080" height="110" rx="16" fill="#f3e7d8" stroke="#c9b79f" stroke-width="2"/>
+  <text x="84" y="532" font-size="26" font-weight="700" fill="#7a6a58">7 其他</text>
+  <text x="84" y="570" font-size="19" fill="#5c5045">兜底條款：法律留給未來的空格，新型服務出現時用子法納進來管，不用每次重修法。</text>
+
+  <text x="60" y="648" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  依 2026/6/30 三讀通過之《虛擬資產服務法》第 6 條</text>
+</svg>
