@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="70" y="82" font-size="44" font-weight="700" fill="#2b2320">三個交易所倒閉，三種結局</text>
+  <text x="70" y="122" font-size="21" fill="#8a7a6d">同樣叫倒閉，能拿回多少、要等多久，差非常多</text>
+
+  <!-- FTX -->
+  <rect x="70" y="166" width="340" height="392" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="102" y="220" font-size="30" font-weight="700" fill="#c85a1c">FTX</text>
+  <text x="102" y="254" font-size="18" fill="#8a7a6d">2022 年 11 月破產</text>
+  <line x1="102" y1="276" x2="378" y2="276" stroke="#e8c3a0" stroke-width="1.5"/>
+  <text x="102" y="316" font-size="18" fill="#2b2320">小額債權人領回</text>
+  <text x="102" y="364" font-size="46" font-weight="700" fill="#e8722a">120%</text>
+  <text x="102" y="402" font-size="18" fill="#2b2320">其餘債權人約 103 至 105%</text>
+  <text x="102" y="446" font-size="18" fill="#2b2320">已等待</text>
+  <text x="102" y="486" font-size="34" font-weight="700" fill="#c85a1c">約 3 年半</text>
+  <text x="102" y="524" font-size="17" fill="#8a7a6d">按破產日美元價值折現，</text>
+  <text x="102" y="546" font-size="17" fill="#8a7a6d">不是還你原本的幣</text>
+
+  <!-- Mt.Gox -->
+  <rect x="430" y="166" width="340" height="392" rx="20" fill="#fdece0" stroke="#e0925c" stroke-width="2"/>
+  <text x="462" y="220" font-size="30" font-weight="700" fill="#b0551a">Mt.Gox</text>
+  <text x="462" y="254" font-size="18" fill="#8a7a6d">2014 年倒閉</text>
+  <line x1="462" y1="276" x2="738" y2="276" stroke="#e6bb99" stroke-width="1.5"/>
+  <text x="462" y="316" font-size="18" fill="#2b2320">已收到賠付的債權人</text>
+  <text x="462" y="364" font-size="46" font-weight="700" fill="#d9743f">約 19,500 人</text>
+  <text x="462" y="402" font-size="18" fill="#2b2320">仍有數千人卡在驗證流程</text>
+  <text x="462" y="446" font-size="18" fill="#2b2320">還款期限三度延到</text>
+  <text x="462" y="486" font-size="34" font-weight="700" fill="#b0551a">2026 年 10 月</text>
+  <text x="462" y="524" font-size="17" fill="#8a7a6d">用幣還幣，但已經等了</text>
+  <text x="462" y="546" font-size="17" fill="#8a7a6d">十二年，資產全程鎖死</text>
+
+  <!-- BitPoint TW -->
+  <rect x="790" y="166" width="340" height="392" rx="20" fill="#f6e7e0" stroke="#c9765a" stroke-width="2"/>
+  <text x="822" y="220" font-size="30" font-weight="700" fill="#9c3a14">幣寶台灣</text>
+  <text x="822" y="254" font-size="18" fill="#8a7a6d">2019 年母公司遭駭</text>
+  <line x1="822" y1="276" x2="1098" y2="276" stroke="#dcae9c" stroke-width="1.5"/>
+  <text x="822" y="316" font-size="18" fill="#2b2320">向東京地院求償</text>
+  <text x="822" y="364" font-size="42" font-weight="700" fill="#b13d12">10.24 億日圓</text>
+  <text x="822" y="402" font-size="18" fill="#2b2320">遭日本法院駁回</text>
+  <text x="822" y="446" font-size="18" fill="#2b2320">用戶實際領回</text>
+  <text x="822" y="486" font-size="34" font-weight="700" fill="#9c3a14">至今仍無著落</text>
+  <text x="822" y="524" font-size="17" fill="#8a7a6d">資產在境外、責任在母公司，</text>
+  <text x="822" y="546" font-size="17" fill="#8a7a6d">台灣用戶連告誰都難確定</text>
+
+  <text x="70" y="606" font-size="20" fill="#2b2320">關鍵不在倒得多慘，而在倒之前有沒有把客戶資產跟自有財產分開放。</text>
+  <text x="70" y="650" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  資料截至 2026 年 7 月公開資訊</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="70" y="82" font-size="44" font-weight="700" fill="#2b2320">幣寶案為什麼追不回來</text>
+  <text x="70" y="122" font-size="21" fill="#8a7a6d">最壞的四個條件，一次湊齊了</text>
+
+  <rect x="70" y="168" width="520" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="126" cy="222" r="26" fill="#e8722a"/>
+  <text x="126" y="231" font-size="26" font-weight="700" fill="#fff8f1" text-anchor="middle">1</text>
+  <text x="170" y="216" font-size="26" font-weight="700" fill="#c85a1c">資產在境外</text>
+  <text x="170" y="256" font-size="18" fill="#2b2320">台灣用戶的幣實際由日本方面掌控，</text>
+  <text x="170" y="284" font-size="18" fill="#2b2320">出事時台灣公司自己也是受害者。</text>
+
+  <rect x="610" y="168" width="520" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="666" cy="222" r="26" fill="#e8722a"/>
+  <text x="666" y="231" font-size="26" font-weight="700" fill="#fff8f1" text-anchor="middle">2</text>
+  <text x="710" y="216" font-size="26" font-weight="700" fill="#c85a1c">責任在母公司</text>
+  <text x="710" y="256" font-size="18" fill="#2b2320">台灣主體有沒有能力賠、該不該賠，</text>
+  <text x="710" y="284" font-size="18" fill="#2b2320">本身就是另一場官司。</text>
+
+  <rect x="70" y="342" width="520" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="126" cy="396" r="26" fill="#e8722a"/>
+  <text x="126" y="405" font-size="26" font-weight="700" fill="#fff8f1" text-anchor="middle">3</text>
+  <text x="170" y="390" font-size="26" font-weight="700" fill="#c85a1c">跨國訴訟</text>
+  <text x="170" y="430" font-size="18" fill="#2b2320">要在日本法院打、適用日本法，</text>
+  <text x="170" y="458" font-size="18" fill="#2b2320">成本高、時間長，結果是駁回。</text>
+
+  <rect x="610" y="342" width="520" height="150" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="666" cy="396" r="26" fill="#e8722a"/>
+  <text x="666" y="405" font-size="26" font-weight="700" fill="#fff8f1" text-anchor="middle">4</text>
+  <text x="710" y="390" font-size="26" font-weight="700" fill="#c85a1c">當年沒有分離保管</text>
+  <text x="710" y="430" font-size="18" fill="#2b2320">2019 年台灣連 VASP 洗防登記都還沒</text>
+  <text x="710" y="458" font-size="18" fill="#2b2320">上路，更沒有資產隔離的法律強制力。</text>
+
+  <rect x="70" y="520" width="1060" height="86" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="102" y="558" font-size="21" font-weight="700" fill="#c85a1c">你能學到的一課</text>
+  <text x="102" y="590" font-size="19" fill="#2b2320">挑交易所時先問：出事那天，我要在哪一國的法院、告哪一家公司？答不出來就別放大錢。</text>
+
+  <text x="70" y="650" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  依 2019 年幣寶（BitPoint）事件公開報導整理</text>
+</svg>

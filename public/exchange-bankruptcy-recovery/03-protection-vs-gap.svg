@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="70" y="80" font-size="44" font-weight="700" fill="#2b2320">新法第 18 條，擋得住什麼</text>
+  <text x="70" y="120" font-size="21" fill="#8a7a6d">《虛擬資產服務法》2026/6/30 三讀通過，施行日由行政院另定，估計最快 2027 年</text>
+
+  <!-- left: protects -->
+  <rect x="70" y="162" width="520" height="390" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="102" y="212" font-size="27" font-weight="700" fill="#c85a1c">擋得住</text>
+  <line x1="102" y1="232" x2="558" y2="232" stroke="#e8c3a0" stroke-width="1.5"/>
+
+  <text x="102" y="278" font-size="21" font-weight="700" fill="#2b2320">分別獨立保管</text>
+  <text x="102" y="308" font-size="18" fill="#8a7a6d">客戶資產必須與交易所自有財產分開</text>
+
+  <text x="102" y="352" font-size="21" font-weight="700" fill="#2b2320">債權人碰不到你的錢</text>
+  <text x="102" y="382" font-size="18" fill="#8a7a6d">交易所的債主不得對客戶資產請求</text>
+
+  <text x="102" y="426" font-size="21" font-weight="700" fill="#2b2320">不屬於破產財團</text>
+  <text x="102" y="456" font-size="18" fill="#8a7a6d">破產時你的資產不進那一鍋、不被稀釋</text>
+
+  <text x="102" y="500" font-size="21" font-weight="700" fill="#2b2320">法幣信託或履約保證</text>
+  <text x="102" y="530" font-size="18" fill="#8a7a6d">新台幣須交付銀行信託或取得十足履保</text>
+
+  <!-- right: gaps -->
+  <rect x="610" y="162" width="520" height="390" rx="20" fill="#f4efe8" stroke="#b9a99a" stroke-width="2"/>
+  <text x="642" y="212" font-size="27" font-weight="700" fill="#6f6055">擋不住</text>
+  <line x1="642" y1="232" x2="1098" y2="232" stroke="#cdbfb2" stroke-width="1.5"/>
+
+  <text x="642" y="278" font-size="21" font-weight="700" fill="#2b2320">駭客入侵</text>
+  <text x="642" y="308" font-size="18" fill="#8a7a6d">財務防火牆不是資安防護，要靠冷錢包</text>
+
+  <text x="642" y="352" font-size="21" font-weight="700" fill="#2b2320">交易所刻意作假帳</text>
+  <text x="642" y="382" font-size="18" fill="#8a7a6d">法律讓事後追究更有力，但不能事前阻止</text>
+
+  <text x="642" y="426" font-size="21" font-weight="700" fill="#2b2320">境外主體與跨國求償</text>
+  <text x="642" y="456" font-size="18" fill="#8a7a6d">資產在海外時，台灣法院也很難伸手</text>
+
+  <text x="642" y="500" font-size="21" font-weight="700" fill="#2b2320">過渡期的空窗</text>
+  <text x="642" y="530" font-size="18" fill="#8a7a6d">施行後 12 個月申請、21 個月取照才到位</text>
+
+  <rect x="70" y="574" width="1060" height="52" rx="14" fill="#fdece0"/>
+  <text x="102" y="608" font-size="20" fill="#2b2320">只要幣還放在交易所，你手上的就是一張欠條。制度能拉高賠率，歸零風險只有自我保管做得到。</text>
+
+  <text x="70" y="656" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  依 2026/6/30 三讀通過之《虛擬資產服務法》條文整理</text>
+</svg>
