@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="84" font-size="46" font-weight="700" fill="#2b2320">金融消費爭議，兩步驟救濟</text>
+  <text x="80" y="122" font-size="22" fill="#8a7a6d">評議申請全程免費，不用先花律師費</text>
+
+  <!-- step 1 -->
+  <rect x="80" y="185" width="470" height="330" rx="20" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <circle cx="140" cy="245" r="30" fill="#e8722a"/>
+  <text x="140" y="256" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="190" y="256" font-size="30" font-weight="700" fill="#c85a1c">先向業者申訴</text>
+  <line x1="112" y1="290" x2="518" y2="290" stroke="#e8c3a0" stroke-width="1.5"/>
+  <text x="112" y="342" font-size="22" fill="#2b2320">向交易所提出申訴</text>
+  <text x="112" y="392" font-size="22" fill="#2b2320">業者須在收到起</text>
+  <text x="112" y="452" font-size="52" font-weight="700" fill="#e8722a">30 天內</text>
+  <text x="112" y="494" font-size="22" fill="#2b2320">處理完並回覆你</text>
+
+  <!-- arrow -->
+  <path d="M 575 350 L 625 350" stroke="#c85a1c" stroke-width="5" fill="none"/>
+  <path d="M 620 338 L 645 350 L 620 362 Z" fill="#c85a1c"/>
+  <text x="610" y="322" font-size="17" fill="#8a7a6d" text-anchor="middle">不滿意</text>
+
+  <!-- step 2 -->
+  <rect x="670" y="185" width="470" height="330" rx="20" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <circle cx="730" cy="245" r="30" fill="#c85a1c"/>
+  <text x="730" y="256" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="780" y="256" font-size="30" font-weight="700" fill="#b0451a">向評議中心評議</text>
+  <line x1="702" y1="290" x2="1108" y2="290" stroke="#e6b9a3" stroke-width="1.5"/>
+  <text x="702" y="342" font-size="22" fill="#2b2320">收到結果或期限屆滿後</text>
+  <text x="702" y="402" font-size="52" font-weight="700" fill="#c03d12">60 天內</text>
+  <text x="702" y="444" font-size="22" fill="#2b2320">向金融消費評議中心</text>
+  <text x="702" y="482" font-size="22" fill="#2b2320">申請評議（免費）</text>
+
+  <text x="80" y="580" font-size="22" fill="#2b2320">評議中心是依金融消保法設立的第三方機構，可想成「金融版的公道伯」。</text>
+  <text x="1000" y="655" font-size="18" fill="#8a7a6d">小狐狸區塊鏈</text>
+</svg>

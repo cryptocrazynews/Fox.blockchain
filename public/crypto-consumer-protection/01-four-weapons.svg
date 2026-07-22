@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fbf6f0"/>
+  <text x="80" y="84" font-size="46" font-weight="700" fill="#2b2320">金融消保法給散戶的四樣武器</text>
+  <text x="80" y="122" font-size="22" fill="#8a7a6d">交易所被公告為金融服務業後，對你多了這些法定義務</text>
+
+  <!-- card 1 -->
+  <rect x="80" y="160" width="510" height="220" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="112" y="212" font-size="27" font-weight="700" fill="#c85a1c">1　廣告不能唬爛</text>
+  <text x="112" y="256" font-size="20" fill="#2b2320">不得虛偽、詐欺、隱匿或讓你誤信</text>
+  <text x="112" y="292" font-size="20" fill="#2b2320">首頁寫「保本」「穩賺」就要算數</text>
+  <text x="112" y="342" font-size="19" fill="#8a7a6d">打的是幣圈最氾濫的行銷話術毛病</text>
+
+  <!-- card 2 -->
+  <rect x="610" y="160" width="510" height="220" rx="18" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="642" y="212" font-size="27" font-weight="700" fill="#c85a1c">2　不適合的商品不能塞</text>
+  <text x="642" y="256" font-size="20" fill="#2b2320">簽約前要先了解你的財力與經驗</text>
+  <text x="642" y="292" font-size="20" fill="#2b2320">確認商品適合你才能賣（適合度）</text>
+  <text x="642" y="342" font-size="19" fill="#8a7a6d">新手被推去玩高槓桿，可主張違反</text>
+
+  <!-- card 3 -->
+  <rect x="80" y="404" width="510" height="220" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="112" y="456" font-size="27" font-weight="700" fill="#b0451a">3　風險要講清楚</text>
+  <text x="112" y="500" font-size="20" fill="#2b2320">訂約前要充分說明商品重要內容</text>
+  <text x="112" y="536" font-size="20" fill="#2b2320">並把風險攤開揭露給你</text>
+  <text x="112" y="586" font-size="19" fill="#8a7a6d">不能只讓你按「我已閱讀」就了事</text>
+
+  <!-- card 4 -->
+  <rect x="610" y="404" width="510" height="220" rx="18" fill="#fbe6dc" stroke="#d9743f" stroke-width="2"/>
+  <text x="642" y="456" font-size="27" font-weight="700" fill="#b0451a">4　舉證責任在業者</text>
+  <text x="642" y="500" font-size="20" fill="#2b2320">害你受損，要它自證沒違反義務</text>
+  <text x="642" y="536" font-size="20" fill="#2b2320">證明不了就得賠</text>
+  <text x="642" y="586" font-size="19" fill="#8a7a6d">散戶最有價值的一張牌</text>
+
+  <text x="1000" y="662" font-size="18" fill="#8a7a6d">小狐狸區塊鏈</text>
+</svg>
