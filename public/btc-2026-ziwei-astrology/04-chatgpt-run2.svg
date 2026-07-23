@@ -1,0 +1,54 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="70" y="62" font-size="40" font-weight="700" fill="#2b2320">ChatGPT 第二次：比特幣 2026 逐月漲跌</text>
+  <text x="70" y="98" font-size="19" fill="#8a7a6d">紫微斗數命理趣味推演　·　依國曆月份</text>
+
+  <circle cx="80" cy="128" r="9" fill="#4f9d5b"/><text x="96" y="135" font-size="17" fill="#2b2320">偏多／漲</text>
+  <circle cx="240" cy="128" r="9" fill="#d98a2b"/><text x="256" y="135" font-size="17" fill="#2b2320">震盪</text>
+  <circle cx="360" cy="128" r="9" fill="#c0392b"/><text x="376" y="135" font-size="17" fill="#2b2320">回檔／風險</text>
+  <circle cx="540" cy="128" r="9" fill="#8a7a6d"/><text x="556" y="135" font-size="17" fill="#2b2320">中性</text>
+
+  <!-- LEFT -->
+  <g>
+    <rect x="70" y="160" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="70" y="160" width="8" height="66" rx="4" fill="#d98a2b"/>
+    <text x="98" y="189" font-size="19" font-weight="700" fill="#c85a1c">1 月</text><text x="98" y="214" font-size="16" fill="#2b2320">偏弱、洗盤整理</text><text x="553" y="205" font-size="38" font-weight="700" fill="#d98a2b" text-anchor="middle">↕</text>
+
+    <rect x="70" y="234" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="70" y="234" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="98" y="263" font-size="19" font-weight="700" fill="#c85a1c">2 月</text><text x="98" y="288" font-size="16" fill="#2b2320">先震盪後轉強</text><text x="553" y="279" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="70" y="308" width="525" height="66" rx="12" fill="#eef6ec" stroke="#9bbf8a" stroke-width="1.5"/><rect x="70" y="308" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="98" y="337" font-size="19" font-weight="700" fill="#4f7a3a">3 月　強勢偏多</text><text x="98" y="362" font-size="16" fill="#2b2320">第一主升段</text><text x="553" y="353" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="70" y="382" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="70" y="382" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="98" y="411" font-size="19" font-weight="700" fill="#c85a1c">4 月</text><text x="98" y="436" font-size="16" fill="#2b2320">偏多但劇烈</text><text x="553" y="427" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="70" y="456" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="70" y="456" width="8" height="66" rx="4" fill="#d98a2b"/>
+    <text x="98" y="485" font-size="19" font-weight="700" fill="#c85a1c">5 月</text><text x="98" y="510" font-size="16" fill="#2b2320">先漲後跌</text><text x="553" y="501" font-size="38" font-weight="700" fill="#d98a2b" text-anchor="middle">↕</text>
+
+    <rect x="70" y="530" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="70" y="530" width="8" height="66" rx="4" fill="#d98a2b"/>
+    <text x="98" y="559" font-size="19" font-weight="700" fill="#c85a1c">6 月</text><text x="98" y="584" font-size="16" fill="#2b2320">先跌後反彈</text><text x="553" y="575" font-size="38" font-weight="700" fill="#d98a2b" text-anchor="middle">↕</text>
+  </g>
+
+  <!-- RIGHT -->
+  <g>
+    <rect x="605" y="160" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="605" y="160" width="8" height="66" rx="4" fill="#d98a2b"/>
+    <text x="633" y="189" font-size="19" font-weight="700" fill="#c85a1c">7 月</text><text x="633" y="214" font-size="16" fill="#2b2320">劇烈震盪，方向極端</text><text x="1088" y="205" font-size="38" font-weight="700" fill="#d98a2b" text-anchor="middle">↕</text>
+
+    <rect x="605" y="234" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="605" y="234" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="633" y="263" font-size="19" font-weight="700" fill="#c85a1c">8 月</text><text x="633" y="288" font-size="16" fill="#2b2320">先震盪後回升</text><text x="1088" y="279" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="605" y="308" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="605" y="308" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="633" y="337" font-size="19" font-weight="700" fill="#c85a1c">9 月</text><text x="633" y="362" font-size="16" fill="#2b2320">穩定偏多</text><text x="1088" y="353" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="605" y="382" width="525" height="66" rx="12" fill="#eef6ec" stroke="#9bbf8a" stroke-width="1.5"/><rect x="605" y="382" width="8" height="66" rx="4" fill="#4f9d5b"/>
+    <text x="633" y="411" font-size="19" font-weight="700" fill="#4f7a3a">10 月　第二主升段</text><text x="633" y="436" font-size="16" fill="#2b2320">最可能再創高</text><text x="1088" y="427" font-size="38" font-weight="700" fill="#4f9d5b" text-anchor="middle">↑</text>
+
+    <rect x="605" y="456" width="525" height="66" rx="12" fill="#fdeae2" stroke="#e8956a" stroke-width="1.5"/><rect x="605" y="456" width="8" height="66" rx="4" fill="#c0392b"/>
+    <text x="633" y="485" font-size="19" font-weight="700" fill="#c0392b">11 月　全年最危險</text><text x="633" y="510" font-size="16" fill="#2b2320">先衝高後急跌</text><text x="1088" y="501" font-size="38" font-weight="700" fill="#c0392b" text-anchor="middle">↓</text>
+
+    <rect x="605" y="530" width="525" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/><rect x="605" y="530" width="8" height="66" rx="4" fill="#d98a2b"/>
+    <text x="633" y="559" font-size="19" font-weight="700" fill="#c85a1c">12 月</text><text x="633" y="584" font-size="16" fill="#2b2320">先弱後震盪築底</text><text x="1088" y="575" font-size="38" font-weight="700" fill="#d98a2b" text-anchor="middle">↕</text>
+  </g>
+
+  <text x="70" y="648" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  命理趣味推演，非價格預測，切勿作為交易依據</text>
+</svg>
