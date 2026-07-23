@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">HOYA BIT 的錢，怎麼進、怎麼出</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">跟台新銀行做信託，用台新帳戶進出免手續費</text>
+
+  <!-- taishin trust bar -->
+  <rect x="80" y="168" width="1040" height="110" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="214" font-size="24" font-weight="700" fill="#4f7a3a">台新國際商業銀行信託保管</text>
+  <text x="110" y="252" font-size="21" fill="#2b2320">你的新台幣由台新依信託契約管理，跟交易所自有資金分開，多一道鎖。</text>
+
+  <!-- card 1: 台新 -->
+  <rect x="80" y="300" width="345" height="185" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="252" y="348" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">台新帳戶出入金</text>
+  <text x="252" y="418" font-size="46" font-weight="700" fill="#e8722a" text-anchor="middle">免手續費</text>
+  <text x="252" y="458" font-size="18" fill="#8a7a6d" text-anchor="middle">入金、出金都不收</text>
+
+  <!-- card 2: 其他銀行 -->
+  <rect x="440" y="300" width="345" height="185" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="612" y="348" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">其他銀行出金</text>
+  <text x="612" y="418" font-size="46" font-weight="700" fill="#e8722a" text-anchor="middle">15 元／筆</text>
+  <text x="612" y="458" font-size="18" fill="#8a7a6d" text-anchor="middle">只能轉回同名帳戶</text>
+
+  <!-- card 3: 內含費 -->
+  <rect x="800" y="300" width="320" height="185" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="960" y="348" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">買賣報價內含費</text>
+  <text x="960" y="415" font-size="40" font-weight="700" fill="#e8722a" text-anchor="middle">0.2%~1.2%</text>
+  <text x="960" y="458" font-size="18" fill="#8a7a6d" text-anchor="middle">直接算進報價，不另收</text>
+
+  <!-- note -->
+  <rect x="80" y="510" width="1040" height="105" rx="14" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="552" font-size="21" font-weight="700" fill="#2b2320">要注意：成本藏在報價裡</text>
+  <text x="110" y="592" font-size="20" fill="#2b2320">閃兌沒有滑價很直覺，但費用不像掛單簿那樣單獨列出，交易量大的人不易精算。</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  費率依官方公告與活動調整為準</text>
+</svg>

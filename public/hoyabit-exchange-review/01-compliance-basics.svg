@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">HOYA BIT 是誰？先看它的合規底牌</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">禾亞數位科技經營，上線前就先把合規做好的台灣本土交易所</text>
+
+  <!-- card 1 -->
+  <rect x="80" y="170" width="260" height="180" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="210" y="220" font-size="22" font-weight="700" fill="#c85a1c" text-anchor="middle">成立年份</text>
+  <text x="210" y="288" font-size="52" font-weight="700" fill="#e8722a" text-anchor="middle">2022</text>
+  <text x="210" y="326" font-size="18" fill="#8a7a6d" text-anchor="middle">台灣本地團隊</text>
+
+  <!-- card 2 -->
+  <rect x="360" y="170" width="360" height="180" rx="16" fill="#fff3e8" stroke="#e8a76a" stroke-width="2"/>
+  <text x="540" y="220" font-size="22" font-weight="700" fill="#c85a1c" text-anchor="middle">完成 VASP 洗防登記</text>
+  <text x="540" y="284" font-size="40" font-weight="700" fill="#e8722a" text-anchor="middle">2025 / 09 / 22</text>
+  <text x="540" y="326" font-size="17" fill="#8a7a6d" text-anchor="middle">金管證券字第 1140349566 號</text>
+
+  <!-- card 3 -->
+  <rect x="740" y="170" width="380" height="180" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="930" y="220" font-size="22" font-weight="700" fill="#4f7a3a" text-anchor="middle">金管會首波納管</text>
+  <text x="930" y="288" font-size="46" font-weight="700" fill="#4f7a3a" text-anchor="middle">9 家之一</text>
+  <text x="930" y="326" font-size="17" fill="#8a7a6d" text-anchor="middle">原 26 家登記，僅 9 家過關</text>
+
+  <!-- approved scope -->
+  <rect x="80" y="382" width="1040" height="150" rx="16" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="428" font-size="24" font-weight="700" fill="#2b2320">核准業務範圍（四大項）</text>
+  <rect x="110" y="452" width="230" height="56" rx="12" fill="#fdece0"/>
+  <text x="225" y="489" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">虛擬資產交換</text>
+  <rect x="360" y="452" width="200" height="56" rx="12" fill="#fdece0"/>
+  <text x="460" y="489" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">交易平台</text>
+  <rect x="580" y="452" width="200" height="56" rx="12" fill="#fdece0"/>
+  <text x="680" y="489" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">移轉</text>
+  <rect x="800" y="452" width="200" height="56" rx="12" fill="#fdece0"/>
+  <text x="900" y="489" font-size="24" font-weight="700" fill="#c85a1c" text-anchor="middle">保管</text>
+
+  <text x="80" y="592" font-size="20" fill="#2b2320">專法 2026/6/30 三讀通過，9 項子法拚 2027 Q1 上路，制度將由登記制轉為許可制。</text>
+
+  <text x="80" y="648" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  資料以金管會公告與官方資訊為準</text>
+</svg>

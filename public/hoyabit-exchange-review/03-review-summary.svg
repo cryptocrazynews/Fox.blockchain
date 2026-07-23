@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="675" fill="#fff8f1"/>
+  <text x="80" y="86" font-size="44" font-weight="700" fill="#2b2320">HOYA BIT 實測總結：它的簡單，換掉了什麼</text>
+  <text x="80" y="126" font-size="21" fill="#8a7a6d">新手友善是真的，但簡單是拿掉東西換來的</text>
+
+  <!-- pros -->
+  <rect x="80" y="168" width="510" height="330" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="110" y="214" font-size="26" font-weight="700" fill="#4f7a3a">優點</text>
+  <text x="110" y="262" font-size="21" fill="#2b2320">新手友善，介面乾淨、閃兌一鍵完成</text>
+  <text x="110" y="306" font-size="21" fill="#2b2320">閃兌零滑價，看到的價就是成交價</text>
+  <text x="110" y="350" font-size="21" fill="#2b2320">台新銀行信託，新台幣多一道保障</text>
+  <text x="110" y="394" font-size="21" fill="#2b2320">台幣進出順，台新帳戶免手續費</text>
+  <text x="110" y="438" font-size="21" fill="#2b2320">合規登記，首波 9 家白名單之一</text>
+  <text x="110" y="482" font-size="21" fill="#2b2320">資安找 Fireblocks、趨勢科技合作</text>
+
+  <!-- cons -->
+  <rect x="610" y="168" width="510" height="330" rx="16" fill="#fdeae2" stroke="#e8956a" stroke-width="2"/>
+  <text x="640" y="214" font-size="26" font-weight="700" fill="#c85a1c">缺點</text>
+  <text x="640" y="262" font-size="21" fill="#2b2320">成本藏在報價裡，0.2%~1.2% 不透明</text>
+  <text x="640" y="306" font-size="21" fill="#2b2320">沒有掛單簿，不能掛限價搶好價</text>
+  <text x="640" y="350" font-size="21" fill="#2b2320">內含費上緣 1.2% 不算便宜</text>
+  <text x="640" y="394" font-size="21" fill="#2b2320">幣種與進階功能相對陽春</text>
+  <text x="640" y="438" font-size="21" fill="#2b2320">日日生幣非保證獲利，有平台風險</text>
+  <text x="640" y="482" font-size="21" fill="#2b2320">想學看盤、玩多幣種會覺得不夠用</text>
+
+  <!-- verdict -->
+  <rect x="80" y="522" width="1040" height="92" rx="14" fill="#fff" stroke="#e8a76a" stroke-width="2"/>
+  <text x="110" y="560" font-size="21" font-weight="700" fill="#2b2320">適合誰</text>
+  <text x="110" y="598" font-size="20" fill="#2b2320">第一次買幣、要簡單直覺、有台新帳戶的新手當入門站；會看盤、在意費率的人再比較別家。</text>
+
+  <text x="80" y="652" font-size="16" fill="#a89a8d">小狐狸區塊鏈  ·  長期部位建議分散、搬去自我保管</text>
+</svg>
