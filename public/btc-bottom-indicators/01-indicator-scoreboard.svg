@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1200 860" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif">
+  <rect width="1200" height="860" fill="#fff8f1"/>
+  <text x="60" y="58" font-size="38" font-weight="700" fill="#2b2320">比特幣抄底指標統整　12 項一次看</text>
+
+  <!-- price banner -->
+  <rect x="60" y="78" width="1080" height="70" rx="14" fill="#fdece0" stroke="#e8a76a" stroke-width="2"/>
+  <text x="84" y="112" font-size="21" font-weight="700" fill="#c85a1c">現價約 $65,900</text>
+  <text x="360" y="112" font-size="20" fill="#2b2320">距 2025/10 高點（約 $126,100）回落約 47%</text>
+  <text x="84" y="138" font-size="17" fill="#8a7a6d">資料截至 2026/7/23，以當日公開資料為準</text>
+
+  <!-- legend -->
+  <rect x="60" y="166" width="70" height="26" rx="8" fill="#3f9147"/><text x="95" y="184" font-size="15" fill="#fff" text-anchor="middle">抄底</text>
+  <rect x="150" y="166" width="70" height="26" rx="8" fill="#d98a2b"/><text x="185" y="184" font-size="15" fill="#fff" text-anchor="middle">中性</text>
+  <rect x="240" y="166" width="70" height="26" rx="8" fill="#c0392b"/><text x="275" y="184" font-size="15" fill="#fff" text-anchor="middle">警示</text>
+  <text x="330" y="184" font-size="16" fill="#8a7a6d">綜合：抄底 7　·　中性 3　·　警示 2</text>
+
+  <!-- LEFT COLUMN rows -->
+  <g>
+    <!-- row template: box, name, reading, chip -->
+    <rect x="60" y="206" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="234" font-size="20" font-weight="700" fill="#2b2320">MVRV Z-Score</text>
+    <text x="84" y="258" font-size="16" fill="#8a7a6d">0.37，逼近歷史底</text>
+    <rect x="494" y="222" width="86" height="34" rx="9" fill="#3f9147"/><text x="537" y="245" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="60" y="280" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="308" font-size="20" font-weight="700" fill="#2b2320">已實現價格</text>
+    <text x="84" y="332" font-size="16" fill="#8a7a6d">約 $54,000，現價仍在其上</text>
+    <rect x="494" y="296" width="86" height="34" rx="9" fill="#d98a2b"/><text x="537" y="319" font-size="16" fill="#fff" text-anchor="middle">中性</text>
+
+    <rect x="60" y="354" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="382" font-size="20" font-weight="700" fill="#2b2320">NUPL 淨未實現損益</text>
+    <text x="84" y="406" font-size="16" fill="#8a7a6d">約 0.18，恐懼區</text>
+    <rect x="494" y="370" width="86" height="34" rx="9" fill="#3f9147"/><text x="537" y="393" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="60" y="428" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="456" font-size="20" font-weight="700" fill="#2b2320">Mayer Multiple</text>
+    <text x="84" y="480" font-size="16" fill="#8a7a6d">0.83，低於 1.0 累積區</text>
+    <rect x="494" y="444" width="86" height="34" rx="9" fill="#3f9147"/><text x="537" y="467" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="60" y="502" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="530" font-size="20" font-weight="700" fill="#2b2320">恐懼與貪婪指數</text>
+    <text x="84" y="554" font-size="16" fill="#8a7a6d">51，月初曾極度恐懼 24</text>
+    <rect x="494" y="518" width="86" height="34" rx="9" fill="#d98a2b"/><text x="537" y="541" font-size="16" fill="#fff" text-anchor="middle">中性</text>
+
+    <rect x="60" y="576" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="84" y="604" font-size="20" font-weight="700" fill="#2b2320">週期／週線 RSI</text>
+    <text x="84" y="628" font-size="16" fill="#8a7a6d">超賣＋正背離，型態醞釀</text>
+    <rect x="494" y="592" width="86" height="34" rx="9" fill="#3f9147"/><text x="537" y="615" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+  </g>
+
+  <!-- RIGHT COLUMN rows -->
+  <g>
+    <rect x="620" y="206" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="234" font-size="20" font-weight="700" fill="#2b2320">200 週移動平均線</text>
+    <text x="644" y="258" font-size="16" fill="#8a7a6d">約 $62K，四年首次跌破</text>
+    <rect x="1054" y="222" width="86" height="34" rx="9" fill="#d98a2b"/><text x="1097" y="245" font-size="16" fill="#fff" text-anchor="middle">中性</text>
+
+    <rect x="620" y="280" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="308" font-size="20" font-weight="700" fill="#2b2320">AHR999 囤幣指數</text>
+    <text x="644" y="332" font-size="16" fill="#8a7a6d">0.32~0.45，抄底／定投區</text>
+    <rect x="1054" y="296" width="86" height="34" rx="9" fill="#3f9147"/><text x="1097" y="319" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="620" y="354" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="382" font-size="20" font-weight="700" fill="#2b2320">Puell Multiple</text>
+    <text x="644" y="406" font-size="16" fill="#8a7a6d">0.75，礦工承壓</text>
+    <rect x="1054" y="370" width="86" height="34" rx="9" fill="#3f9147"/><text x="1097" y="393" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="620" y="428" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="456" font-size="20" font-weight="700" fill="#2b2320">長期持有者供給</text>
+    <text x="644" y="480" font-size="16" fill="#8a7a6d">創新高，16.3M+ BTC</text>
+    <rect x="1054" y="444" width="86" height="34" rx="9" fill="#3f9147"/><text x="1097" y="467" font-size="16" fill="#fff" text-anchor="middle">抄底</text>
+
+    <rect x="620" y="502" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="530" font-size="20" font-weight="700" fill="#2b2320">資金費率</text>
+    <text x="644" y="554" font-size="16" fill="#8a7a6d">+4.5~6.7%，仍為正未洗盤</text>
+    <rect x="1054" y="518" width="86" height="34" rx="9" fill="#c0392b"/><text x="1097" y="541" font-size="16" fill="#fff" text-anchor="middle">警示</text>
+
+    <rect x="620" y="576" width="540" height="66" rx="12" fill="#fff" stroke="#ecdcc9" stroke-width="1.5"/>
+    <text x="644" y="604" font-size="20" font-weight="700" fill="#2b2320">ETF／交易所資金流</text>
+    <text x="644" y="628" font-size="16" fill="#8a7a6d">近 30 日 ETF 淨流出約 4 萬枚</text>
+    <rect x="1054" y="592" width="86" height="34" rx="9" fill="#c0392b"/><text x="1097" y="615" font-size="16" fill="#fff" text-anchor="middle">警示</text>
+  </g>
+
+  <!-- verdict bar -->
+  <rect x="60" y="664" width="1080" height="128" rx="16" fill="#eef6ec" stroke="#9bbf8a" stroke-width="2"/>
+  <text x="84" y="702" font-size="24" font-weight="700" fill="#4f7a3a">綜合評價：價值累積區，分批布局優於一次重壓</text>
+  <text x="84" y="736" font-size="18" fill="#2b2320">估值與鏈上成本面普遍便宜、進入歷史累積區；但資金費率仍正、ETF 短期流出、情緒已回中性，</text>
+  <text x="84" y="762" font-size="18" fill="#2b2320">代表最恐慌的一刻可能剛過、趨勢尚未確認轉多。這裡是「便宜區」，不是「保證最低點」。</text>
+  <text x="84" y="786" font-size="16" fill="#8a7a6d">做法：定期定額布局、只用閒錢、不上槓桿、長期部位自我保管。</text>
+
+  <text x="60" y="836" font-size="15" fill="#a89a8d">小狐狸區塊鏈  ·  本文為知識分享，不構成投資建議，數值以各鏈上平台即時資料為準</text>
+</svg>
