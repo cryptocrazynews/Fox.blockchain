@@ -144,6 +144,17 @@ export const PLATFORMS: Platform[] = [
     activityNote: "優惠細節以官方與你的推薦方案為準",
     post: "xrex-intro",
   },
+  {
+    id: "hoyabit",
+    name: "HOYA BIT",
+    type: "台灣交易所",
+    code: "BdniStdb",
+    url: "https://www.hoyabit.com/",
+    benefit: "金管會合規台灣交易所，閃兌介面新手友善，台幣出入金方便",
+    activity: "註冊時填推薦碼 BdniStdb，完成 KYC 與銀行綁定可參加新戶活動",
+    activityNote: "新戶獎勵內容與期限以 HOYA BIT 官方活動頁為準",
+    post: "2026-07-23-hoyabit完整實測",
+  },
 ];
 
 export const getPlatform = (id?: string) =>
