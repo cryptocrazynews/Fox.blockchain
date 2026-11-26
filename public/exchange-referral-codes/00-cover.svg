@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1060" cy="110" r="190" fill="#f0a35e" opacity="0.18"/>
+  <circle cx="980" cy="600" r="120" fill="#e8722a" opacity="0.10"/>
+  <rect x="70" y="70" width="230" height="44" rx="22" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="185" y="100" font-size="22" fill="#e8722a" font-weight="700" text-anchor="middle">2026年11月最新</text>
+  <text x="70" y="205" font-size="64" font-weight="900" fill="#2b2320">交易所推薦碼</text>
+  <text x="70" y="285" font-size="64" font-weight="900" fill="#e8722a">總整理</text>
+  <text x="70" y="340" font-size="26" fill="#8a7a6d">7 家折扣、優惠期限、忘了填怎麼補，一頁看完</text>
+  <rect x="70" y="385" width="390" height="76" rx="38" fill="#e8722a"/>
+  <text x="265" y="436" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle">幣安 38825428</text>
+  <rect x="70" y="480" width="390" height="76" rx="38" fill="#e8722a"/>
+  <text x="265" y="531" font-size="34" font-weight="700" fill="#ffffff" text-anchor="middle">MAX 35d1aa4c</text>
+  <g>
+    <rect x="690" y="150" width="420" height="96" rx="18" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+    <text x="720" y="193" font-size="22" fill="#8a7a6d">MAX 新戶 6 個月</text>
+    <text x="720" y="228" font-size="28" font-weight="700" fill="#2b2320">手續費 8 折，疊加約省 44%</text>
+    <rect x="690" y="266" width="420" height="96" rx="18" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+    <text x="720" y="309" font-size="22" fill="#8a7a6d">幣託 通過 Level 2 起 180 天</text>
+    <text x="720" y="344" font-size="28" font-weight="700" fill="#2b2320">手續費 20% 獎勵</text>
+    <rect x="690" y="382" width="420" height="96" rx="18" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+    <text x="720" y="425" font-size="22" fill="#8a7a6d">幣安 Referral Pro</text>
+    <text x="720" y="460" font-size="28" font-weight="700" fill="#2b2320">返佣以註冊頁顯示為準</text>
+  </g>
+  <text x="1130" y="635" font-size="22" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<text x="50" y="72" font-size="42" font-weight="900" fill="#2b2320">交易所推薦碼一覽</text>
+<text x="50" y="108" font-size="22" fill="#8a7a6d">2026 年 11 月 26 日查核，合規欄對照證期局 10/28 名單</text>
+<rect x="40" y="130" width="1120" height="50" rx="12" fill="#e8722a"/>
+<text x="62" y="163" font-size="21" font-weight="700" fill="#ffffff">平台</text>
+<text x="242" y="163" font-size="21" font-weight="700" fill="#ffffff">推薦碼</text>
+<text x="512" y="163" font-size="21" font-weight="700" fill="#ffffff">新戶拿到什麼</text>
+<text x="1012" y="163" font-size="21" font-weight="700" fill="#ffffff">洗防登記</text>
+<rect x="40" y="188" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="223" font-size="21" font-weight="700" fill="#2b2320">幣安</text>
+<text x="242" y="223" font-size="20" font-weight="700" fill="#e8722a">38825428</text>
+<text x="512" y="223" font-size="20" fill="#2b2320">手續費返佣，比例以註冊頁為準</text>
+<rect x="1008" y="199" width="130" height="32" rx="16" fill="#f6f1ec" stroke="#8a7a6d" stroke-width="1.5"/>
+<text x="1073" y="222" font-size="18" font-weight="700" fill="#8a7a6d" text-anchor="middle">不在名單</text>
+<rect x="40" y="250" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="285" font-size="21" font-weight="700" fill="#2b2320">MAX</text>
+<text x="242" y="285" font-size="20" font-weight="700" fill="#e8722a">35d1aa4c</text>
+<text x="512" y="285" font-size="20" fill="#2b2320">6 個月 8 折，疊 MAX Token 7 折</text>
+<rect x="1008" y="261" width="130" height="32" rx="16" fill="#fdeede" stroke="#e8722a" stroke-width="1.5"/>
+<text x="1073" y="284" font-size="18" font-weight="700" fill="#e8722a" text-anchor="middle">已登記</text>
+<rect x="40" y="312" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="347" font-size="21" font-weight="700" fill="#2b2320">幣託</text>
+<text x="242" y="347" font-size="20" font-weight="700" fill="#e8722a">9066419187</text>
+<text x="512" y="347" font-size="20" fill="#2b2320">Level 2 起 180 天 20% 獎勵</text>
+<rect x="1008" y="323" width="130" height="32" rx="16" fill="#fdeede" stroke="#e8722a" stroke-width="1.5"/>
+<text x="1073" y="346" font-size="18" font-weight="700" fill="#e8722a" text-anchor="middle">已登記</text>
+<rect x="40" y="374" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="409" font-size="21" font-weight="700" fill="#2b2320">XREX</text>
+<text x="242" y="409" font-size="20" font-weight="700" fill="#e8722a">34sMC9SwvyX47kHj</text>
+<text x="512" y="409" font-size="20" fill="#2b2320">標示永久 10% 手續費折扣</text>
+<rect x="1008" y="385" width="130" height="32" rx="16" fill="#fdeede" stroke="#e8722a" stroke-width="1.5"/>
+<text x="1073" y="408" font-size="18" font-weight="700" fill="#e8722a" text-anchor="middle">已登記</text>
+<rect x="40" y="436" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="471" font-size="21" font-weight="700" fill="#2b2320">OKX</text>
+<text x="242" y="471" font-size="20" font-weight="700" fill="#e8722a">5758217</text>
+<text x="512" y="471" font-size="20" fill="#2b2320">手續費折扣＋新戶盲盒任務</text>
+<rect x="1008" y="447" width="130" height="32" rx="16" fill="#f6f1ec" stroke="#8a7a6d" stroke-width="1.5"/>
+<text x="1073" y="470" font-size="18" font-weight="700" fill="#8a7a6d" text-anchor="middle">不在名單</text>
+<rect x="40" y="498" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="533" font-size="21" font-weight="700" fill="#2b2320">Gate</text>
+<text x="242" y="533" font-size="20" font-weight="700" fill="#e8722a">VLEQAFBXVA</text>
+<text x="512" y="533" font-size="20" fill="#2b2320">手續費折扣＋盲盒抽獎</text>
+<rect x="1008" y="509" width="130" height="32" rx="16" fill="#f6f1ec" stroke="#8a7a6d" stroke-width="1.5"/>
+<text x="1073" y="532" font-size="18" font-weight="700" fill="#8a7a6d" text-anchor="middle">不在名單</text>
+<rect x="40" y="560" width="1120" height="54" rx="10" fill="#ffffff" stroke="#f2c9a3" stroke-width="1.5"/>
+<text x="62" y="595" font-size="21" font-weight="700" fill="#2b2320">Crypto.com</text>
+<text x="242" y="595" font-size="20" font-weight="700" fill="#e8722a">wu4v2eyk66</text>
+<text x="512" y="595" font-size="20" fill="#2b2320">新戶 CRO 獎勵，需鎖倉</text>
+<rect x="1008" y="571" width="130" height="32" rx="16" fill="#f6f1ec" stroke="#8a7a6d" stroke-width="1.5"/>
+<text x="1073" y="594" font-size="18" font-weight="700" fill="#8a7a6d" text-anchor="middle">不在名單</text>
+<text x="1150" y="655" font-size="18" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

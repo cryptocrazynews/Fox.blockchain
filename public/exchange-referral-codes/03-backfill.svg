@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<text x="50" y="72" font-size="42" font-weight="900" fill="#2b2320">推薦碼忘了填，能不能補？</text>
+<text x="50" y="108" font-size="22" fill="#8a7a6d">依各家官方說明整理，2026 年 11 月 26 日查核</text>
+<rect x="50" y="140" width="350" height="440" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+<text x="80" y="200" font-size="36" font-weight="900" fill="#2b2320">MAX</text>
+<rect x="80" y="222" width="290" height="48" rx="24" fill="#e8722a"/>
+<text x="225" y="254" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">可以補填</text>
+<text x="80" y="320" font-size="19" fill="#2b2320">到「設定推薦人」補填</text>
+<text x="80" y="378" font-size="19" fill="#2b2320">（使用者 &gt; 分享推薦連結）</text>
+<text x="80" y="436" font-size="19" fill="#2b2320">只能綁比你早註冊的人</text>
+<text x="80" y="494" font-size="19" fill="#2b2320">折扣期仍從註冊日起算 6 個月</text>
+<rect x="425" y="140" width="350" height="440" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+<text x="455" y="200" font-size="36" font-weight="900" fill="#2b2320">幣安</text>
+<rect x="455" y="222" width="290" height="48" rx="24" fill="#f0a35e"/>
+<text x="600" y="254" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">條件全符合才行</text>
+<text x="455" y="320" font-size="19" fill="#2b2320">註冊 30 天內</text>
+<text x="455" y="378" font-size="19" fill="#2b2320">沒有入金也沒有交易</text>
+<text x="455" y="436" font-size="19" fill="#2b2320">沒綁過推薦人、為主帳戶</text>
+<text x="455" y="494" font-size="19" fill="#2b2320">KYC 資料 180 天內未用於他帳號</text>
+<rect x="800" y="140" width="350" height="440" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+<text x="830" y="200" font-size="36" font-weight="900" fill="#2b2320">幣託</text>
+<rect x="830" y="222" width="290" height="48" rx="24" fill="#8a7a6d"/>
+<text x="975" y="254" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">官方頁沒寫</text>
+<text x="830" y="320" font-size="19" fill="#2b2320">推薦活動頁未列補填規則</text>
+<text x="830" y="378" font-size="19" fill="#2b2320">請直接洽官方客服</text>
+<text x="830" y="436" font-size="19" fill="#2b2320">別相信私訊代補登</text>
+<text x="830" y="494" font-size="19" fill="#2b2320">最好註冊當下就填</text>
+<rect x="50" y="598" width="700" height="44" rx="22" fill="#fdeede"/>
+<text x="400" y="628" font-size="21" font-weight="700" fill="#e8722a" text-anchor="middle">結論：註冊當下就填，比事後補省事太多</text>
+<text x="1150" y="655" font-size="18" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

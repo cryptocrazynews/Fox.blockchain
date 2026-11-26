@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<text x="50" y="72" font-size="42" font-weight="900" fill="#2b2320">推薦碼能省多少？30 萬台幣試算</text>
+<text x="50" y="108" font-size="22" fill="#8a7a6d">每月交易 30 萬台幣、全部吃單；MAX 以 0.15%、幣託以 0.2% 估算</text>
+<rect x="50" y="135" width="535" height="470" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+<text x="80" y="185" font-size="30" font-weight="900" fill="#2b2320">MAX　推薦碼 35d1aa4c</text>
+<text x="80" y="240" font-size="20" fill="#8a7a6d">沒填推薦碼</text>
+<rect x="80" y="254" width="225" height="38" rx="8" fill="#f2c9a3"/>
+<text x="319" y="282" font-size="24" font-weight="700" fill="#2b2320">450 元</text>
+<text x="80" y="345" font-size="20" fill="#8a7a6d">只填推薦碼（8 折）</text>
+<rect x="80" y="359" width="180" height="38" rx="8" fill="#f0a35e"/>
+<text x="274" y="387" font-size="24" font-weight="700" fill="#2b2320">360 元</text>
+<text x="80" y="450" font-size="20" fill="#8a7a6d">推薦碼＋MAX Token（0.8 × 0.7）</text>
+<rect x="80" y="464" width="126" height="38" rx="8" fill="#e8722a"/>
+<text x="220" y="492" font-size="24" font-weight="700" fill="#2b2320">252 元</text>
+<rect x="80" y="535" width="475" height="50" rx="25" fill="#fdeede"/>
+<text x="317" y="568" font-size="22" font-weight="700" fill="#e8722a" text-anchor="middle">半年約省 1,188 元</text>
+<rect x="615" y="135" width="535" height="470" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+<text x="645" y="185" font-size="30" font-weight="900" fill="#2b2320">幣託　推薦碼 9066419187</text>
+<text x="645" y="240" font-size="20" fill="#8a7a6d">沒填推薦碼</text>
+<rect x="645" y="254" width="300" height="38" rx="8" fill="#f2c9a3"/>
+<text x="959" y="282" font-size="24" font-weight="700" fill="#2b2320">600 元</text>
+<text x="645" y="345" font-size="20" fill="#8a7a6d">推薦碼 20% 獎勵</text>
+<rect x="645" y="359" width="240" height="38" rx="8" fill="#f0a35e"/>
+<text x="899" y="387" font-size="24" font-weight="700" fill="#2b2320">淨 480 元</text>
+<text x="645" y="450" font-size="20" fill="#8a7a6d">推薦碼＋BITO 折抵</text>
+<rect x="645" y="464" width="192" height="38" rx="8" fill="#e8722a"/>
+<text x="851" y="492" font-size="24" font-weight="700" fill="#2b2320">淨 384 元</text>
+<rect x="645" y="535" width="475" height="50" rx="25" fill="#fdeede"/>
+<text x="882" y="568" font-size="22" font-weight="700" fill="#e8722a" text-anchor="middle">180 天約省 1,296 元</text>
+<text x="50" y="640" font-size="18" fill="#8a7a6d">費率依 VIP 等級與官方費率表為準；幣託獎勵以 USDT 發放，滿 10 USDT 可領</text>
+<text x="1150" y="640" font-size="18" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>
