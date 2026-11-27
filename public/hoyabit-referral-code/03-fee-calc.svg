@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="88" font-size="44" font-weight="900" fill="#2b2320">HOYA BIT 手續費試算</text>
+  <text x="60" y="130" font-size="23" fill="#8a7a6d">官網標示交易手續費 0.1% 至 0.5%，以每月閃兌金額計算</text>
+  <rect x="60" y="165" width="1080" height="70" rx="16" fill="#e8722a"/>
+  <text x="120" y="211" font-size="26" font-weight="700" fill="#ffffff">每月閃兌金額</text>
+  <text x="520" y="211" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">以 0.1% 計</text>
+  <text x="760" y="211" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">以 0.5% 計</text>
+  <text x="1000" y="211" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">半年差距</text>
+  <rect x="60" y="245" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="120" y="296" font-size="28" font-weight="700" fill="#2b2320">3 萬元</text>
+  <text x="520" y="296" font-size="28" fill="#2b2320" text-anchor="middle">30 元</text>
+  <text x="760" y="296" font-size="28" fill="#2b2320" text-anchor="middle">150 元</text>
+  <text x="1000" y="296" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">720 元</text>
+  <rect x="60" y="335" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="120" y="386" font-size="28" font-weight="700" fill="#2b2320">10 萬元</text>
+  <text x="520" y="386" font-size="28" fill="#2b2320" text-anchor="middle">100 元</text>
+  <text x="760" y="386" font-size="28" fill="#2b2320" text-anchor="middle">500 元</text>
+  <text x="1000" y="386" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">2,400 元</text>
+  <rect x="60" y="425" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="120" y="476" font-size="28" font-weight="700" fill="#2b2320">30 萬元</text>
+  <text x="520" y="476" font-size="28" fill="#2b2320" text-anchor="middle">300 元</text>
+  <text x="760" y="476" font-size="28" fill="#2b2320" text-anchor="middle">1,500 元</text>
+  <text x="1000" y="476" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">7,200 元</text>
+  <rect x="60" y="530" width="530" height="80" rx="16" fill="#fff1e4" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="85" y="565" font-size="20" fill="#8a7a6d">台新帳戶出入金</text>
+  <text x="85" y="595" font-size="24" font-weight="700" fill="#2b2320">免手續費</text>
+  <text x="330" y="565" font-size="20" fill="#8a7a6d">其他銀行出金</text>
+  <text x="330" y="595" font-size="24" font-weight="700" fill="#2b2320">每筆 15 元</text>
+  <rect x="610" y="530" width="530" height="80" rx="16" fill="#fff1e4" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="635" y="565" font-size="20" fill="#8a7a6d">對照：MAX 每月 30 萬元</text>
+  <text x="635" y="595" font-size="24" font-weight="700" fill="#2b2320">推薦碼加 MAX Token 約 252 元</text>
+  <text x="1150" y="645" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="88" font-size="44" font-weight="900" fill="#2b2320">第一銀行粉獅幣換 USDT 活動</text>
+  <text x="60" y="130" font-size="23" fill="#8a7a6d">活動期間 2026/11/1 至 12/31 23:59，首波 1,000 份兌完為止</text>
+  <rect x="60" y="170" width="520" height="350" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="220" font-size="26" font-weight="700" fill="#2b2320">全體加碼（新舊戶都可）</text>
+  <text x="90" y="268" font-size="20" fill="#8a7a6d">1. 粉獅幣兌換 5 或 10 USDT 序號</text>
+  <text x="90" y="303" font-size="20" fill="#8a7a6d">2. 到 HOYA BIT 帳戶完成兌換入帳</text>
+  <text x="90" y="338" font-size="20" fill="#8a7a6d">3. 額外再送，每人限領一次</text>
+  <rect x="90" y="375" width="260" height="76" rx="38" fill="#e8722a"/>
+  <text x="220" y="425" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">+5 USDT</text>
+  <text x="90" y="490" font-size="20" fill="#8a7a6d">有沒有填推薦碼都拿得到</text>
+  <rect x="620" y="170" width="520" height="350" rx="20" fill="#fff1e4" stroke="#e8722a" stroke-width="2"/>
+  <text x="650" y="220" font-size="26" font-weight="700" fill="#2b2320">指定碼加碼（限新戶）</text>
+  <text x="650" y="268" font-size="20" fill="#8a7a6d">1. 用官方指定邀請碼 hoya11 註冊</text>
+  <text x="650" y="303" font-size="20" fill="#8a7a6d">2. 綁定銀行後 7 天內完成兌換入帳</text>
+  <text x="650" y="338" font-size="20" fill="#8a7a6d">3. 依入帳時間排序前 100 名</text>
+  <rect x="650" y="375" width="260" height="76" rx="38" fill="#e8722a"/>
+  <text x="780" y="425" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle">再 +5 USDT</text>
+  <text x="650" y="490" font-size="20" fill="#8a7a6d">兩項合計最高 10 USDT</text>
+  <rect x="60" y="545" width="1080" height="66" rx="14" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="587" font-size="22" fill="#2b2320">邀請碼只能填一個：粉獅幣會員要搶前 100 名填 hoya11，其他人填 BdniStdb</text>
+  <text x="1150" y="645" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>
