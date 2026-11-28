@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="92" font-size="44" font-weight="900" fill="#2b2320">幣安推薦碼怎麼填：5 個步驟</text>
+  <text x="60" y="136" font-size="23" fill="#8a7a6d">推薦人 ID 欄位標示選填、預設收合，最容易漏掉的是第 3 步</text>
+  <rect x="60" y="190" width="200" height="300" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <circle cx="160" cy="260" r="38" fill="#e8722a"/>
+  <text x="160" y="275" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="160" y="370" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">用推薦連結</text>
+  <text x="160" y="412" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">開啟註冊頁</text>
+  <polygon points="265,330 277,340 265,350" fill="#f0a35e"/>
+  <rect x="280" y="190" width="200" height="300" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <circle cx="380" cy="260" r="38" fill="#e8722a"/>
+  <text x="380" y="275" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="380" y="370" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">輸入信箱</text>
+  <text x="380" y="412" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">或手機號碼</text>
+  <polygon points="485,330 497,340 485,350" fill="#f0a35e"/>
+  <rect x="500" y="190" width="200" height="300" rx="20" fill="#e8722a" stroke="#f2c9a3" stroke-width="2"/>
+  <circle cx="600" cy="260" r="38" fill="#ffffff"/>
+  <text x="600" y="275" font-size="40" font-weight="900" fill="#e8722a" text-anchor="middle">3</text>
+  <text x="600" y="370" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">推薦人 ID</text>
+  <text x="600" y="412" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">填 38825428</text>
+  <polygon points="705,330 717,340 705,350" fill="#f0a35e"/>
+  <rect x="720" y="190" width="200" height="300" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <circle cx="820" cy="260" r="38" fill="#e8722a"/>
+  <text x="820" y="275" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="820" y="370" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">完成 KYC</text>
+  <text x="820" y="412" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">身分驗證</text>
+  <polygon points="925,330 937,340 925,350" fill="#f0a35e"/>
+  <rect x="940" y="190" width="200" height="300" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <circle cx="1040" cy="260" r="38" fill="#e8722a"/>
+  <text x="1040" y="275" font-size="40" font-weight="900" fill="#ffffff" text-anchor="middle">5</text>
+  <text x="1040" y="370" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">開 BNB 折抵</text>
+  <text x="1040" y="412" font-size="26" font-weight="700" fill="#2b2320" text-anchor="middle">與雙重驗證</text>
+  <rect x="60" y="525" width="1080" height="80" rx="16" fill="#fff1e4" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="575" font-size="24" fill="#2b2320">送出前確認推薦人 ID 不是空的；推薦關係一旦設定，<tspan font-weight="700" fill="#e8722a">不能更改或移除</tspan></text>
+  <text x="1150" y="652" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="88" font-size="44" font-weight="900" fill="#2b2320">幣安手續費試算：開 BNB 折抵省多少</text>
+  <text x="60" y="130" font-size="23" fill="#8a7a6d">一般用戶、全部現貨交易，每月交易額以 USDT 計</text>
+  <rect x="60" y="165" width="1080" height="70" rx="16" fill="#e8722a"/>
+  <text x="90" y="211" font-size="25" font-weight="700" fill="#ffffff">每月交易額</text>
+  <text x="510" y="211" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">標準 0.1%</text>
+  <text x="740" y="211" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">開 BNB 0.075%</text>
+  <text x="980" y="211" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">0 級佣金池上限</text>
+  <rect x="60" y="245" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="296" font-size="28" font-weight="700" fill="#2b2320">1,000 USDT</text>
+  <text x="510" y="296" font-size="28" fill="#2b2320" text-anchor="middle">1 USDT</text>
+  <text x="740" y="296" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">0.75 USDT</text>
+  <text x="980" y="296" font-size="28" fill="#2b2320" text-anchor="middle">約 0.15 USDT</text>
+  <rect x="60" y="335" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="386" font-size="28" font-weight="700" fill="#2b2320">5,000 USDT</text>
+  <text x="510" y="386" font-size="28" fill="#2b2320" text-anchor="middle">5 USDT</text>
+  <text x="740" y="386" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">3.75 USDT</text>
+  <text x="980" y="386" font-size="28" fill="#2b2320" text-anchor="middle">約 0.75 USDT</text>
+  <rect x="60" y="425" width="1080" height="80" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="476" font-size="28" font-weight="700" fill="#2b2320">20,000 USDT</text>
+  <text x="510" y="476" font-size="28" fill="#2b2320" text-anchor="middle">20 USDT</text>
+  <text x="740" y="476" font-size="28" font-weight="700" fill="#e8722a" text-anchor="middle">15 USDT</text>
+  <text x="980" y="476" font-size="28" fill="#2b2320" text-anchor="middle">約 3 USDT</text>
+  <rect x="60" y="530" width="1080" height="80" rx="16" fill="#fff1e4" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="568" font-size="22" fill="#2b2320">佣金池＝開 BNB 後實付手續費 × 20%，你拿到的回饋只會是其中一部分或全部</text>
+  <text x="90" y="598" font-size="20" fill="#8a7a6d">實際回饋以帳號內紀錄為準；小額交易時，BNB 折抵比推薦回饋更有感</text>
+  <text x="1150" y="652" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>

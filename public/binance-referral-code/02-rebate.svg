@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="'Noto Sans CJK TC','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#fdeede"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="92" font-size="44" font-weight="900" fill="#2b2320">幣安返佣怎麼算：三層拆解</text>
+  <text x="60" y="136" font-size="23" fill="#8a7a6d">一般用戶現貨為例，資料來源：幣安費率表、BNB 折抵說明、Referral Pro 常見問題</text>
+  <rect x="60" y="175" width="340" height="250" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="90" y="220" font-size="22" fill="#8a7a6d">第一層　標準費率</text>
+  <text x="90" y="300" font-size="64" font-weight="900" fill="#2b2320">0.1%</text>
+  <text x="90" y="350" font-size="22" fill="#2b2320">掛單、吃單都一樣</text>
+  <text x="90" y="385" font-size="20" fill="#8a7a6d">買 1,000 USDT 付 1 USDT</text>
+  <text x="430" y="310" font-size="40" font-weight="900" fill="#f0a35e" text-anchor="middle">›</text>
+  <rect x="460" y="175" width="340" height="250" rx="20" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="490" y="220" font-size="22" fill="#8a7a6d">第二層　BNB 折抵</text>
+  <text x="490" y="300" font-size="64" font-weight="900" fill="#e8722a">0.075%</text>
+  <text x="490" y="350" font-size="22" fill="#2b2320">現貨省 25%，合約最多 10%</text>
+  <text x="490" y="385" font-size="20" fill="#8a7a6d">現貨帳戶要留 BNB</text>
+  <text x="830" y="310" font-size="40" font-weight="900" fill="#f0a35e" text-anchor="middle">›</text>
+  <rect x="860" y="175" width="280" height="250" rx="20" fill="#e8722a"/>
+  <text x="885" y="220" font-size="22" fill="#ffffff">第三層　推薦回饋</text>
+  <text x="885" y="290" font-size="30" font-weight="900" fill="#ffffff">推薦人決定</text>
+  <text x="885" y="335" font-size="20" fill="#ffffff">從推薦人的佣金裡分出</text>
+  <text x="885" y="365" font-size="20" fill="#ffffff">比例以註冊頁顯示為準</text>
+  <text x="885" y="395" font-size="20" fill="#ffffff">不會超過佣金等級</text>
+  <text x="60" y="478" font-size="24" font-weight="700" fill="#2b2320">推薦人現貨佣金等級（你拿到的回饋上限）</text>
+  <rect x="60" y="500" width="255" height="105" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="187" y="545" font-size="22" fill="#8a7a6d" text-anchor="middle">0 級</text>
+  <text x="187" y="588" font-size="36" font-weight="900" fill="#2b2320" text-anchor="middle">20%</text>
+  <rect x="335" y="500" width="255" height="105" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="462" y="545" font-size="22" fill="#8a7a6d" text-anchor="middle">1 級</text>
+  <text x="462" y="588" font-size="36" font-weight="900" fill="#2b2320" text-anchor="middle">30%</text>
+  <rect x="610" y="500" width="255" height="105" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="737" y="545" font-size="22" fill="#8a7a6d" text-anchor="middle">2 級</text>
+  <text x="737" y="588" font-size="36" font-weight="900" fill="#2b2320" text-anchor="middle">41%</text>
+  <rect x="885" y="500" width="255" height="105" rx="16" fill="#ffffff" stroke="#f2c9a3" stroke-width="2"/>
+  <text x="1012" y="545" font-size="22" fill="#8a7a6d" text-anchor="middle">3 級</text>
+  <text x="1012" y="588" font-size="36" font-weight="900" fill="#2b2320" text-anchor="middle">50%</text>
+  <text x="1150" y="652" font-size="20" fill="#8a7a6d" text-anchor="end">小狐狸區塊鏈 fox-blockchain.com</text>
+</svg>
